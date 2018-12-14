@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Android 启动页切换到主页 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Android 启动页切换到主页</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>activity_splash.xml:</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#99cc00&quot;&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tv_version&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_centerInParent=&quot;true&quot;
+        android:textColor=&quot;#ffffff&quot;
+        android:textSize=&quot;14sp&quot;/&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre>
+
+<p>SplashActivity.java:</p>
+
+<pre><code>package com.example.muzico.test.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.example.muzico.test.MainActivity;
+import com.example.muzico.test.R;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class SplashActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        init();
+    }
+
+    private void init() {
+
+        //设置启动页的版本信息
+        TextView textView = findViewById(R.id.tv_version);
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(),0);
+            textView.setText(&quot;V&quot; + info.versionName);
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            textView.setText(&quot;V&quot;);
+        }
+
+
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                SplashActivity.this.finish();
+            }
+        };
+        timer.schedule(task, 3000);//定时器延迟3秒后执行
+    }
+}
+</code></pre>
+
+<p>AndroidManifest.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.example.muzico.test&quot;&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/Theme.AppCompat.NoActionBar&quot;&gt;
+        &lt;activity android:name=&quot;.MainActivity&quot;&gt;
+
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;.activity.SplashActivity&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+
+<h3 id="toc_0">全屏效果：</h3>
+
+<p>res/values/styles.xml:</p>
+
+<pre><code>&lt;resources&gt;
+
+    &lt;style name=&quot;AppTheme.Full&quot; parent=&quot;Theme.AppCompat.NoActionBar&quot;&gt;
+        &lt;item name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;
+    &lt;/style&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>AndroidManifest.xml  中 android:theme 的值改为：</p>
+
+<pre><code>@style/AppTheme.Full
+</code></pre>
+
+<p>可以看到 启动页变成了全屏，而主页也是。。。变成了全屏。</p>
+
+<h3 id="toc_1">隐藏、显示状态栏</h3>
+
+<p>为了让主页里面可以看到状态栏，我们可以在主页里面使用代码：</p>
+
+<p>MainActivity.java:</p>
+
+<pre><code>package com.example.muzico.test;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.WindowManager;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        //显示状态栏
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+}
+</code></pre>
+
+<p>知识点：</p>
+
+<pre><code>//隐藏状态栏 
+getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//显示状态栏
+getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+</code></pre>
+
+<h3 id="toc_2">更加简单的启动页全屏</h3>
+
+<p>在上面我们看到有代码可以直接隐藏、显示状态栏，那么我们是否不修改 AndroidManifest.xml、MainActivity.java 的情况下，直接让启动页全屏而有不影响主页呢？</p>
+
+<p>答案是可以的。</p>
+
+<p>SplashActivity.java:</p>
+
+<pre><code>    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+
+        //隐藏状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        init();
+    }
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	jQuery 选择器应用 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">jQuery 选择器应用</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<pre><code>&lt;!DOCTYPE&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;../../Library/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            $(function(){
+                $(&quot;input[type=&#39;button&#39;]&quot;).click(function(){
+                    var i = 0
+                    $(&quot;input[type=&#39;text&#39;]&quot;).each(function(){
+                        i += parseInt($(this).val())
+                    })
+                    $(&quot;label&quot;).text(i)
+                })
+                $(&#39;input:lt(2)&#39;)
+                    .add(&quot;label&quot;)
+                    .css(&#39;border&#39;,&#39;none&#39;)
+                    .css(&#39;borderBottom&#39;,&#39;solid 1px navy&#39;)
+                    .css(&#39;textAlign&#39;,&#39;center&#39;)
+                    .css(&#39;width&#39;,&#39;3em&#39;)
+                    .css({&#39;width&#39;:&#39;30px&#39;})
+            })
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;input type=&quot;text&quot; value=&quot;&quot; /&gt; +
+        &lt;input type=&quot;text&quot; value=&quot;&quot; /&gt;
+        &lt;input type=&quot;button&quot; value=&quot;=&quot; /&gt;
+        &lt;label&gt;&lt;/label&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：</p>
+
+<p><img src="media/15392263853361/B3AC1733-BC2B-448E-B69D-9ABF81ABBF7F.png" alt="B3AC1733-BC2B-448E-B69D-9ABF81ABBF7F"/></p>
+
+<p><img src="media/15392263853361/98D0A22F-60B8-4DED-BA97-D76E733F2203.png" alt="98D0A22F-60B8-4DED-BA97-D76E733F2203"/></p>
+
+<h5 id="toc_0">---------华丽的分割线--------</h5>
+
+<pre><code>$(&quot;input[type=&#39;button&#39;]&quot;)
+</code></pre>
+
+<p>选择器匹配出文档中 type属性为button的 input元素对象。</p>
+
+<h5 id="toc_1">---------华丽的分割线--------</h5>
+
+<pre><code>$(&quot;input[type=&#39;button&#39;]&quot;).click(function(){
+    //代码
+})
+</code></pre>
+
+<p>匹配按钮，并且绑定点击事件。</p>
+
+<h5 id="toc_2">---------华丽的分割线--------</h5>
+
+<pre><code>$(&quot;input[type=&#39;text&#39;]&quot;).each(function(){
+    //代码
+})
+</code></pre>
+
+<p>选择器匹配出文档中全部输入框，并且用 each() 遍历。</p>
+
+<h5 id="toc_3">---------华丽的分割线--------</h5>
+
+<pre><code>i += parseInt($(this).val())
+</code></pre>
+
+<p>this，是指当前的对象，即使输入框。通过 val() 可以获取文本框的值。<br/>
+parseInt()，将字符串转为数值类型。</p>
+
+<h5 id="toc_4">---------华丽的分割线--------</h5>
+
+<pre><code>$(&#39;input:lt(2)&#39;)
+</code></pre>
+
+<p>选择器匹配出所有input元素的前两个目标。<br/>
+lt，代表小于某个值。</p>
+
+<h5 id="toc_5">---------华丽的分割线--------</h5>
+
+<pre><code>$(&#39;input:lt(2)&#39;)
+    .add(&#39;label&#39;)
+    .css(&#39;border&#39;,&#39;none&#39;)
+    .css(&#39;borderBottom&#39;,&#39;solid 1px navy&#39;)
+    .css(&#39;textAlign&#39;,&#39;center&#39;)
+    .css(&#39;width&#39;,&#39;3em&#39;)
+    .css({&#39;width&#39;:&#39;30px&#39;})
+</code></pre>
+
+<p>这里不是很懂。</p>
+
+<p>没有这行代码的话，就变变成下面的样子：</p>
+
+<p><img src="media/15392263853361/383542FE-0AF6-4657-851F-CDA439C92A3E.png" alt="383542FE-0AF6-4657-851F-CDA439C92A3E"/></p>
+
+<p><img src="media/15392263853361/36F25958-4FC9-4404-BBFA-F009491FBC20.png" alt="36F25958-4FC9-4404-BBFA-F009491FBC20"/></p>
+
+<p>有这部分代码的时候，却显示结果的 label 下面多了一条线。（参见本文第二张图片）</p>
+
+<p>这条线是从哪里来的呢？？？</p>
+
+<p>把这部分的代码移除 .add(&#39;label&#39;) 这句，就变成了显示结果的 label 没有了线。多神奇啊。</p>
+
+<p><img src="media/15392263853361/3F943FDF-4560-4ABB-9C6F-6F35348527A1.png" alt="3F943FDF-4560-4ABB-9C6F-6F35348527A1"/></p>
+
+<p>将这部分的代码修改成下面的样子，测试看看：</p>
+
+<pre><code>$(&#39;input:lt(1)&#39;)
+    .add(&#39;label&#39;)
+    .css(&#39;border&#39;,&#39;none&#39;)
+    .css(&#39;borderBottom&#39;,&#39;solid 1px navy&#39;)
+    .css(&#39;textAlign&#39;,&#39;center&#39;)
+    .css(&#39;width&#39;,&#39;3em&#39;)
+    .css({&#39;width&#39;:&#39;30px&#39;})
+</code></pre>
+
+<p>显示的结果却是：</p>
+
+<p><img src="media/15392263853361/6B455489-2B11-4CBE-83BB-245FCEBB8F31.png" alt="6B455489-2B11-4CBE-83BB-245FCEBB8F31"/></p>
+
+<p>将这部分的代码修改成下面的样子，测试看看：</p>
+
+<pre><code>$(&#39;input:lt(3)&#39;)
+    .add(&#39;label&#39;)
+    .css(&#39;border&#39;,&#39;none&#39;)
+    .css(&#39;borderBottom&#39;,&#39;solid 1px navy&#39;)
+    .css(&#39;textAlign&#39;,&#39;center&#39;)
+    .css(&#39;width&#39;,&#39;3em&#39;)
+    .css({&#39;width&#39;:&#39;30px&#39;})
+</code></pre>
+
+<p>显示的结果却是：</p>
+
+<p><img src="media/15392263853361/2EE5D259-329B-490D-9BE8-BA6EDDD883B2.png" alt="2EE5D259-329B-490D-9BE8-BA6EDDD883B2"/></p>
+
+<p>将这部分的代码修改成下面的样子，测试看看：</p>
+
+<pre><code>$(&#39;input:lt(3)&#39;)
+    .css(&#39;border&#39;,&#39;none&#39;)
+    .css(&#39;borderBottom&#39;,&#39;solid 1px navy&#39;)
+    .css(&#39;textAlign&#39;,&#39;center&#39;)
+    .css(&#39;width&#39;,&#39;3em&#39;)
+    .css({&#39;width&#39;:&#39;30px&#39;})
+</code></pre>
+
+<p>显示的结果却是：</p>
+
+<p><img src="media/15392263853361/C25A54DF-0F6D-4761-BC94-D2451444579C.png" alt="C25A54DF-0F6D-4761-BC94-D2451444579"/></p>
+
+<p>关于这部分实在无法理解，暂时先这样吧。。。。。。以后再补。。。。。。</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

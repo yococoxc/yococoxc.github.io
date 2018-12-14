@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Android 使用 Fresco 的 demo（依赖） - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Android 使用 Fresco 的 demo（依赖）</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">首先，引入依赖，让 Android Studio 自行下载 Fresco 的库。</h3>
+
+<p><img src="media/15367420632273/0390BF00916A4F7E9C5FC843A122FA7D.png" alt="0390BF00916A4F7E9C5FC843A122FA7D"/></p>
+
+<p>哗啦啦的写上：</p>
+
+<pre><code>implementation &#39;com.facebook.fresco:fresco:+&#39;
+</code></pre>
+
+<p><img src="media/15367420632273/C3EF1A4B-BB71-48A4-8B07-CD50DCF46DFF.png" alt="C3EF1A4B-BB71-48A4-8B07-CD50DCF46DFF"/></p>
+
+<p>最后要点击 Sync Now ，进行同步处理，更新设置。</p>
+
+<p><img src="media/15367420632273/88DD1137-CD70-42CF-B8AD-0416353C73ED.png" alt="88DD1137-CD70-42CF-B8AD-0416353C73ED"/></p>
+
+<h3 id="toc_1">其他依赖</h3>
+
+<pre><code>// 在 API &lt; 14 上的机器支持 WebP 时，需要添加
+implementation &#39;com.facebook.fresco:animated-base-support:+&#39;
+
+// 支持 GIF 动图，需要添加
+implementation &#39;com.facebook.fresco:animated-gif:+&#39;
+
+// 支持 WebP （静态图+动图），需要添加
+implementation &#39;com.facebook.fresco:animated-webp:+&#39;
+implementation &#39;com.facebook.fresco:webpsupport:+&#39;
+
+// 仅支持 WebP 静态图，需要添加
+implementation &#39;com.facebook.fresco:webpsupport:+&#39;
+</code></pre>
+
+<p><a href="https://www.fresco-cn.org/docs/index.html">参考</a></p>
+
+<h3 id="toc_2">开启网络请求权限</h3>
+
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+</code></pre>
+
+<p><img src="media/15367420632273/C46888D2-027F-4656-A76E-8409636C3CAB.png" alt="C46888D2-027F-4656-A76E-8409636C3CAB"/></p>
+
+<p>没有这句话，你就不能实现网络请求的功能了。</p>
+
+<h3 id="toc_3">XML 的布局</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;android.support.constraint.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;com.facebook.drawee.view.SimpleDraweeView
+        android:id=&quot;@+id/my_image_view&quot;
+        android:layout_width=&quot;130dp&quot;
+        android:layout_height=&quot;130dp&quot;
+        app:placeholderImage=&quot;@drawable/ic_launcher_background&quot;/&gt;
+
+&lt;/android.support.constraint.ConstraintLayout&gt;
+</code></pre>
+
+<h3 id="toc_4">MainActivity.java 代码</h3>
+
+<pre><code>import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Fresco.initialize(this);
+
+        setContentView(R.layout.activity_main);
+
+        Uri uri = Uri.parse(&quot;https://yococoxc.github.io/muzicoLogo.jpg&quot;);
+        SimpleDraweeView draweeView = findViewById(R.id.my_image_view);
+        draweeView.setImageURI(uri);
+
+    }
+}
+</code></pre>
+
+<p><br/><br/></p>
+
+<p>加载图片前需要初始化类。一次初始化即可，多次调用初始化是没有意义的。</p>
+
+<pre><code>Fresco.initialize(this);
+</code></pre>
+
+<p>加载图片：</p>
+
+<pre><code>Uri uri = Uri.parse(&quot;https://yococoxc.github.io/muzicoLogo.jpg&quot;);
+SimpleDraweeView draweeView = findViewById(R.id.my_image_view);
+draweeView.setImageURI(uri);
+</code></pre>
+
+<p>剩下的，Fresco会替你完成:</p>
+
+<ul>
+<li>显示占位图直到加载完成；</li>
+<li>下载图片；</li>
+<li>缓存图片；</li>
+<li>图片不再显示时，从内存中移除；</li>
+</ul>
+
+<p>等等等等。</p>
+
+<p><a href="https://www.fresco-cn.org/docs/getting-started.html">本文参考</a></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

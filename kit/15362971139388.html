@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	[众烁云仓] 主页 - LQSKit
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="LQSKit" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">LQSKit</a></h1>
+					<p class="subtitle">LQSKit 文档</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">[众烁云仓] 主页</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>基于 LQSKit 中十分强大的 LQSViewTemplateCollectionItem 类的设计。</p>
+
+<p>这个页面是由众多接口集合到一起显示的，而不是一个接口返回全部内容。鉴于这点要根据页面的接口有多少来编写逻辑，某程度上代码行数会变大，所以这里就不贴全部内容了，只展示核心代码：</p>
+
+<p>ZS__HomeView.h</p>
+
+<pre><code>#import &quot;ZS__HomeView.h&quot;
+#import &quot;MJRefresh.h&quot;
+
+#pragma mark - 请求
+#import &quot;Phone__Banner__ListRequest.h&quot;
+#import &quot;HomeArticleListRequest.h&quot;
+#import &quot;ProductRecommendationRequest.h&quot;
+#import &quot;HomeMaybeLikeRequest.h&quot;
+#import &quot;HomeNewPresaleRequest.h&quot;
+#import &quot;HomeSaleRequest.h&quot;
+
+#pragma mark - cell、reusable
+#import &quot;ZS__HomeCollectionReusableViewBanners.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewService.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewArticle.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewDIY.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewProductRecommendation.h&quot;
+#import &quot;ZS__HomeCollectionCellProductRecommendation.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewMaybeLike.h&quot;
+#import &quot;ZS__HomeCollectionCellMaybeLike.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewNewPresale.h&quot;
+#import &quot;ZS__HomeCollectionCellNewPresale.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewSale.h&quot;
+#import &quot;ZS__HomeCollectionCellSale.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewCategory.h&quot;
+
+
+@interface ZS__HomeView ()&lt;LQSRequestImplementDelegate&gt;{
+    BOOL isPhone__Banner__ListRequest;
+    BOOL isHomeArticleListRequest;
+    BOOL isProductRecommendationRequest;
+    BOOL isHomeMaybeLikeRequest;
+    BOOL isHomeNewPresaleRequest;
+    BOOL isHomeSaleRequest;
+}
+
+@end
+
+@implementation ZS__HomeView
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    self.lqs__backgroundColor = @&quot;#ccc&quot;;
+    
+    NSMutableArray* keepArray = [NSMutableArray array];
+    {
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;广告滚动&quot;;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewBanners class] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:0]];
+    }
+    /************************************************/
+    {
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;服务&quot;;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewService class] height:40];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        width = width / 4.0;
+        CGFloat height = (width + 15) * 2 + 35;
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;分类&quot;;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewCategory class] height:height];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;新闻&quot;;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewArticle class] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        width = (width - 8 - 8 - 8) / 2.0;
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;特卖&quot;;
+        item.minimumLineSpacing = 8;
+        item.minimumInteritemSpacing = 8;
+        item.sectionInsets = UIEdgeInsetsMake(8, 8, 0, 8);
+        item.cellWidth = width;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewSale class] height:0];
+        [item setupCellWithClass:[ZS__HomeCollectionCellSale class] array:[NSArray array] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        width = (width - 8 - 8 - 8) / 2.0;
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;新品预售&quot;;
+        item.minimumLineSpacing = 8;
+        item.minimumInteritemSpacing = 8;
+        item.sectionInsets = UIEdgeInsetsMake(8, 8, 0, 8);
+        item.cellWidth = width;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewNewPresale class] height:0];
+        [item setupCellWithClass:[ZS__HomeCollectionCellNewPresale class] array:[NSArray array] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        CGFloat height = [LQS heightWithWidth:width equalRatioWithOtherWidth:750 otherHeight:131];
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;DIY&quot;;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewDIY class] height:height];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        width = (width - 8 - 8 - 8) / 2.0;
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;精品推荐&quot;;
+        item.minimumLineSpacing = 8;
+        item.minimumInteritemSpacing = 8;
+        item.sectionInsets = UIEdgeInsetsMake(8, 8, 0, 8);
+        item.cellWidth = width;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewProductRecommendation class] height:0];
+        [item setupCellWithClass:[ZS__HomeCollectionCellProductRecommendation class] array:[NSArray array] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    {
+        CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+        width = (width - 8 - 8 - 8) / 2.0;
+        
+        LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+        item.tag = @&quot;猜你喜欢&quot;;
+        item.minimumLineSpacing = 8;
+        item.minimumInteritemSpacing = 8;
+        item.sectionInsets = UIEdgeInsetsMake(8, 8, 0, 8);
+        item.cellWidth = width;
+        [item setupHeaderWithClass:[ZS__HomeCollectionReusableViewMaybeLike class] height:0];
+        [item setupCellWithClass:[ZS__HomeCollectionCellMaybeLike class] array:[NSArray array] height:0];
+        [keepArray addObject:item];
+        
+        [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+    }
+    /************************************************/
+    self.collectionDataSource = keepArray;
+    
+    
+    self.collectionManager.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerWithRefreshing)];
+    [self.collectionManager.collectionView.mj_header beginRefreshing];
+}
+
+#pragma mark - 请求
+- (void) headerWithRefreshing {
+    {
+        Phone__Banner__ListRequest* request = [Phone__Banner__ListRequest requestWithDelegate:self];
+        request.tag = @&quot;Phone__Banner__ListRequest&quot;;
+        [request requestWithOnly:&amp;isPhone__Banner__ListRequest];
+    }
+    {
+        HomeArticleListRequest* request = [HomeArticleListRequest requestWithDelegate:self];
+        request.tag = @&quot;HomeArticleListRequest&quot;;
+        [request requestWithOnly:&amp;isHomeArticleListRequest];
+    }
+    {
+        HomeSaleRequest* request = [HomeSaleRequest requestWithDelegate:self];
+        request.tag = @&quot;HomeSaleRequest&quot;;
+        [request requestWithOnly:&amp;isHomeSaleRequest];
+    }
+    {
+        HomeNewPresaleRequest* request = [HomeNewPresaleRequest requestWithDelegate:self];
+        request.tag = @&quot;HomeNewPresaleRequest&quot;;
+        [request requestWithOnly:&amp;isHomeNewPresaleRequest];
+    }
+    {
+        HomeNewPresaleRequest* request = [HomeNewPresaleRequest requestWithDelegate:self];
+        request.tag = @&quot;HomeNewPresaleRequest&quot;;
+        [request requestWithOnly:&amp;isHomeNewPresaleRequest];
+    }
+    {
+        ProductRecommendationRequest* request = [ProductRecommendationRequest requestWithDelegate:self];
+        request.tag = @&quot;ProductRecommendationRequest&quot;;
+        [request requestWithOnly:&amp;isProductRecommendationRequest];
+    }
+    {
+        HomeMaybeLikeRequest* request = [HomeMaybeLikeRequest requestWithDelegate:self];
+        request.tag = @&quot;HomeMaybeLikeRequest&quot;;
+        [request requestWithOnly:&amp;isHomeMaybeLikeRequest];
+    }
+}
+
+#pragma mark - LQSRequestImplementDelegate
+- (void) lqsRequestImplement:(LQSRequestImplement *)request error:(NSError *)error {
+    [self.collectionManager.collectionView.mj_header endRefreshing];
+}
+
+- (void) lqsRequestImplement:(LQSRequestImplement *)request success:(id)result {
+    [self.collectionManager.collectionView.mj_header endRefreshing];
+    
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;Phone__Banner__ListRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* banners = [result objectForKey:@&quot;banners&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;广告滚动&quot;];
+        if (item) {
+            if ([banners lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                item.dataSourceArray = nil;
+            } else {
+                //有内容
+                CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+                CGFloat height = [LQS heightWithWidth:width equalRatioWithOtherWidth:750 otherHeight:362];
+                item.headerHeight = height;
+                item.dataSourceArray = banners;
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;HomeArticleListRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* articles = [result objectForKey:@&quot;articles&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;新闻&quot;];
+        if (item) {
+            if ([articles lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                item.dataSourceArray = nil;
+            } else {
+                //有内容
+                item.headerHeight = 30;
+                item.dataSourceArray = articles;
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;HomeSaleRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* products = [result objectForKey:@&quot;products&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;特卖&quot;];
+        if (item) {
+            if ([products lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                [item setupCellWithClass:[ZS__HomeCollectionCellSale class] array:[NSArray array] height:0];
+            } else {
+                //有内容
+                item.headerHeight = 44;
+                [item setupCellWithClass:[ZS__HomeCollectionCellSale class] array:products height:180];
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;HomeNewPresaleRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* products = [result objectForKey:@&quot;products&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;新品预售&quot;];
+        if (item) {
+            if ([products lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                [item setupCellWithClass:[ZS__HomeCollectionCellNewPresale class] array:[NSArray array] height:0];
+            } else {
+                //有内容
+                item.headerHeight = 44;
+                [item setupCellWithClass:[ZS__HomeCollectionCellNewPresale class] array:products height:180];
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;ProductRecommendationRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* products = [result objectForKey:@&quot;products&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;精品推荐&quot;];
+        if (item) {
+            if ([products lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                [item setupCellWithClass:[ZS__HomeCollectionCellProductRecommendation class] array:[NSArray array] height:0];
+            } else {
+                //有内容
+                item.headerHeight = 44;
+                [item setupCellWithClass:[ZS__HomeCollectionCellProductRecommendation class] array:products height:180];
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+    if ([request.tag lqs__isEqualToString:@&quot;HomeMaybeLikeRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        NSString* error_code = [result objectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        NSArray* products = [result objectForKey:@&quot;products&quot;];
+        
+        LQSCollectionSectionItem* item = [self itemWithTag:@&quot;猜你喜欢&quot;];
+        if (item) {
+            if ([products lqs__length] == 0) {
+                //没有内容
+                item.headerHeight = 0;
+                [item setupCellWithClass:[ZS__HomeCollectionCellMaybeLike class] array:[NSArray array] height:0];
+            } else {
+                //有内容
+                item.headerHeight = 44;
+                [item setupCellWithClass:[ZS__HomeCollectionCellMaybeLike class] array:products height:180];
+            }
+        }
+        [self.collectionManager.collectionView reloadData];
+        return;
+    }
+    /***************************************************************************/
+}
+
+@end
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>

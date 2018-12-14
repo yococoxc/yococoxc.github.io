@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	[众烁云仓]  首页分类模块 - LQSKit
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="LQSKit" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">LQSKit</a></h1>
+					<p class="subtitle">LQSKit 文档</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">[众烁云仓]  首页分类模块</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>基于 LQSKit 中十分强大的 LQSViewTemplateCollectionItem 类的设计。</p>
+
+<p>效果图：</p>
+
+<p><img src="media/15362988834575/DF63F180-D38B-4E84-A135-02A2102474B2.png" alt="DF63F180-D38B-4E84-A135-02A2102474B2"/></p>
+
+<p>ZS__HomeCollectionReusableViewCategory.h</p>
+
+<pre><code>#import &quot;LQSBasicCollectionReusableView.h&quot;
+
+@interface ZS__HomeCollectionReusableViewCategory : LQSBasicCollectionReusableView
+
+@end
+</code></pre>
+
+<p>ZS__HomeCollectionReusableViewCategory.m</p>
+
+<pre><code>#import &quot;ZS__HomeCollectionReusableViewCategory.h&quot;
+#import &quot;ZS__HomeCollectionReusableViewCategoryContent.h&quot;
+
+@interface ZS__HomeCollectionReusableViewCategory ()&lt;LQSMenuScrollPageViewSource&gt;
+
+@property(nonatomic,strong) NSArray* dataSource;
+
+@end
+
+@implementation ZS__HomeCollectionReusableViewCategory
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    //读取缓存内容
+    NSArray* dataSource = [LQSStore getWithString:@&quot;ecapi.category.list&quot;];
+    self.dataSource = dataSource;
+    
+    self.lqs__backgroundColor = @&quot;#fff&quot;;
+    
+    
+    LQSMenuScrollPageView* menuScrollPageView = [LQSMenuScrollPageView new];
+    menuScrollPageView.menu.scrollLineWidth = 60;
+    menuScrollPageView.dataSource = self;
+    [self addSubview:menuScrollPageView];
+    [menuScrollPageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+
+#pragma mark - LQSMenuScrollPageViewSource
+- (NSUInteger) numberOfViewsInLQSMenuScrollPageView:(LQSMenuScrollPageView *)view {
+    NSUInteger count = [self.dataSource lqs__length];
+    if (count &lt; 3) {
+        return count;
+    }
+    return 3;
+}
+
+- (NSString* ) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view textOfMenuAtIndex:(NSUInteger)index {
+    NSDictionary* dictionary = [self.dataSource objectAtIndex:index];
+    if ([dictionary lqs__isNSDictionary]) {
+        NSString* name = [dictionary lqs__toStringWithObjectForKey:@&quot;name&quot;];
+        return name;
+    }
+    return @&quot;&quot;;
+}
+
+- (UIView*) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view viewOfScrollPageAtIndex:(NSUInteger)index {
+    ZS__HomeCollectionReusableViewCategoryContent* temp = [ZS__HomeCollectionReusableViewCategoryContent new];
+    
+    NSDictionary* dictionary = [self.dataSource objectAtIndex:index];
+    if ([dictionary lqs__isNSDictionary]) {
+        NSArray* categories = [dictionary objectForKey:@&quot;categories&quot;];
+        if ([categories lqs__isNSArray]) {
+            //数据
+            temp.categories = categories;
+        }
+    }
+    return temp;
+}
+
+@end
+</code></pre>
+
+<p>ZS__HomeCollectionReusableViewCategoryContent.h</p>
+
+<pre><code>#import &quot;LQSViewTemplateCollectionItem.h&quot;
+
+@interface ZS__HomeCollectionReusableViewCategoryContent : LQSViewTemplateCollectionItem
+
+@property(nonatomic,strong) NSArray* categories;
+
+@end
+</code></pre>
+
+<p>ZS__HomeCollectionReusableViewCategoryContent.m</p>
+
+<pre><code>#import &quot;ZS__HomeCollectionReusableViewCategoryContent.h&quot;
+
+#import &quot;ZS__HomeCollectionReusableViewCategoryContentCell.h&quot;
+
+@implementation ZS__HomeCollectionReusableViewCategoryContent
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    self.lqs__backgroundColor = @&quot;#fff&quot;;
+    
+    
+    UIView* line = [UIView lqs__backgroundColor:@&quot;#999&quot;];
+    [self.contentView addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.height.mas_equalTo(1);
+    }];
+}
+
+- (void) setCategories:(NSArray *)categories {
+    _categories = categories;
+    
+    
+    if ([categories lqs__isNSArray] == NO) {
+        return;
+    }
+    NSMutableArray* tempKeepArray = [NSMutableArray array];
+    NSUInteger index = 0;
+    for (NSDictionary* dictioanry in categories) {
+        if (index &lt; 8) {
+            if ([dictioanry lqs__isNSDictionary]) {
+                [tempKeepArray addObject:dictioanry];
+                index++;
+            }
+        }
+    }
+    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    width = width / 4.0;
+    CGFloat height = width + 15;
+    
+    NSMutableArray* keepArray = [NSMutableArray array];
+    LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+    item.cellWidthMultiple = 4;
+    [item setupCellWithClass:[ZS__HomeCollectionReusableViewCategoryContentCell class] array:tempKeepArray height:height];
+    [keepArray addObject:item];
+    self.collectionDataSource = keepArray;
+}
+
+@end
+</code></pre>
+
+<p>ZS__HomeCollectionReusableViewCategoryContentCell.h</p>
+
+<pre><code>#import &quot;LQSBasicCollectionViewCell.h&quot;
+
+@interface ZS__HomeCollectionReusableViewCategoryContentCell : LQSBasicCollectionViewCell
+
+@property(nonatomic,strong) UIImageView* imageView;
+
+@property(nonatomic,strong) UILabel* titleLabel;
+
+@end
+</code></pre>
+
+<p>ZS__HomeCollectionReusableViewCategoryContentCell.m</p>
+
+<pre><code>#import &quot;ZS__HomeCollectionReusableViewCategoryContentCell.h&quot;
+#import &quot;YYWebImage.h&quot;
+
+#import &quot;ZS__GoodsListController.h&quot;
+
+@interface ZS__HomeCollectionReusableViewCategoryContentCell ()
+
+@property(nonatomic,strong) NSString* theID;
+
+@end
+
+@implementation ZS__HomeCollectionReusableViewCategoryContentCell
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    
+    self.lqs__backgroundColor = @&quot;#fff&quot;;
+    
+    UIImageView* imageView  = [UIImageView new];
+    [self.contentView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(8);
+        make.right.mas_equalTo(-8);
+        make.top.mas_equalTo(4);
+        make.height.mas_equalTo(imageView.mas_width);
+    }];
+    self.imageView = imageView;
+    
+    UILabel* titleLabel = [UILabel lqs__text:@&quot;&quot; textColor:@&quot;#333&quot; fontSize:14];
+    titleLabel.adjustsFontSizeToFitWidth = YES;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(-4);
+        make.height.mas_equalTo(20);
+    }];
+    self.titleLabel = titleLabel;
+    
+    
+    UIControl* control = [UIControl new];
+    [control lqs__addTarget:self action:@selector(pressedControlToDoSomething)];
+    [self.contentView addSubview:control];
+    [control mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+
+#pragma mark - 处理数据
+- (void) setupWithDictionary:(NSDictionary *)dictionary {
+    
+    self.imageView.image = nil;
+    self.titleLabel.text = nil;
+    self.theID = nil;
+    
+    if ([dictionary lqs__isNSDictionary] == NO) {
+        return;
+    }
+    
+    if (self.tag == 7) {
+        self.titleLabel.text = @&quot;更多&quot;;
+        return;
+    }
+    
+    self.theID = [dictionary lqs__toStringWithObjectForKey:@&quot;id&quot;];
+    
+    self.titleLabel.text = [dictionary lqs__toStringWithObjectForKey:@&quot;name&quot;];
+    
+    
+    NSString* thumbs = [dictionary lqs__toStringWithObjectForKey:@&quot;thumbs&quot;];
+    if ([thumbs lqs__isNSString]) {
+        [self.imageView yy_setImageWithURL:[NSURL URLWithString:thumbs] placeholder:nil];
+    }
+}
+
+#pragma mark - 触发事件
+- (void) pressedControlToDoSomething {
+    
+    if (self.tag == 7) {
+        [LQSNotitia sendWithTag:@&quot;MainController控制到CategoryController&quot;];
+        return;
+    }
+    
+    if (self.theID == nil) {
+        return;
+    }
+    
+    ZS__GoodsListController* controller = [ZS__GoodsListController new];
+    controller.category = self.theID;
+    [self lqs__currentNavigationControllerPushViewController:controller];
+}
+
+@end
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Swift4 基础之 可选类型、可选绑定、隐式解析可选 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Swift4 基础之 可选类型、可选绑定、隐式解析可选</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<pre><code>
+/*
+ 可选类型
+ 要么有值，值等于x；要么没有值，即为 nil。
+ */
+
+let possubleNumber = &quot;123&quot;
+let convertedNumber = Int(possubleNumber)
+/*
+ convertedNumber 的类型为 Int? 即为 &quot;optional Int&quot;。
+ 暗示该值可能是 Int，或者不是Int，即为 nil。
+ */
+
+print(convertedNumber)
+/*
+ 输出：
+ Optional(123)
+ */
+
+let possubleNumber2 = &quot;Hello World&quot;
+let convertedNumber2 = Int(possubleNumber2)
+print(convertedNumber2)
+/*
+ 输出：
+ nil
+ */
+
+/*
+ nil
+ 表示值缺失，不能用于非可选的常量和变量。
+ 在 Objective-C 中，nil 是一个指向不存在对象的指针。
+ 在 Swift 中，nil 不是指针——它是一个确定的值，用来表示值缺失。
+ 
+ var serverResponseCode: Int = 404
+ serverResponseCode = nil
+ 
+ 上面的代码会报错！
+ 
+ var serverResponseCode: Int? = 404
+ serverResponseCode = nil
+ 
+ 这样的代码就不会报错了。
+ 
+ 如果代码中有常量或者变量需要处理值缺失的情况，
+ 请把它们声明成对应的可选类型。
+ */
+
+/*
+ 声明一个可选常量或者变量但是没有赋值，它们会自动被设置为 nil：
+ */
+
+var surveyAnswer: String?
+/*
+ surveyAnswer 的值默认为 nil
+ */
+
+/*
+ 可以使用 if 语句和 nil 比较来判断一个可选值是否包含值。
+ 可以使用“相等”(==)或“不等”(!=)来执行比较。
+ */
+
+if convertedNumber != nil {
+    print(&quot;convertedNumber 不等于 nil&quot;)
+}
+
+/*
+ 确定可选类型确实包含值之后,
+ 可以在可选的名字后面加一个感叹号（!）来获取值。
+ 这个惊叹号表示“我知道这个可选有值，请使用它。”
+ 这被称为可选值的强制解析（forced unwrapping）。
+ */
+
+if convertedNumber != nil {
+    print(&quot;convertedNumber 的值为 \(convertedNumber!)&quot;)
+}
+
+/*
+ 使用 ! 来获取一个不存在的可选值会导致运行时错误。
+ 使用 ! 来强制解析值之前，一定要确定可选包含一个非  nil 的值。
+ */
+
+/*
+ 可选绑定
+ 用来判断可选类型是否包含值，
+ 如果包含就把值赋给一个临时常量或者变量。
+ 
+ 可以用在 if 和 while 语句中，
+ 这条语句不仅可以用来判断可选类型中是否有值，
+ 同时可以将可选类型中的值赋给一个常量或者变量。
+ */
+
+if let constantNumber = convertedNumber {
+    print(&quot;constantNumber 的值为 \(constantNumber)&quot;)
+}
+
+/*
+ 用可选绑定来重写 possibleNumber 这个例子：
+ */
+
+if let actualNumber = Int(possubleNumber) {
+    print(&quot;\&#39;\(possubleNumber)\&#39; has an integer value of \(actualNumber)&quot;)
+} else {
+    print(&quot;\&#39;\(possubleNumber)\&#39; could not be converted to an integer&quot;)
+}
+
+
+/*
+ 可以包含多个可选绑定或多个布尔条件在一个 if 语句中，
+ 只要使用逗号分开就行。
+ 
+ 只要有任意一个可选绑定的值为nil，
+ 或者任意一个布尔条件为false，
+ 则整个if条件判断为false，
+ 这时你就需要使用嵌套 if 条件语句来处理，
+ 如下所示：
+ */
+
+if let firstNumber = Int(&quot;4&quot;), let secondNumber = Int(&quot;42&quot;), firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+    print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+}
+
+
+if let firstNumber = Int(&quot;4&quot;) {
+    if let secondNumber = Int(&quot;42&quot;) {
+        if firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+            print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+        }
+    }
+}
+
+/*
+ 注意：
+ 在 if 条件语句中使用常量和变量来创建一个可选绑定
+ ，仅在 if 语句的句中(body)中才能获取到值。
+ 相反，在 guard 语句中使用常量和变量来创建一个可选绑定，
+ 仅在 guard 语句外且在语句后才能获取到值，请参考提前退出。
+ */
+
+
+/*
+ 提前退出
+ 条件为真，才会执行guard语句后的代码。
+ 条件为假，会执行else从句中的代码。
+ guard，总会带有else 语句。
+ */
+
+func greet(person: [String: String]) {
+    guard let name = person[&quot;name&quot;] else {
+        return
+    }
+    print(&quot;Hello \(name)&quot;)
+    
+    guard let location = person[&quot;location&quot;] else {
+        print(&quot;I hope the weather is nice near you.&quot;)
+        return
+    }
+    
+    print(&quot;I hope the weather is nice in \(location)&quot;)
+}
+
+greet(person: [&quot;name&quot;: &quot;John&quot;])
+greet(person: [&quot;name&quot;: &quot;Hane&quot;, &quot;location&quot;: &quot;Cupertion&quot;])
+
+
+/*
+ 隐式解析可选类型
+ 其实就是一个普通的可选类型，
+ 但是可以被当做非可选类型来使用，
+ 并不需要每次都使用解析来获取可选值。
+ */
+
+/*
+ 可选类型String
+ */
+let possibleString: String? = &quot;An optional string.&quot;
+/*
+ 需要感叹号来获取值
+ */
+let forcedString: String = possibleString!
+
+
+/*
+ 隐式解析可选类型String
+ */
+let assumedString: String? = &quot;An implicitly unwrapped optional string.&quot;
+/*
+ 需要感叹号来获取值
+ */
+let implicitString: String = assumedString
+
+/*
+ 注意：
+ 如果在隐式解析可选类型没有值的时候尝试取值，
+ 会触发运行时错误。
+ */
+
+
+/*
+ 可以把隐式解析可选类型当做普通可选类型来判断它是否包含值
+ */
+if assumedString != nil {
+    print(assumedString)
+}
+
+/*
+ 也可以在可选绑定中使用隐式解析可选类型来检查并解析它的值
+ */
+if let definiteString = assumedString {
+    print(definiteString)
+}
+
+/*
+ 注意
+ 如果一个变量之后可能变成nil的话请不要使用隐式解析可选类型。
+ 如果你需要在变量的生命周期中判断是否是nil的话，请使用普通可选类型。
+ */
+
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

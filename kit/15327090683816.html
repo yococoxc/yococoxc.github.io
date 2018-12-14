@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	LQSMenuScrollPageView实践 - 红包页面的实现 - LQSKit
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="LQSKit" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">LQSKit</a></h1>
+					<p class="subtitle">LQSKit 文档</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">LQSMenuScrollPageView实践 - 红包页面的实现</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>效果图：<br/>
+在最下面。</p>
+
+<p>主要基于 LQSMenuScrollPageView类来实现。</p>
+
+<p>BasicHeadController.h</p>
+
+<pre><code>#import &lt;UIKit/UIKit.h&gt;
+
+@interface BasicHeadController : LQSHeadViewController
+
+@end
+</code></pre>
+
+<p>BasicHeadController.m</p>
+
+<pre><code>#import &quot;BasicHeadController.h&quot;
+
+@interface BasicHeadController ()
+
+@end
+
+@implementation BasicHeadController
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    self.headView.style = LQSHeadViewStyleLeftBackRightMore;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+}
+
+#pragma mark -
+- (void) pressedButtonToDoSomethingWithLeftButton:(UIButton *)sender {
+    if (self.headView.style == LQSHeadViewStyleLeftBackRightMore) {
+        if (self.navigationController) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+}
+- (void) pressedButtonToDoSomethingWithRightButton:(UIButton *)sender {
+    if (self.headView.style == LQSHeadViewStyleLeftBackRightMore) {
+        CommondPopMenuView* temp = [CommondPopMenuView new];
+        [temp showWithView:sender];
+    }
+}
+
+@end
+</code></pre>
+
+<p>/********<strong><em>简短的分割线</em></strong>******/</p>
+
+<p>RedPacketController.h</p>
+
+<pre><code>#import &lt;UIKit/UIKit.h&gt;
+
+@interface RedPacketController : BasicHeadController
+
+@end
+</code></pre>
+
+<p>RedPacketController.m</p>
+
+<pre><code>#import &quot;RedPacketController.h&quot;
+#import &quot;RedPacketView.h&quot;
+
+@interface RedPacketController ()
+
+@property(nonatomic,strong) RedPacketView* myView;
+
+@end
+
+@implementation RedPacketController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.headTitle = @&quot;红包&quot;;
+    
+    RedPacketView* temp = [RedPacketView new];
+    [self setupBodyView:temp];
+    self.myView = temp;
+}
+
+@end
+
+</code></pre>
+
+<p>/********<strong><em>简短的分割线</em></strong>******/</p>
+
+<p>RedPacketView.h</p>
+
+<pre><code>#import &quot;LQSView.h&quot;
+
+@interface RedPacketView : LQSView
+
+@end
+</code></pre>
+
+<p>RedPacketView.m</p>
+
+<pre><code>#import &quot;RedPacketView.h&quot;
+#import &quot;RedPacketViewContent.h&quot;
+
+@interface RedPacketView ()&lt;LQSMenuScrollPageViewSource,LQSMenuScrollPageViewDelegate&gt;
+
+@property(nonatomic,strong) NSArray* array;
+
+@property(nonatomic,strong,readwrite) LQSMenuScrollPageView* menuScrollPageView;
+
+@end
+
+@implementation RedPacketView
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    
+    [self lqs__setBackgroundColor:@&quot;#ffffff&quot;];
+    
+    NSMutableArray* keepArray = [NSMutableArray array];
+    [keepArray addObject:@{@&quot;name&quot;: @&quot;未使用&quot;,@&quot;rp_state&quot;: @&quot;unused&quot;}];
+    [keepArray addObject:@{@&quot;name&quot;: @&quot;已使用&quot;,@&quot;rp_state&quot;: @&quot;used&quot;}];
+    [keepArray addObject:@{@&quot;name&quot;: @&quot;已过期&quot;,@&quot;rp_state&quot;: @&quot;expire&quot;}];
+    self.array = keepArray;
+    
+    
+    LQSMenuScrollPageView* menuScrollPageView = [LQSMenuScrollPageView new];
+    menuScrollPageView.menu.style = LQSMenuStyleAverageDefault;
+    menuScrollPageView.menu.buttonTextSelectedColor = @&quot;#BE00FA&quot;;
+    menuScrollPageView.menu.scrollLineWidth = 30;
+    menuScrollPageView.dataSource = self;
+    menuScrollPageView.delegate = self;
+    [self.contentView addSubview:menuScrollPageView];
+    self.menuScrollPageView = menuScrollPageView;
+}
+
+
+- (void) reloadLayout {
+    [super reloadLayout];
+    
+    self.menuScrollPageView.frame = self.contentView.bounds;
+}
+
+#pragma mark - LQSMenuScrollPageViewSource
+- (NSUInteger) numberOfViewsInLQSMenuScrollPageView:(LQSMenuScrollPageView *)view {
+    if ([self.array isKindOfClass:[NSArray class]]) {
+        return [self.array count];
+    }
+    return 0;
+}
+- (NSString*) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view textOfMenuAtIndex:(NSUInteger)index {
+    NSString* text = nil;
+    NSDictionary* dictionary = [self.array objectAtIndex:index];
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        text = [dictionary objectForKey:@&quot;name&quot;];
+    }
+    return text;
+}
+
+- (UIView*) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view viewOfScrollPageAtIndex:(NSUInteger)index {
+    
+    RedPacketViewContent* temp = [RedPacketViewContent new];
+    return temp;
+}
+
+- (void) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view didSelectOrScrollToIndex:(NSInteger)index {
+    
+    RedPacketViewContent* temp = (RedPacketViewContent*)[view.scrollPageView viewWithIndex:index];
+    if ([temp isKindOfClass:[RedPacketViewContent class]] == NO) {
+        return;
+    }
+    
+    NSString* rp_state = nil;
+    NSDictionary* dictionary = [self.array objectAtIndex:index];
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        rp_state = [dictionary objectForKey:@&quot;rp_state&quot;];
+    }
+    
+    temp.rp_state = rp_state;
+}
+
+@end
+
+</code></pre>
+
+<p>/********<strong><em>简短的分割线</em></strong>******/</p>
+
+<p>RedPacketViewContent.h</p>
+
+<pre><code>#import &quot;LQSView.h&quot;
+#import &quot;RedPacketViewContentEmpty.h&quot;
+
+@interface RedPacketViewContent : LQSView
+
+@property(nonatomic,strong) RedPacketViewContentEmpty* emptyView;
+
+@property(nonatomic,strong) NSString* rp_state;
+
+@end
+</code></pre>
+
+<p>RedPacketViewContent.m</p>
+
+<pre><code>#import &quot;RedPacketViewContent.h&quot;
+#import &quot;MJRefresh.h&quot;
+#import &quot;MemberRedpacket__RedpacketListRequest.h&quot;
+#import &quot;RedPacketCollectionCell.h&quot;
+
+@interface RedPacketView2Content ()&lt;LQSCollectionViewDataSource,LQSRequestImplementDelegate&gt;
+{
+    BOOL isRequest;
+}
+
+@property(nonatomic,strong) LQSCollectionView* collectionView;
+
+@property(nonatomic,assign) NSUInteger page;
+
+@property(nonatomic,assign) NSInteger page_total;
+
+@property(nonatomic,strong) NSMutableArray* redpacket_list;
+
+@end
+
+@implementation RedPacketView2Content
+
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    [self lqs__setBackgroundColor:@&quot;#f7f7f7&quot;];
+    
+    self.redpacket_list = [NSMutableArray array];
+    
+    RedPacketViewContentEmpty* emptyView = [RedPacketViewContentEmpty new];
+    emptyView.hidden = YES;
+    self.emptyView = emptyView;
+    
+    LQSCollectionView* collectionView = [LQSCollectionView new];
+    collectionView.collectionView.backgroundView = emptyView;
+    collectionView.cellHeight = 92;
+    collectionView.dataSource = self;
+    collectionView.collectionLayout.minimumLineSpacing = 10;
+    collectionView.collectionLayout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
+    [collectionView.collectionView registerClass:[RedPacketCollectionCell class] forCellWithReuseIdentifier:@&quot;RedPacketCollectionCell&quot;];
+    [self setupBodyView:collectionView];
+    self.collectionView = collectionView;
+    
+    collectionView.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadRequestAction)];
+    
+    collectionView.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadRequestAction)];
+}
+
+
+#pragma mark -
+- (void) setRp_state:(NSString *)rp_state {
+    if (_rp_state != nil) {
+        return;
+    }
+    _rp_state = rp_state;
+    
+    [self.collectionView.collectionView.mj_header beginRefreshing];
+}
+
+#pragma mark - 请求
+//重新请求
+- (void) reloadRequestAction {
+    if (isRequest) {
+        return;
+    }
+    
+    self.page = 1;
+    self.page_total = -1;
+    
+    [self actionWithRequest];
+}
+//请求
+- (void) loadRequestAction {
+    if (isRequest) {
+        return;
+    }
+    
+    [self actionWithRequest];
+}
+
+
+- (void) actionWithRequest {
+    if (self.page_total &gt; 0 &amp;&amp;
+        self.page &gt;= self.page_total) {
+        [self.collectionView.collectionView.mj_header endRefreshing];
+        [self.collectionView.collectionView.mj_footer endRefreshing];
+        return;
+    }
+    
+    NSString* pageString = [NSString stringWithFormat:@&quot;%d&quot;,(int)self.page];
+    
+    MemberRedpacket__RedpacketListRequest* request = [MemberRedpacket__RedpacketListRequest requestWithDelegate:self];
+    [request requestWithRp_state:self.rp_state page:pageString only:&amp;isRequest];
+}
+
+
+#pragma mark - LQSRequestImplementDelegate
+- (void) lqsRequestImplement:(LQSRequestImplement *)request error:(NSError *)error {
+    NSLog(@&quot;%s  ==  请求失败  ==  %@&quot;,__func__, error);
+    
+    
+    [self.collectionView.collectionView.mj_header endRefreshing];
+    [self.collectionView.collectionView.mj_footer endRefreshing];
+}
+- (void) lqsRequestImplement:(LQSRequestImplement *)request success:(id)result {
+    NSLog(@&quot;%s  ==  请求成功  ==  %@&quot;,__func__, result);
+    
+    
+    [self.collectionView.collectionView.mj_header endRefreshing];
+    [self.collectionView.collectionView.mj_footer endRefreshing];
+}
+- (void) lqsRequestImplement:(LQSRequestImplement *)request successWithDictionary:(NSDictionary *)result code200ForDatasDcitionary:(NSDictionary *)datas {
+    if (self.page == 1) {
+        self.redpacket_list = [NSMutableArray array];
+    }
+    
+    
+    if ([result isKindOfClass:[NSDictionary class]]) {
+        NSString* page_total = [result lqs__toStringWithObjectForKey:@&quot;page_total&quot;];
+        if (page_total) {
+            self.page_total = [page_total integerValue];
+        }
+    }
+    
+    if ([datas isKindOfClass:[NSDictionary class]]) {
+        NSArray* redpacket_list = [datas objectForKey:@&quot;redpacket_list&quot;];
+        if ([redpacket_list isKindOfClass:[NSArray class]]) {
+            [self.redpacket_list addObjectsFromArray:redpacket_list];
+            if ([redpacket_list count] &gt; 0) {
+                self.page++;
+            }
+        }
+    }
+    
+    if ([self.redpacket_list count] == 0) {
+        self.emptyView.hidden = NO;
+        self.collectionView.collectionView.mj_footer.hidden = YES;
+    } else {
+        self.emptyView.hidden = YES;
+        self.collectionView.collectionView.mj_footer.hidden = NO;
+    }
+    
+    
+    
+    [self.collectionView.collectionView reloadData];
+}
+
+#pragma mark - LQSCollectionViewDataSource
+- (NSInteger) lqsCollectionView:(LQSCollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    if ([self.redpacket_list isKindOfClass:[NSArray class]]) {
+        return [self.redpacket_list count];
+    }
+    return 0;
+}
+- (UICollectionViewCell*) lqsCollectionView:(LQSCollectionView *)view cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RedPacketCollectionCell* cell = [view.collectionView dequeueReusableCellWithReuseIdentifier:@&quot;RedPacketCollectionCell&quot; forIndexPath:indexPath];
+    
+    if ([self.rp_state lqs__isEqualToString:@&quot;unused&quot;]) {
+        cell.state = RedPacketCellStateUnused;
+    } else if ([self.rp_state lqs__isEqualToString:@&quot;used&quot;]) {
+        cell.state = RedPacketCellStateUsed;
+    } else if ([self.rp_state lqs__isEqualToString:@&quot;expire&quot;]) {
+        cell.state = RedPacketCellStateExpire;
+    }
+    
+    NSDictionary* dictionary = [self.redpacket_list objectAtIndex:indexPath.row];
+    [cell setupWithDictionary:dictionary];
+    
+    return cell;
+}
+
+@end
+
+</code></pre>
+
+<p><img src="media/15327090683816/21605F76-56C9-44D0-8FF9-CECBCD8E8786.jpg" alt="21605F76-56C9-44D0-8FF9-CECBCD8E8786"/></p>
+
+<p><img src="media/15327090683816/827A05C3-B87F-47BC-A179-8646CACFE5B9.jpg" alt="827A05C3-B87F-47BC-A179-8646CACFE5B9"/></p>
+
+<p><img src="media/15327090683816/2A464179-4EDA-41D6-BF62-2270136F6CDC.jpg" alt="2A464179-4EDA-41D6-BF62-2270136F6CD"/></p>
+
+<p><img src="media/15327090683816/84D629BB-1236-4EA9-BF4E-4B8702361214.jpg" alt="84D629BB-1236-4EA9-BF4E-4B8702361214"/></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>

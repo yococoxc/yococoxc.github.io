@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	【众烁云仓】新闻列表 - LQSKit
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="LQSKit" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">LQSKit</a></h1>
+					<p class="subtitle">LQSKit 文档</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">【众烁云仓】新闻列表</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>基于 LQSKit 中十分强大的 LQSViewTemplateCollectionItem 类的设计。</p>
+
+<p>效果图：</p>
+
+<p><img src="media/15362958760514/9E6A7CAA-47A8-4E03-9F7C-50B3C7817550.png" alt="9E6A7CAA-47A8-4E03-9F7C-50B3C7817550"/></p>
+
+<p>下面便是完整的源码。<br/>
+<br></p>
+
+<p>Article__ListRequest.h</p>
+
+<pre><code>#import &quot;LQSRequestImplement.h&quot;
+
+@interface Article__ListRequest : LQSRequestImplement
+
+- (void) requestWithPage:(NSString*)page only:(BOOL *)only;
+
+@end
+</code></pre>
+
+<p>Article__ListRequest.m</p>
+
+<pre><code>#import &quot;Article__ListRequest.h&quot;
+
+@implementation Article__ListRequest
+
+- (void) requestWithPage:(NSString*)page only:(BOOL *)only {
+    
+    NSString* urlString = [NSString stringWithFormat: @&quot;%@/%@/ecapi.article.list&quot;,APIDomainName,APIVersion];
+    
+    self.coreRequest.HTTPMethod = @&quot;POST&quot;;
+    
+    [self.coreRequest setHTTPBody:@&quot;14&quot; forKey:@&quot;id&quot;];
+    
+    [self.coreRequest setHTTPBody:@&quot;100&quot; forKey:@&quot;per_page&quot;];
+    
+    [self.coreRequest setHTTPBody:page forKey:@&quot;page&quot;];
+    
+    [self requestWithURLString:urlString only:only];
+}
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListController.h</p>
+
+<pre><code>#import &quot;LQSViewController.h&quot;
+
+@interface ZS__ArticleListController : LQSHeadViewController
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListController.m</p>
+
+<pre><code>#import &quot;ZS__ArticleListController.h&quot;
+#import &quot;ZS__ArticleListView.h&quot;
+
+@interface ZS__ArticleListController ()
+
+@property(nonatomic,strong) ZS__ArticleListView* myView;
+
+@end
+
+@implementation ZS__ArticleListController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.headTitle = @&quot;动态列表&quot;;
+    
+    self.headView.style = LQSHeadViewStyleLeftBack;
+    
+    ZS__ArticleListView* myView = [ZS__ArticleListView new];
+    [self setupBodyView:myView];
+    self.myView = myView;
+}
+
+#pragma mark -
+- (void) pressedButtonToDoSomethingWithLeftButton:(UIButton *)sender {
+    [self lqs__currentNavigationControllerPopViewController];
+}
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListView.h</p>
+
+<pre><code>#import &quot;LQSView.h&quot;
+
+@interface ZS__ArticleListView : LQSViewTemplateCollectionItem
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListView.m</p>
+
+<pre><code>#import &quot;ZS__ArticleListView.h&quot;
+
+#import &quot;Article__ListRequest.h&quot;
+
+#import &quot;MJRefresh.h&quot;
+
+#import &quot;ZS__ArticleListCollectionCell.h&quot;
+
+@interface ZS__ArticleListView ()&lt;LQSRequestImplementDelegate&gt;
+{
+    BOOL isArticle__ListRequest;
+}
+@property(nonatomic,assign) BOOL isHeaderRefreshing;
+@property(nonatomic,assign) NSUInteger page;
+@property(nonatomic,strong) NSMutableArray* keepArray;
+
+@end
+
+@implementation ZS__ArticleListView
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    //初始化数据
+    self.keepArray = [NSMutableArray array];
+    self.page = 1;
+    
+    //添加上拉下拉刷新功能
+    self.collectionManager.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerWithRefreshing)];
+    [self.collectionManager.collectionView.mj_header beginRefreshing];
+    self.collectionManager.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerWithRefreshing)];
+}
+
+
+#pragma mark - 请求
+- (void) headerWithRefreshing {
+    self.isHeaderRefreshing = YES;
+    self.page = 1;
+    
+    
+    [self footerWithRefreshing];
+}
+
+- (void) footerWithRefreshing {
+    NSString* page = [NSString stringWithFormat:@&quot;%d&quot;,(int)self.page];
+    
+    Article__ListRequest* request = [Article__ListRequest requestWithDelegate:self];
+    request.tag = @&quot;Article__ListRequest&quot;;
+    [request requestWithPage:page only:&amp;isArticle__ListRequest];
+}
+
+
+#pragma mark - LQSRequestImplementDelegate
+- (void) lqsRequestImplement:(LQSRequestImplement *)request error:(NSError *)error {
+    [self.collectionManager.collectionView.mj_footer endRefreshing];
+    [self.collectionManager.collectionView.mj_header endRefreshing];
+}
+- (void) lqsRequestImplement:(LQSRequestImplement *)request success:(id)result {
+    [self.collectionManager.collectionView.mj_footer endRefreshing];
+    [self.collectionManager.collectionView.mj_header endRefreshing];
+    
+    if ([request.tag lqs__isEqualToString:@&quot;Article__ListRequest&quot;]) {
+        if ([result lqs__isNSDictionary] == NO) {
+            return;
+        }
+        
+        NSString* error_code = [result lqs__toStringWithObjectForKey:@&quot;error_code&quot;];
+        if ([error_code lqs__isEqualToString:@&quot;0&quot;] == NO) {
+            return;
+        }
+        
+        NSArray* articles = [result objectForKey:@&quot;articles&quot;];
+        if ([articles lqs__isNSArray] == NO) {
+            return;
+        }
+        if ([articles count] == 0) {
+            return;
+        }
+        
+        self.page++;
+        
+        if (self.isHeaderRefreshing == YES) {
+            self.isHeaderRefreshing = NO;
+            [self.keepArray removeAllObjects];
+        }
+        
+        [self.keepArray addObjectsFromArray:articles];
+        
+        [self setupCollectionViewWithDataSource];
+        return;
+    }
+}
+
+#pragma mark - 数据配置内容的设定
+- (void) setupCollectionViewWithDataSource {
+    NSMutableArray* keepArray = [NSMutableArray array];
+    LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+    item.sectionInsets = UIEdgeInsetsMake(8, 8, 8, 8);
+    item.minimumLineSpacing = 8;
+    item.minimumInteritemSpacing = 8;
+    item.cellWidthOffset = 16;
+    [item setupCellWithClass:[ZS__ArticleListCollectionCell class] array:self.keepArray height:44];
+    [keepArray addObject:item];
+    self.collectionDataSource = keepArray;
+}
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListCollectionCell.h</p>
+
+<pre><code>#import &quot;LQSBasicCollectionViewCell.h&quot;
+
+@interface ZS__ArticleListCollectionCell : LQSBasicCollectionViewCell
+
+@property(nonatomic,strong) UILabel* leftLabel;
+
+@end
+</code></pre>
+
+<p>ZS__ArticleListCollectionCell.m</p>
+
+<pre><code>#import &quot;ZS__ArticleListCollectionCell.h&quot;
+#import &quot;ZS__ArticleDetailController.h&quot;
+
+@interface ZS__ArticleListCollectionCell ()
+
+@property(nonatomic,strong) NSString* url;
+
+@property(nonatomic,strong) NSString* title;
+
+@end
+
+@implementation ZS__ArticleListCollectionCell
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    /****************************************************/
+    UILabel* leftLabel = [UILabel lqs__text:@&quot;&quot; textColor:@&quot;#333&quot; fontSize:14];
+    [self.contentView addSubview:leftLabel];
+    [leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(16);
+        make.centerY.mas_equalTo(self.contentView);
+    }];
+    self.leftLabel = leftLabel;
+    
+    /****************************************************/
+    UIView* line = [UIView lqs__backgroundColor:@&quot;#ddd&quot;];
+    [self.contentView addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+        make.height.mas_equalTo(1);
+    }];
+    
+    /****************************************************/
+    UIControl* temp = [UIControl new];
+    [temp lqs__addTarget:self action:@selector(pressedControlToDetail)];
+    [self.contentView addSubview:temp];
+    [temp mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+
+#pragma mark - 配置内容
+- (void) setupWithDictionary:(NSDictionary *)dictionary {
+    self.leftLabel.text = nil;
+    
+    if ([dictionary lqs__isNSDictionary] == NO) {
+        return;
+    }
+    
+    NSString* title = [dictionary lqs__toStringWithObjectForKey:@&quot;title&quot;];
+    self.leftLabel.text = title;
+    self.title = title;
+    
+    NSString* url = [dictionary lqs__toStringWithObjectForKey:@&quot;url&quot;];
+    self.url = url;
+    
+}
+
+#pragma mark - 点击事件
+- (void) pressedControlToDetail {
+    if ([self.url lqs__isNSString] == NO) {
+        return;
+    }
+    
+    ZS__ArticleDetailController* controller = [ZS__ArticleDetailController new];
+    controller.url = self.url;
+    controller.name = self.title;
+    [self lqs__currentNavigationControllerPushViewController:controller];
+}
+
+@end
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>

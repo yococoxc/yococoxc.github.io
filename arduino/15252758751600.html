@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Arduino 实例01.Basic Fade - 木子才的Arduino
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的Arduino" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">木子才的Arduino</a></h1>
+					<p class="subtitle">木子才用来学习Arduino的空间哦~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Arduino 实例01.Basic Fade</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<pre><code>/*
+  Fade
+
+  This example shows how to fade an LED on pin 9 using the analogWrite()
+  function.
+
+  The analogWrite() function uses PWM, so if you want to change the pin you&#39;re
+  using, be sure to use another PWM capable pin. On most Arduino, the PWM pins
+  are identified with a &quot;~&quot; sign, like ~3, ~5, ~6, ~9, ~10 and ~11.
+
+  This example code is in the public domain.
+
+  http://www.arduino.cc/en/Tutorial/Fade
+*/
+
+int led = 9;           // the PWM pin the LED is attached to
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 5;    // how many points to fade the LED by
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // declare pin 9 to be an output:
+  pinMode(led, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // set the brightness of pin 9:
+  analogWrite(led, brightness);
+
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade:
+  if (brightness &lt;= 0 || brightness &gt;= 255) {
+    fadeAmount = -fadeAmount;
+  }
+  // wait for 30 milliseconds to see the dimming effect
+  delay(30);
+}
+</code></pre>
+
+<p><img src="media/15252758751600/D87818CF-8656-490A-9894-DDFFF6889344.png" alt="D87818CF-8656-490A-9894-DDFFF6889344"/></p>
+
+<h3 id="toc_0">analogWrite</h3>
+
+<h5 id="toc_1">描述</h5>
+
+<p>analogWrite()实现对引脚设置PWM的要求。可以被用来控制LED等，电机转动，舵机等。使用此函数后，引脚会产生稳定的方波，直到下一次对引脚做其他操作。大多数引脚的PWM频率大约为490Hz。在Uno以及相似的板子上，pin5和pin6有大约980Hz的频率。Leonardo板子的pin3和pin11也有980Hz的频率。</p>
+
+<p>在大多数的Arduino板子上（用ATmega168或者ATmega328的板子），在引脚3,5,6,9,10和11有PWM功能；在Arduino Mega板子上，在2~13和44~46引脚有PWM功能。使用ATmega8的老板子只在9，10和11引脚支持analogWrite（）。</p>
+
+<p>Arduino Due板子在2到13引脚和DAC0，DAC1引脚支持analogWrite（）。但是ADC0和DAC1是采用D/A转换的方式输出，它们确实输出的是模拟量而不是由PWM调制输出的。</p>
+
+<p>另外，使用analogWrite（）不需要再用pinMode（）设置引脚为输出。</p>
+
+<h4 id="toc_2">语法</h4>
+
+<p>analogWrite(pin, value)</p>
+
+<h4 id="toc_3">参数</h4>
+
+<p>pin：将要写入的引脚。数据类型为：int<br/>
+value：占空比，在0~255之间。（0时候为关，即LOW；255为开，即HIGH）</p>
+
+<h4 id="toc_4">返回值</h4>
+
+<p>没有东西返回</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	flexbox 学习 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">flexbox 学习</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>最初的代码：</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/86FFFE0D-72DB-4443-8E9F-6FC5CB359811.png" alt="86FFFE0D-72DB-4443-8E9F-6FC5CB359811"/></p>
+
+<p>这样学习的话好像不容易看出效果。给它加上颜色改变一下大小，让它变得更好理解。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/85867095-3525-42BD-8D55-1287FC2C2FEE.png" alt="85867095-3525-42BD-8D55-1287FC2C2FEE"/></p>
+
+<p>接下来，我们要把这个定义为是flexbox，上面还不是flexbox。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/D124FDA1-CA47-4604-8123-B829ED4290DE.png" alt="D124FDA1-CA47-4604-8123-B829ED4290DE"/></p>
+
+<p>可以看到，设置 display 属性为 flex，就可以将它转变成一个 flexbox。</p>
+
+<p>通过设置 direction 属性为 rtl (right to left)，可以改变子元素的排列方式。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        direction: rtl;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/81607328-A2C3-42B4-A71C-1E35983B60E8.png" alt="81607328-A2C3-42B4-A71C-1E35983B60E8"/></p>
+
+<p>测试的时候，发现如果 body 设置 direction 属性，改变其子元素的排列方式。而且还发现无需设置 display 属性，这个神奇啊~~~</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+    }
+    body {
+        direction: rtl;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/304CB1CD-D300-48AC-B20B-4194EFB89DB9.png" alt="304CB1CD-D300-48AC-B20B-4194EFB89DB9"/></p>
+
+<p>发现 direction 属性真的可以无视 display属性是否设置了值，就可以生效。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        direction: ltr;
+    }
+    body {
+        direction: rtl;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/0EBE5662-85CF-4DAE-9750-AAECACF987FC.png" alt="0EBE5662-85CF-4DAE-9750-AAECACF987F"/></p>
+
+<p>flex 有个专属的 direction 属性叫：flex-direction。</p>
+
+<h3 id="toc_0">flex-direction</h3>
+
+<pre><code>flex-direction : fow | row-reverse | column | column-reverse
+
+row：横向从左到右排列（左对齐），默认的排列方式。
+row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。
+column：纵向排列。
+column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。
+</code></pre>
+
+<p>如果没有设置 display 属性的话，那么flex-direction 真的不会生效。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        flex-direction: row-reverse;
+        display: flex;
+        display: -webkit-flex;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/DDA60ACD-3FC9-493E-BFFA-B2FE84076BE5.png" alt="DDA60ACD-3FC9-493E-BFFA-B2FE84076BE5"/></p>
+
+<pre><code>flex-direction: column;
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/DC3633DC-65ED-410B-A043-FBAD3685FAD5.png" alt="DC3633DC-65ED-410B-A043-FBAD3685FAD5"/></p>
+
+<pre><code>flex-direction: column-reverse;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/78261734-EA97-4120-B351-5258B9B2A529.png" alt="78261734-EA97-4120-B351-5258B9B2A529"/></p>
+
+<h3 id="toc_1">justify-content</h3>
+
+<p>内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。</p>
+
+<pre><code>justify-content : flex-start | flex-end | center | space-between | space-around
+
+flex-start：
+弹性项目向行头紧挨着填充。这个是默认值。第一个弹性项的main-start外边距边线被放置在该行的main-start边线，而后续弹性项依次平齐摆放。
+
+flex-end：
+弹性项目向行尾紧挨着填充。第一个弹性项的main-end外边距边线被放置在该行的main-end边线，而后续弹性项依次平齐摆放。
+
+center：
+弹性项目居中紧挨着填充。（如果剩余的自由空间是负的，则弹性项目将在两个方向上同时溢出）。
+
+space-between：
+弹性项目平均分布在该行上。如果剩余空间为负或者只有一个弹性项，则该值等同于flex-start。否则，第1个弹性项的外边距和行的main-start边线对齐，而最后1个弹性项的外边距和行的main-end边线对齐，然后剩余的弹性项分布在该行上，相邻项目的间隔相等。
+
+space-around：
+弹性项目平均分布在该行上，两边留有一半的间隔空间。如果剩余空间为负或者只有一个弹性项，则该值等同于center。否则，弹性项目沿该行分布，且彼此间隔相等（比如是20px），同时首尾两边和弹性容器之间留有一半的间隔（1/2*20px=10px）。
+</code></pre>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/6F81693F-50F6-4086-B277-61AC93EF9F80.png" alt="6F81693F-50F6-4086-B277-61AC93EF9F80"/></p>
+
+<pre><code>justify-content: flex-end;
+-webkit-justify-content: flex-end;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/E5766DF3-399F-43C9-A7F4-CD042CED903F.png" alt="E5766DF3-399F-43C9-A7F4-CD042CED903F"/></p>
+
+<pre><code>justify-content: center;
+-webkit-justify-content: center;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/792FA2B0-C8C3-49B0-BA49-1760026EB715.png" alt="792FA2B0-C8C3-49B0-BA49-1760026EB715"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/936114D2-71F4-4C62-8543-0178842B6211.png" alt="936114D2-71F4-4C62-8543-0178842B6211"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+    }
+.container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/4D3FAAD6-A052-42CB-ABD9-028138EE414C.png" alt="4D3FAAD6-A052-42CB-ABD9-028138EE414"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+    }
+.container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/3F083B31-5F85-4013-8A31-E2D5BAE24B50.png" alt="3F083B31-5F85-4013-8A31-E2D5BAE24B50"/></p>
+
+<h3 id="toc_2">align-items</h3>
+
+<p>align-items 设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</p>
+
+<pre><code>align-items : flex-start | flex-end | center | baseline | stretch
+
+flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
+flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。
+center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。
+baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与&#39;flex-start&#39;等效。其它情况下，该值将参与基线对齐。
+stretch：如果指定侧轴大小的属性值为&#39;auto&#39;，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照&#39;min/max-width/height&#39;属性的限制。
+</code></pre>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        align-items: stretch;
+        -webkit-align-items: stretch;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/ABF4DDAC-F3E0-4B71-A9E6-6A09D0E47FBF.png" alt="ABF4DDAC-F3E0-4B71-A9E6-6A09D0E47FBF"/></p>
+
+<pre><code>align-items: flex-end;
+-webkit-align-items: flex-start;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/BEB9FFA0-D193-4162-8686-431923A2A27F.png" alt="BEB9FFA0-D193-4162-8686-431923A2A27F"/></p>
+
+<pre><code>align-items: flex-end;
+-webkit-align-items: flex-end;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/688D2E36-2CC7-4833-AB85-418A5870181E.png" alt="688D2E36-2CC7-4833-AB85-418A5870181E"/></p>
+
+<pre><code>align-items: center;
+-webkit-align-items: center;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/4E8275DB-097E-475C-88D2-59DCDCBF1474.png" alt="4E8275DB-097E-475C-88D2-59DCDCBF1474"/></p>
+
+<pre><code>align-items: baseline;
+-webkit-align-items: baseline;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/E5C764E9-2ABE-49EA-8FC7-2F415727EB98.png" alt="E5C764E9-2ABE-49EA-8FC7-2F415727EB98"/></p>
+
+<h3 id="toc_3">flex-wrap</h3>
+
+<p>flex-wrap 属性用于指定弹性盒子的子元素换行方式。</p>
+
+<pre><code>flex-wrap : nowrap | wrap | wrap-reverse | initial | inherit
+
+nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。
+wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行
+wrap-reverse -反转 wrap 排列。
+</code></pre>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap = nowrap;
+        flex-wrap = nowrap;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/6D2FB1A7-661E-4D0C-9DC4-F9F72786B42B.png" alt="6D2FB1A7-661E-4D0C-9DC4-F9F72786B42B"/></p>
+
+<h3 id="toc_4">align-content</h3>
+
+<p>align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。</p>
+
+<pre><code>align-content : flex-start | flex-end | center | space-between | space-around | stretch
+
+stretch - 默认。各行将会伸展以占用剩余的空间。
+flex-start - 各行向弹性盒容器的起始位置堆叠。
+flex-end - 各行向弹性盒容器的结束位置堆叠。
+center -各行向弹性盒容器的中间位置堆叠。
+space-between -各行在弹性盒容器中平均分布。
+space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。
+</code></pre>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: center;
+        -webkit-align-content: center;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/017E8D36-4CE8-41E9-B7BD-5F5A4D3344AB.png" alt="017E8D36-4CE8-41E9-B7BD-5F5A4D3344AB"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        -webkit-align-content: flex-start;
+    }
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/B52F07BA-4B66-479F-830B-12566F407D79.png" alt="B52F07BA-4B66-479F-830B-12566F407D79"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        -webkit-align-content: flex-end;
+    }
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/42139016-4F7A-4D7C-AFB1-5C7AE1208B10.png" alt="42139016-4F7A-4D7C-AFB1-5C7AE1208B10"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+        align-content: flex-end;
+        -webkit-align-content: flex-end;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/BD0E118B-6C7C-4E9F-BE91-5E522B49BF64.png" alt="BD0E118B-6C7C-4E9F-BE91-5E522B49BF64"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: space-between;
+        -webkit-align-content: space-between;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/3C59B28C-E39D-4D56-B6DE-B0FA98CF2A68.png" alt="3C59B28C-E39D-4D56-B6DE-B0FA98CF2A68"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+        align-content: space-between;
+        -webkit-align-content: space-between;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/71D27E1A-5BC7-473C-8F21-10A495AEC93C.png" alt="71D27E1A-5BC7-473C-8F21-10A495AEC93"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: space-around;
+        -webkit-align-content: space-around;
+    }
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/0C8E7FCB-2EC2-464D-82EF-408FC6CFC457.png" alt="0C8E7FCB-2EC2-464D-82EF-408FC6CF"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+        align-content: space-around;
+        -webkit-align-content: space-around;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/E8904A5E-ECAC-4123-B955-AC3ADFC37B8B.png" alt="E8904A5E-ECAC-4123-B955-AC3ADFC37B8B"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-content: stretch;
+        -webkit-align-content: stretch;
+    }
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/60C6DE7B-4D54-4ACB-A4D0-D0836F5411E1.png" alt="60C6DE7B-4D54-4ACB-A4D0-D0836F5411E1"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+        align-content: stretch;
+        -webkit-align-content: stretch;
+    }
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/478CB3DF-4992-46B3-88C6-B5F7A23A9DB3.png" alt="478CB3DF-4992-46B3-88C6-B5F7A23A9DB3"/></p>
+
+<h3 id="toc_5">弹性子元素属性</h3>
+
+<h4 id="toc_6">排序</h4>
+
+<pre><code>order : &lt;integer&gt;
+
+&lt;integer&gt;：用整数值来定义排列顺序，数值小的排在前面。可以为负值。
+</code></pre>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+    }
+    .first {
+        order: -1;
+        -webkit-order: -1;
+    }
+    .last {
+        order: 9;
+        -webkit-order: 9;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item last&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item first&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/E1174C6D-908D-4185-8C1A-BF926B10AFD9.png" alt="E1174C6D-908D-4185-8C1A-BF926B10AFD9"/></p>
+
+<h4 id="toc_7">对齐</h4>
+
+<p>设置&quot;margin&quot;值为&quot;auto&quot;值，自动获取弹性容器中剩余的空间。所以设置垂直方向margin值为&quot;auto&quot;，可以使弹性子元素在弹性容器的两上轴方向都完全集中。</p>
+
+<p>以下实例在第一个弹性子元素上设置了 margin-right: auto; 。 它将剩余的空间放置在元素的右侧：</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt; 
+&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt; 
+&lt;style&gt; 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 400px;
+    height: 250px;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+}
+
+.flex-item:first-child {
+    margin-right: auto;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;flex-container&quot;&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;flex item 1&lt;/div&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;flex item 2&lt;/div&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;flex item 3&lt;/div&gt;  
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/97A92636-8C9F-4A8B-853A-EB80EAA63EF4.png" alt="97A92636-8C9F-4A8B-853A-EB80EAA63EF4"/></p>
+
+<h4 id="toc_8">完美的居中</h4>
+
+<p>以下实例将完美解决我们平时碰到的居中问题。</p>
+
+<p>使用弹性盒子，居中变的很简单，只想要设置 margin: auto; 可以使得弹性子元素在两上轴方向上完全居中:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    .item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#39;container&#39;&gt;
+        &lt;div class=&#39;item&#39;&gt;item 1&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 2&lt;/div&gt;
+        &lt;div class=&#39;item&#39;&gt;item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>效果:<br/>
+<img src="media/15167167350899/480A707E-2370-4D38-9A70-7797C5FBD96A.png" alt="480A707E-2370-4D38-9A70-7797C5FBD96A"/></p>
+
+<pre><code>.item {
+        background-color: #ff5606;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+    }
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: #008989;
+        display: flex;
+        display: -webkit-flex;
+        margin: auto;
+    }
+</code></pre>
+
+<p>效果：<br/>
+<img src="media/15167167350899/2E76FE88-F325-40CD-B538-6C3461E2F6A9.png" alt="2E76FE88-F325-40CD-B538-6C3461E2F6A9"/></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

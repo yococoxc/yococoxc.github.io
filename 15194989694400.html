@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Unity Shader - 图形管道(The Graphics Pipeline) - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Unity Shader - 图形管道(The Graphics Pipeline)</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>Unlit Shader 的数据流：<br/>
+Object Data -&gt; appdata Struct -&gt; Vertex Shader -&gt; v2f Struct -&gt; Fragment Shader -&gt; Final Color</p>
+
+<h3 id="toc_0">Vertex Data Structure</h3>
+
+<p>第一个结构体是 appdata，它对应于输入组装阶段。为了刷新记忆，这个 appdata 来自于最后一个 shader：</p>
+
+<pre><code>struct appdata
+{
+    float4 vertex : POSITION;
+};
+</code></pre>
+
+<p>：POSITION是一个着色器语义，它是一个附加到着色器数据结构的字符串，传递关于成员预期用途的信息。通过将语义添加到appdata中，我们告诉输入程序集阶段我们想要的数据是什么。</p>
+
+<p>在这种情况下，我们只要求顶点位置，这是您总是要求的最低点。 如果模型具有纹理，则可以请求更多数据，例如处理纹理的UV信息或顶点颜色。 语义和数据类型必须匹配。 如果你要给它一个POSITION语义的单个浮点数，那么float4的值会被无声地截断以浮动。</p>
+
+<p>数据类型选择变量的“形状”，但语义选择它内部的内容。 多种语义可以填充float4，但是如果我们错误地选择了我们想要的语义，着色器会在运行时中断，可能会以微妙的方式破坏。 当着色器变得复杂时，微妙的着色器破坏是追踪最糟糕的问题之一，所以要小心。</p>
+
+<p>这是收集每个顶点更改数据的唯一方法，但您可以从属性和全局属性中传递其他数据，这些数据不会在每个顶点变化。 OpenGL将这些每个顶点值调用得非常适当，并且可以变化，并且可以全局传递或者着色器中的属性称为uniform。</p>
+
+<h3 id="toc_1">Vertex Function</h3>
+
+<p>下一个可编程阶段是顶点着色器函数被执行的顶点处理阶段。 它将appdata数据结构（appdata）作为参数并返回第二种类型的数据<br/>
+结构（v2f）：</p>
+
+<pre><code>v2f vert (appdata v)
+{
+    v2f o;
+    o.vertex = UnityObjectToClipPos(v.vertex);
+    return o;
+}
+</code></pre>
+
+<p>这是在顶点着色器中需要完成的最低限度：将顶点的坐标转换为光栅化器可以使用的坐标空间。 你可以通过使用UnityObjectToClipPos函数来实现。 现在，不要过多担心坐标空间，因为我们将在下一章详细解释它们。</p>
+
+<h3 id="toc_2">Fragment Data Structure</h3>
+
+<p>再次，我们包含在v2f数据结构中的成员决定了我们可以从顶点着色器传递哪些数据。 这是上一章的v2f结构：</p>
+
+<pre><code>struct v2f {
+    float4 vertex : SV_POSITION;
+};
+</code></pre>
+
+<p>它非常小，只覆盖处理过的顶点的2D位置。 我们仍然需要获得语义上的权利，但是这种数据结构对错误不那么敏感。 请记住，语义不能重复。 例如，您也不能将SV_POSITION语义分配给第二个成员。</p>
+
+<h3 id="toc_3">Fragment Function</h3>
+
+<p>下一个可编程阶段是片段着色阶段，其中执行片段着色器<br/>
+每个片段。 在第2章的非常简单的例子中，片段着色器只使用顶点的位置。</p>
+
+<pre><code>float4 frag (v2f i) : SV_Target
+{
+    return _Color;
+}
+</code></pre>
+
+<p>实际上，如果你还记得，那个float4并没有在代码中的任何地方使用过。 但是如果你试图摆脱它，你会发现着色器根本没有渲染任何东西。 即使您没有看到它在着色器代码中反映出来，图形管道也会使用该值。</p>
+
+<p>您可能会注意到，frag函数有一个输出语义，我们在前一章中没有提到。 这用于本书不会涵盖的特定技术。 你应该坚持使用SV_Target，这意味着它输出一个片段颜色。</p>
+
+<p>这个简单的着色器向您展示了从3D场景空间和2D目标渲染空间转换而来的作品，因为我们确实可以将3D模型渲染到2D屏幕中。 但它没有清楚地显示光栅化器的作用。 让我们为这个着色器添加顶点颜色支持。 为此，您需要使用具有顶点颜色的网格。 其中一个包含在本章的示例源代码中。</p>
+
+<h2 id="toc_4">Adding Vertex Colors Support</h2>
+
+<p>基本上，我们在顶点添加一个不同的额外值，这需要传递给光栅化器，光栅化器会插入它。</p>
+
+<h3 id="toc_5">Appdata Additions</h3>
+
+<p>当向应该填充网格的顶点颜色的应用数据（如果网格具有它们）添加成员时，我们需要注意名称和语义。 最好的选择是使用颜色作为成员的名字，并使用COLOR作为语义。 取决于您的平台，仅使用带有不同名称变量的COLOR语义可能无效。 以下是添加此顶点颜色成员后结构的外观：</p>
+
+<pre><code>struct appdata
+{
+    float4 vertex : POSITION;
+    float4 color : COLOR;
+};
+</code></pre>
+
+<h3 id="toc_6">v2f Additions</h3>
+
+<p>在v2f中，您需要添加完全相同的成员。 和以前一样，这个数据结构可能不太挑剔，但是你自己承担风险就改变这个公式。 以下是添加此顶点颜色成员后结构的外观：</p>
+
+<pre><code>struct v2f {
+    float4 vertex : SV_POSITION;
+    float4 color : COLOR;
+};
+</code></pre>
+
+<h3 id="toc_7">Assign the Color in the Vertex Function</h3>
+
+<p>使用适当的成员准备好结构后，我们在顶点函数中添加一行。 它将任何appdata的颜色成员分配给v2f的颜色成员。 “魔术”就在这里; 它使顶点颜色数据通过光栅化器，这将会适当地插值颜色：</p>
+
+<pre><code>v2f vert (appdata v)
+{
+    v2f o;
+    o.vertex = UnityObjectToClipPos(v.vertex);
+    o.color = v.color;
+    return o;
+}
+</code></pre>
+
+<h3 id="toc_8">Use the Color in the Fragment Function</h3>
+
+<p>和前面的着色器一样，片段函数只关注返回一种颜色，但在这种情况下，我们忽略了我们的属性（我们可以完全移除它）并使用v2f中包含的插值变量：</p>
+
+<pre><code>fixed4 frag (v2f i) : SV_Target
+{
+    return i.color; 
+}
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

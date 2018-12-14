@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	微信小程序 从零开始的开发，简单的单页 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">微信小程序 从零开始的开发，简单的单页</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>首先，我们来看看本次项目的最终面貌吧。</p>
+
+<p><img src="media/15165843932968/76A4E917-B7B0-4ECB-8185-DBAA511768BC.png" alt="76A4E917-B7B0-4ECB-8185-DBAA511768B"/></p>
+
+<p>本次项目，所使用到的组件只有 image, text。<br/>
+所以说超简单。<br/>
+先创建一下程序入口。</p>
+
+<p>app.js<br/>
+app.json<br/>
+app.wxss</p>
+
+<p>这三个是必须有的，也是程序最基本的。<br/>
+看名字也大概知道是什么来的，<br/>
+wxss，其实就是 css，懂不。<br/>
+后面还会有一个 wxml，其实就是 xml，可以视为 HTML，为页面的骨架。</p>
+
+<p>由于本次的单页项目太简单了，这三个文件不用怎么写入内容。<br/>
+噢，不，app.json，必须用到，它用来配置页面的路径，没有这个，加载不到页面。</p>
+
+<p>接续创建文件~<br/>
+这次是个单页项目，那么先创建单页的目录吧。<br/>
+先创建一个 pages 文件夹，这个是用来放所有页面的文件夹。<br/>
+这次页面的文件夹叫 welcome。</p>
+
+<p>所以创建如下：</p>
+
+<pre><code>pages - welcome - welcome.js
+                - welcome.wxss
+                - welcome.wxml
+</code></pre>
+
+<p>也可以顺便创建 welcome.json，不过这里用不到。<br/>
+顺便说刚创建的时候这是个空白页面，<br/>
+会报这种错误：</p>
+
+<pre><code>pages/welcome/welcome.json 文件解析错误  SyntaxError: Unexpected end of JSON input
+</code></pre>
+
+<p>这个时候可以随便写个内容就得了，注意是JSON格式的，比如：</p>
+
+<pre><code>{}
+</code></pre>
+
+<p>好了，welcome单页所需要的东西准备好了。<br/>
+在正式开发前，我们先做一些必须的东西——配置app:</p>
+
+<p>前面也提过，<br/>
+app.json 是用来配置的页面的。<br/>
+所以接下来，就是：<br/>
+app.json:</p>
+
+<pre><code>{
+  &quot;pages&quot;: [
+    &quot;pages/welcome/welcome&quot;
+  ]
+}
+</code></pre>
+
+<p>这部分更详细的信息，可以看官网的文档。<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html">点击这里</a></p>
+
+<p>我们的的单页 welcome 就是在 pages 数组里面。<br/>
+pages数组记录很多页面的路径。<br/>
+这里，我们只是看到welcome，是不是好简单的样子。<br/>
+其实微信做了处理，简化了写代码，而这些必须的步骤就是你一开始创建的单页的文件。</p>
+
+<p>welcome.js<br/>
+welcome.wxml<br/>
+welcome.wxss</p>
+
+<p>看到他们的名字是多么统一吧，这就是理由。<br/>
+微信根据你配置的单页的名字，把名字一致，后缀不同的文件，都引入了。<br/>
+在写代码的时候，你不需要引入任何文件，是不是很简便啊~</p>
+
+<p>说起来，我们会用到一张图片，创建一个 images 的文件夹。<br/>
+然后.......打开项目的硬盘地址，把图片放进名为 images 的文件夹里面。<br/>
+嗯，微信不支持拉图片。</p>
+
+<p>下面我们只需要往 welcome.wxml 和 welcome.wxss 写入代码就可以了。</p>
+
+<p>welcome.wxml:</p>
+
+<pre><code>&lt;view class=&#39;container&#39;&gt;
+  &lt;image src=&#39;/images/muzico.jpg&#39; class=&#39;user-avatar&#39;&gt;&lt;/image&gt;
+  &lt;text class=&#39;user-name&#39;&gt;Hello, muzico!&lt;/text&gt;
+  &lt;view class=&#39;moto-container&#39;&gt;
+    &lt;text class=&#39;moto&#39;&gt;开启小程序之旅&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
+
+<p>welcome.wxss:</p>
+
+<pre><code>page {
+  background-color: #b3d4db;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.user-avatar {
+  width:200rpx;
+  height:200rpx;
+  margin-top: 160rpx;
+  border-radius: 100px;
+}
+
+.user-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: 100rpx;
+}
+
+.moto-container {
+  margin-top: 100rpx;
+  border: 1px solid #405f80;
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.moto {
+  font-size: 22rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #405f80;
+}
+</code></pre>
+
+<p>虽然welcome.js 这次没有用到，但是会报一个错误：</p>
+
+<pre><code>appservice:1010 pages/welcome/welcome.js 出现脚本错误或者未正确调用 Page()
+</code></pre>
+
+<p>解决这个错误，很简单：<br/>
+welcome.js:</p>
+
+<pre><code>Page({
+})
+</code></pre>
+
+<p>加上这个代码就可以了。</p>
+
+<p>.<br/>
+.</p>
+
+<p>嗯，其实很简单啊，就是在写网页。</p>
+
+<p><code>&lt;view&gt;</code> 这个标签，不要觉得好高大上，你直接理解为 <code>&lt;div&gt;</code> 就得了。</p>
+
+<p>welcome.wxss 里面，为啥会写到 配置 page 呢？<br/>
+其实自己去看看页面的代码就行了：<br/>
+<img src="media/15165843932968/1065999C-FFD8-4811-8B3C-775FF98DC674.png" alt="1065999C-FFD8-4811-8B3C-775FF98D"/></p>
+
+<p>其实你写的 welcome.wxml 还有一层 <code>&lt;page&gt;&lt;/page&gt;</code> 所包含着。<br/>
+要设置背景色，然后要这么做啊。</p>
+
+<p>把一些重复利用到的 CSS 内容可以放到 app.wxss里面，比如字体:</p>
+
+<pre><code>text {
+  font-family: MicroSoft Yahei;
+}
+</code></pre>
+
+<p>最后你会发现上述的代码都弄好之后得到的界面是：<br/>
+<img src="media/15165843932968/BC3AC26F-569D-4C8A-A8DF-6BE99585DB21.png" alt="BC3AC26F-569D-4C8A-A8DF-6BE99585DB21"/></p>
+
+<p>......<br/>
+和效果图差了头部！！！</p>
+
+<p>其实这个也是在 app.json 配置的，看文档吧~<br/>
+app.json:</p>
+
+<pre><code>{
+  &quot;pages&quot;: [
+    &quot;pages/welcome/welcome&quot;
+  ],
+  &quot;window&quot;: {
+    &quot;navigationBarBackgroundColor&quot;: &quot;#b3d4db&quot;
+  }
+}
+</code></pre>
+
+<p>app.json 配置的是全局的，而且包含很多的内容。<br/>
+而单页的 .json 文件只是配置当前单页的window内容。<br/>
+所以要改变头部也可以这么写：</p>
+
+<p>welcome.json:</p>
+
+<pre><code>{
+    &quot;navigationBarBackgroundColor&quot;: &quot;#b3d4db&quot;
+}
+</code></pre>
+
+<p>ok，好了~~~收工。</p>
+
+<p>最后的体验感觉就是，我在写 网页（HTML5）。<br/>
+小程序不是什么高大上的东西，就是 网页（HTML5）。<br/>
+我觉得新颖的，估计是 wxss，wxml，第一次看到的时候觉得哇塞什么鬼啊。原来就是 css，xml 的别名。。。。。。。。。</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

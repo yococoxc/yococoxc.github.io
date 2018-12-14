@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Python3 Requests 的使用 & 静态页面捉取 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Python3 Requests 的使用 & 静态页面捉取</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h1 id="toc_0">1.获取响应内容</h1>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+
+r = requests.get(&#39;http://www.santostang.com/&#39;)
+print(&quot;文本编码：&quot;, r.encoding)
+#服务器内容使用的文本编码，如：UTF-8。
+print(&quot;响应状态码：&quot;, r.status_code)
+#用于检测响应的状态码。
+#200，表示请求成功。
+#4xx，表示客户端错误。
+#5xx，表示服务器响应错误。
+print(&quot;字节方式的响应体：&quot;, r.content)
+#字节方式的响应体，会自动解析 gzip 和 deflate 编码的响应数据。
+print(&quot;字符串方式的响应体：&quot;, r.text)
+#服务器响应的内容，会自动根据响应头部的字符编码进行解码。
+print(&quot;JSON：&quot;, r.json())
+#Requests 内置的 JSON 解码器。
+</code></pre>
+
+<h1 id="toc_1">2.定制 Requests</h1>
+
+<h2 id="toc_2">2.1. 传递 URL 参数</h2>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+
+key_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;}
+r = requests.get(&#39;http://httpbin.org/get&#39;, params = key_dict)
+print(&quot;URL 已经正确编码：&quot;, r.url)
+print(&quot;字符串方式的响应体：\n&quot;, r.text)
+</code></pre>
+
+<p>得到结果：</p>
+
+<pre><code>URL 已经正确编码： http://httpbin.org/get?key1=value1&amp;key2=value2
+字符串方式的响应体：
+ {
+  &quot;args&quot;: {
+    &quot;key1&quot;: &quot;value1&quot;,
+    &quot;key2&quot;: &quot;value2&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;*/*&quot;,
+    &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;Host&quot;: &quot;httpbin.org&quot;,
+    &quot;User-Agent&quot;: &quot;python-requests/2.19.1&quot;
+  },
+  &quot;origin&quot;: &quot;116.20.113.241&quot;,
+  &quot;url&quot;: &quot;http://httpbin.org/get?key1=value1&amp;key2=value2&quot;
+}
+</code></pre>
+
+<h2 id="toc_3">2.2. 定制请求头</h2>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+
+headers = {
+    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36&#39;,
+    &#39;Host&#39;: &#39;www.santostang.com&#39;
+}
+
+r = requests.get(&#39;http://www.santostang.com/&#39;, headers = headers)
+print(&quot;响应状态码：&quot;, r.status_code)
+
+</code></pre>
+
+<h2 id="toc_4">2.3. 发送 POST 请求</h2>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+
+key_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;}
+r = requests.post(&#39;http://httpbin.org/post&#39;, data = key_dict)
+print(r.text)
+</code></pre>
+
+<p>得到结果：</p>
+
+<pre><code>{
+  &quot;args&quot;: {},
+  &quot;data&quot;: &quot;&quot;,
+  &quot;files&quot;: {},
+  &quot;form&quot;: {
+    &quot;key1&quot;: &quot;value1&quot;,
+    &quot;key2&quot;: &quot;value2&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;Accept&quot;: &quot;*/*&quot;,
+    &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,
+    &quot;Connection&quot;: &quot;close&quot;,
+    &quot;Content-Length&quot;: &quot;23&quot;,
+    &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
+    &quot;Host&quot;: &quot;httpbin.org&quot;,
+    &quot;User-Agent&quot;: &quot;python-requests/2.19.1&quot;
+  },
+  &quot;json&quot;: null,
+  &quot;origin&quot;: &quot;116.20.113.241&quot;,
+  &quot;url&quot;: &quot;http://httpbin.org/post&quot;
+}
+</code></pre>
+
+<h2 id="toc_5">2.4. 请求超时</h2>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+
+link =  &quot;http://www.santostang.com/&quot;
+r = requests.get(link, timeout = 0.001)
+</code></pre>
+
+<p>0.001（秒），应该可以看到超时时所跑出的异常，一般设置该值为 20（秒）。</p>
+
+<h1 id="toc_6">3. Requests 爬虫实践（静态页面捉取）：Top 250 电影数据</h1>
+
+<p>网址：<a href="https://movie.douban.com/top250">https://movie.douban.com/top250</a><br/>
+该网页一页共有 25 组数据，共有 10 页。</p>
+
+<p>第 2 页网址：<a href="https://movie.douban.com/top250?start=25">https://movie.douban.com/top250?start=25</a><br/>
+第 3 页网址：<a href="https://movie.douban.com/top250?start=50">https://movie.douban.com/top250?start=50</a><br/>
+...<br/>
+第 10 页网址：<a href="https://movie.douban.com/top250?start=225">https://movie.douban.com/top250?start=225</a></p>
+
+<p>浏览器获取到的请求头：(重要)</p>
+
+<pre><code>Host: movie.douban.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36
+</code></pre>
+
+<p>第一个内容的格式：</p>
+
+<pre><code>&lt;li&gt;
+            &lt;div class=&quot;item&quot;&gt;
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;em class=&quot;&quot;&gt;1&lt;/em&gt;
+                    &lt;a href=&quot;https://movie.douban.com/subject/1292052/&quot;&gt;
+                        &lt;img width=&quot;100&quot; alt=&quot;肖申克的救赎&quot; src=&quot;https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp&quot; class=&quot;&quot;&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;info&quot;&gt;
+                    &lt;div class=&quot;hd&quot;&gt;
+                        &lt;a href=&quot;https://movie.douban.com/subject/1292052/&quot; class=&quot;&quot;&gt;
+                            &lt;span class=&quot;title&quot;&gt;肖申克的救赎&lt;/span&gt;
+                                    &lt;span class=&quot;title&quot;&gt;&amp;nbsp;/&amp;nbsp;The Shawshank Redemption&lt;/span&gt;
+                                &lt;span class=&quot;other&quot;&gt;&amp;nbsp;/&amp;nbsp;月黑高飞(港)  /  刺激1995(台)&lt;/span&gt;
+                        &lt;/a&gt;
+
+
+                            &lt;span class=&quot;playable&quot;&gt;[可播放]&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bd&quot;&gt;
+                        &lt;p class=&quot;&quot;&gt;
+                            导演: 弗兰克·德拉邦特 Frank Darabont&amp;nbsp;&amp;nbsp;&amp;nbsp;主演: 蒂姆·罗宾斯 Tim Robbins /...&lt;br&gt;
+                            1994&amp;nbsp;/&amp;nbsp;美国&amp;nbsp;/&amp;nbsp;犯罪 剧情
+                        &lt;/p&gt;
+
+                        
+                        &lt;div class=&quot;star&quot;&gt;
+                                &lt;span class=&quot;rating5-t&quot;&gt;&lt;/span&gt;
+                                &lt;span class=&quot;rating_num&quot; property=&quot;v:average&quot;&gt;9.6&lt;/span&gt;
+                                &lt;span property=&quot;v:best&quot; content=&quot;10.0&quot;&gt;&lt;/span&gt;
+                                &lt;span&gt;1174888人评价&lt;/span&gt;
+                        &lt;/div&gt;
+
+                            &lt;p class=&quot;quote&quot;&gt;
+                                &lt;span class=&quot;inq&quot;&gt;希望让人自由。&lt;/span&gt;
+                            &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+</code></pre>
+
+<p>代码：</p>
+
+<pre><code>#!/usr/bin/python
+#coding: UTF-8
+
+import requests
+from bs4 import BeautifulSoup
+
+def get_movies():
+    headers = {
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36&#39;,
+        &#39;Host&#39;: &#39;movie.douban.com&#39;
+    }
+
+    movie_list = []
+
+    for i in range(0, 10) :
+        link = &#39;https://movie.douban.com/top250?start=&#39; + str(i * 25)
+        r = requests.get(link, headers = headers, timeout = 10)
+        print(str(i + 1), &quot;页响应状态码：&quot;, r.status_code)
+        # print(r.text)
+
+        soup = BeautifulSoup(r.text, &quot;lxml&quot;)
+        div_list = soup.find_all(&#39;div&#39;, class_ = &#39;hd&#39;)
+        for each in div_list:
+            movie = each.a.span.text.strip()
+            movie_list.append(movie)
+
+    return movie_list      
+
+movies = get_movies()
+print(movies)
+</code></pre>
+
+<p>得到：</p>
+
+<pre><code>1 页响应状态码： 200
+2 页响应状态码： 200
+3 页响应状态码： 200
+4 页响应状态码： 200
+5 页响应状态码： 200
+6 页响应状态码： 200
+7 页响应状态码： 200
+8 页响应状态码： 200
+9 页响应状态码： 200
+10 页响应状态码： 200
+[&#39;肖申克的救赎&#39;, &#39;霸王别姬&#39;, &#39;这个杀手不太冷&#39;, &#39;阿甘正传&#39;, &#39;美丽人生&#39;, &#39;泰坦尼克号&#39;, &#39;千与千寻&#39;, &#39;辛德勒的名单&#39;, &#39;盗梦空间&#39;, &#39;机器人总动员&#39;, &#39;忠犬八公的故事&#39;, &#39;三傻大闹宝莱坞&#39;, &#39;海上钢琴师&#39;, &#39;放牛班的春天&#39;, &#39;大话西游之大圣娶亲&#39;, &#39;楚门的世界&#39;, &#39;教父&#39;, &#39;龙猫&#39;, &#39;星际穿越&#39;, &#39;熔炉&#39;, &#39;无间道&#39;, &#39;触不可及&#39;, &#39;当幸福来敲门&#39;, &#39;乱世佳人&#39;, &#39;怦然心动&#39;, &#39;疯狂动物城&#39;, &#39;天堂电影院&#39;, &#39;蝙蝠侠：黑暗骑士&#39;, &#39;活着&#39;, &#39;十二怒汉&#39;, &#39;少年派的奇幻漂流&#39;, &#39;鬼子来了&#39;, &#39;指环王3：王者无敌&#39;, &#39;搏击俱乐部&#39;, &#39;天空之城&#39;, &#39;控方证人&#39;, &#39;飞屋环游记&#39;, &#39;大话西游之月光宝盒&#39;, &#39;罗马假日&#39;, &#39;窃听风暴&#39;, &#39;摔跤吧！爸爸&#39;, &#39;两杆大烟枪&#39;, &#39;辩护人&#39;, &#39;闻香识女人&#39;, &#39;飞越疯人院&#39;, &#39;哈尔的移动城堡&#39;, &#39;死亡诗社&#39;, &#39;V字仇杀队&#39;, &#39;海豚湾&#39;, &#39;教父2&#39;, &#39;指环王2：双塔奇兵&#39;, &#39;指环王1：魔戒再现&#39;, &#39;美丽心灵&#39;, &#39;饮食男女&#39;, &#39;情书&#39;, &#39;素媛&#39;, &#39;狮子王&#39;, &#39;美国往事&#39;, &#39;钢琴家&#39;, &#39;小鞋子&#39;, &#39;七宗罪&#39;, &#39;被嫌弃的松子的一生&#39;, &#39;致命魔术&#39;, &#39;天使爱美丽&#39;, &#39;本杰明·巴顿奇事&#39;, &#39;西西里的美丽传说&#39;, &#39;黑客帝国&#39;, &#39;让子弹飞&#39;, &#39;拯救大兵瑞恩&#39;, &#39;音乐之声&#39;, &#39;看不见的客人&#39;, &#39;末代皇帝&#39;, &#39;低俗小说&#39;, &#39;勇敢的心&#39;, &#39;剪刀手爱德华&#39;, &#39;沉默的羔羊&#39;, &#39;大闹天宫&#39;, &#39;蝴蝶效应&#39;, &#39;春光乍泄&#39;, &#39;入殓师&#39;, &#39;心灵捕手&#39;, &#39;哈利·波特与魔法石&#39;, &#39;玛丽和马克思&#39;, &#39;布达佩斯大饭店&#39;, &#39;阳光灿烂的日子&#39;, &#39;禁闭岛&#39;, &#39;猫鼠游戏&#39;, &#39;幽灵公主&#39;, &#39;第六感&#39;, &#39;重庆森林&#39;, &#39;狩猎&#39;, &#39;致命ID&#39;, &#39;断背山&#39;, &#39;穿条纹睡衣的男孩&#39;, &#39;大鱼&#39;, &#39;加勒比海盗&#39;, &#39;阿凡达&#39;, &#39;告白&#39;, &#39;摩登时代&#39;, &#39;一一&#39;, &#39;甜蜜蜜&#39;, &#39;射雕英雄传之东成西就&#39;, &#39;阳光姐妹淘&#39;, &#39;消失的爱人&#39;, &#39;爱在黎明破晓前&#39;, &#39;上帝之城&#39;, &#39;侧耳倾听&#39;, &#39;爱在日落黄昏时&#39;, &#39;风之谷&#39;, &#39;超脱&#39;, &#39;小森林 夏秋篇&#39;, &#39;喜剧之王&#39;, &#39;倩女幽魂&#39;, &#39;恐怖直播&#39;, &#39;红辣椒&#39;, &#39;菊次郎的夏天&#39;, &#39;驯龙高手&#39;, &#39;幸福终点站&#39;, &#39;神偷奶爸&#39;, &#39;借东西的小人阿莉埃蒂&#39;, &#39;岁月神偷&#39;, &#39;杀人回忆&#39;, &#39;七武士&#39;, &#39;萤火虫之墓&#39;, &#39;怪兽电力公司&#39;, &#39;谍影重重3&#39;, &#39;喜宴&#39;, &#39;小森林 冬春篇&#39;, &#39;贫民窟的百万富翁&#39;, &#39;电锯惊魂&#39;, &#39;东邪西毒&#39;, &#39;请以你的名字呼唤我&#39;, &#39;记忆碎片&#39;, &#39;真爱至上&#39;, &#39;黑天鹅&#39;, &#39;疯狂原始人&#39;, &#39;哈利·波特与死亡圣器(下)&#39;, &#39;萤火之森&#39;, &#39;7号房的礼物&#39;, &#39;雨人&#39;, &#39;英雄本色&#39;, &#39;卢旺达饭店&#39;, &#39;海洋&#39;, &#39;心迷宫&#39;, &#39;超能陆战队&#39;, &#39;唐伯虎点秋香&#39;, &#39;蝙蝠侠：黑暗骑士崛起&#39;, &#39;荒蛮故事&#39;, &#39;傲慢与偏见&#39;, &#39;海边的曼彻斯特&#39;, &#39;虎口脱险&#39;, &#39;纵横四海&#39;, &#39;燃情岁月&#39;, &#39;教父3&#39;, &#39;时空恋旅人&#39;, &#39;玩具总动员3&#39;, &#39;花样年华&#39;, &#39;完美的世界&#39;, &#39;恋恋笔记本&#39;, &#39;无人知晓&#39;, &#39;达拉斯买家俱乐部&#39;, &#39;二十二&#39;, &#39;雨中曲&#39;, &#39;魂断蓝桥&#39;,&#39;猜火车&#39;, &#39;血战钢锯岭&#39;, &#39;穿越时空的少女&#39;, &#39;我是山姆&#39;, &#39;冰川时代&#39;, &#39;人工智能&#39;, &#39;爆裂鼓手&#39;, &#39;浪潮&#39;, &#39;未麻的部屋&#39;, &#39;罗生门&#39;, &#39;朗读者&#39;, &#39;被解救的姜戈&#39;, &#39;头脑特工队&#39;, &#39;香水&#39;, &#39;阿飞正传&#39;, &#39;你的名字。&#39;, &#39;可可西里&#39;, &#39;恐怖游轮&#39;, &#39;房间&#39;, &#39;一次别离&#39;, &#39;战争之王&#39;, &#39;追随&#39;, &#39;撞车&#39;, &#39;模仿游戏&#39;, &#39;一个叫欧维的男人决定去死&#39;, &#39;忠犬八公物语&#39;, &#39;地球上的星星&#39;, &#39;魔女宅急便&#39;, &#39;完美陌生人&#39;, &#39;谍影重重&#39;, &#39;谍影重重2&#39;, &#39;牯岭街少年杀人事件&#39;, &#39;哪吒闹海&#39;, &#39;梦之安魂曲&#39;, &#39;青蛇&#39;, &#39;惊魂记&#39;, &#39;黑客帝国3：矩阵革命&#39;, &#39;小萝莉的猴神大叔&#39;, &#39;再次出发之纽约遇见你&#39;, &#39;东京物语&#39;, &#39;新龙门客栈&#39;, &#39;海街日记&#39;, &#39;步履不停&#39;, &#39;源代码&#39;, &#39;终结者2：审判日&#39;, &#39;绿里奇迹&#39;, &#39;末路狂花&#39;, &#39;初恋这件小事&#39;, &#39;无敌破坏王&#39;, &#39;秒速5厘米&#39;, &#39;城市之光&#39;, &#39;无耻混蛋&#39;, &#39;爱在午夜降临前&#39;, &#39;这个男人来自地球&#39;, &#39;碧海蓝天&#39;, &#39;疯狂的石头&#39;, &#39;勇闯夺命岛&#39;, &#39;E.T. 外星人&#39;, &#39;变脸&#39;, &#39;卡萨布兰卡&#39;, &#39;海盗电台&#39;, &#39;发条橙&#39;,&#39;黄金三镖客&#39;, &#39;彗星来的那一夜&#39;, &#39;美国丽人&#39;, &#39;聚焦&#39;, &#39;血钻&#39;, &#39;荒野生存&#39;, &#39;国王的演讲&#39;, &#39;非常嫌疑犯&#39;, &#39;英国病人&#39;, &#39;迁徙的鸟&#39;, &#39;黑鹰坠落&#39;, &#39;我爱你&#39;, &#39;勇士&#39;, &#39;遗愿清单&#39;, &#39;荒岛余生&#39;, &#39;燕尾蝶&#39;, &#39;枪火&#39;, &#39;2001太空漫游&#39;, &#39;叫我第一名&#39;, &#39;穆赫兰道&#39;, &#39;千钧一发&#39;, &#39;上帝也疯狂&#39;, &#39;大卫·戈尔的一生&#39;, &#39;蓝色大门&#39;]
+</code></pre>
+
+<p>代码中的</p>
+
+<pre><code>div_list = soup.find_all(&#39;div&#39;, class_ = &#39;hd&#39;)
+</code></pre>
+
+<p>也可以用这个来代替:</p>
+
+<blockquote>
+<p>注意这里 class属性中有空格，都转为.</p>
+</blockquote>
+
+<pre><code>div_list = soup.select(&#39;div .hd&#39;)
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

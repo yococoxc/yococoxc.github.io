@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Python Scrapy 多爬虫一起运行 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Python Scrapy 多爬虫一起运行</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p><a href="https://www.cnblogs.com/skying555/p/5296312.html">参考1</a><br/>
+<a href="https://www.cnblogs.com/lei0213/p/7900340.html">参考2</a></p>
+
+<h3 id="toc_0">0.目标</h3>
+
+<p>我们的目标依旧是京东图书销量榜之「计算机与互联网」，<br/>
+京东提供了多个榜单让我们去知道，畅销榜的情况，那么现在让我们一起把这些畅销榜的数据都爬下来吧。</p>
+
+<h4 id="toc_1">近24小时畅销榜</h4>
+
+<pre><code>http://book.jd.com/booktop/3287-0-0-0-10001-1.html
+</code></pre>
+
+<h4 id="toc_2">近1周畅销榜</h4>
+
+<pre><code>http://book.jd.com/booktop/3287-0-0-0-10002-1.html
+</code></pre>
+
+<h4 id="toc_3">近30日畅销榜</h4>
+
+<pre><code>http://book.jd.com/booktop/3287-0-0-0-10003-1.html
+</code></pre>
+
+<h3 id="toc_4">1.创建工程</h3>
+
+<pre><code>scrapy startproject jdbooksales 
+</code></pre>
+
+<h3 id="toc_5">2.创建爬虫程序</h3>
+
+<pre><code>cd jdbooksales
+scrapy genspider booksales book.jd.com
+</code></pre>
+
+<h3 id="toc_6">3.设置数据存储模板（jdbooksales/jdbooksales/items.py）</h3>
+
+<pre><code># -*- coding: utf-8 -*-
+
+import scrapy
+
+class JdbooksalesItem(scrapy.Item):
+    name = scrapy.Field()
+
+</code></pre>
+
+<h3 id="toc_7">4.管道处理（jdbooksales/jdbooksales/pipelines.py）</h3>
+
+<pre><code># -*- coding: utf-8 -*-
+
+import codecs
+import json
+
+class Jdbookssales24ipeline(object):
+    def __init__(self):
+        self.file = codecs.open(&#39;jd24.json&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;)
+
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item), ensure_ascii=False) + &quot;\n&quot;
+        self.file.write(line)
+        return item
+
+    def spider_closed(self, spider):
+        self.file.close()
+
+class Jdbookssales1ipeline(object):
+    def __init__(self):
+        self.file = codecs.open(&#39;jd1.json&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;)
+
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item), ensure_ascii=False) + &quot;\n&quot;
+        self.file.write(line)
+        return item
+
+    def spider_closed(self, spider):
+        self.file.close()
+
+
+class Jdbookssales30ipeline(object):
+    def __init__(self):
+        self.file = codecs.open(&#39;jd30.json&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;)
+
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item), ensure_ascii=False) + &quot;\n&quot;
+        self.file.write(line)
+        return item
+
+    def spider_closed(self, spider):
+        self.file.close()
+
+</code></pre>
+
+<p>这里有三个管道处理的过程都是一样的，不同在于把数据存储在指定的文件上。<br/>
+PS：有机会看看怎么优化一下这里。</p>
+
+<h3 id="toc_8">5.爬虫</h3>
+
+<p>在 jdbooksales/jdbooksales/spiders 目录下创建文件：<br/>
+jdbooksales1.py、jdbooksales24.py、jdbooksales30.py<br/>
+该三只爬虫代表要爬的三个主题。</p>
+
+<p>jdbooksales1.py:</p>
+
+<pre><code># -*- coding: utf-8 -*-
+import scrapy
+from jdbooksales.items import JdbooksalesItem
+
+class Jd1Spider(scrapy.Spider):
+    name = &#39;jd1&#39;
+    custom_settings = {
+        &#39;ITEM_PIPELINES&#39;:{&#39;jdbooksales.pipelines.Jdbookssales1ipeline&#39;: 500},
+    }
+    allowed_domains = [&#39;book.jd.com&#39;]
+    start_urls = [&#39;http://book.jd.com/booktop/0-0-0.html?category=3287-0-0-0-10002-1&#39;]
+
+    def parse(self, response):
+        books = response.xpath(&#39;//div[@class=&quot;mc&quot;]/ul[@class=&quot;clearfix&quot;]/li&#39;)
+        for book in books:
+            item = JdbooksalesItem()
+            #获取名字
+            item[&#39;name&#39;] = book.xpath(&#39;./div[@class=&quot;p-detail&quot;]/a/text()&#39;).extract()[0]
+            yield item
+        
+        #获取下一页的数据
+        next_url = response.xpath(&#39;//a[@class=&quot;pn-next&quot;][1]/@href&#39;).extract()[0]
+        if len(next_url) &gt; 0:
+            next_url = response.urljoin(next_url)
+            yield scrapy.Request(next_url, callback=self.parse)
+
+</code></pre>
+
+<p>jdbooksales24.py:</p>
+
+<pre><code># -*- coding: utf-8 -*-
+import scrapy
+from jdbooksales.items import JdbooksalesItem
+
+class Jd24Spider(scrapy.Spider):
+    name = &#39;jd24&#39;
+    custom_settings = {
+        &#39;ITEM_PIPELINES&#39;:{&#39;jdbooksales.pipelines.Jdbookssales24ipeline&#39;: 400},
+    }
+    allowed_domains = [&#39;book.jd.com&#39;]
+    start_urls = [&#39;http://book.jd.com/booktop/0-0-0.html?category=3287-0-0-0-10001-1&#39;]
+
+    def parse(self, response):
+        books = response.xpath(&#39;//div[@class=&quot;mc&quot;]/ul[@class=&quot;clearfix&quot;]/li&#39;)
+        for book in books:
+            item = JdbooksalesItem()
+            #获取名字
+            item[&#39;name&#39;] = book.xpath(&#39;./div[@class=&quot;p-detail&quot;]/a/text()&#39;).extract()[0]
+            yield item
+        
+        #获取下一页的数据
+        next_url = response.xpath(&#39;//a[@class=&quot;pn-next&quot;][1]/@href&#39;).extract()[0]
+        if len(next_url) &gt; 0:
+            next_url = response.urljoin(next_url)
+            yield scrapy.Request(next_url, callback=self.parse)
+
+</code></pre>
+
+<p>jdbooksales30.py:</p>
+
+<pre><code># -*- coding: utf-8 -*-
+import scrapy
+from jdbooksales.items import JdbooksalesItem
+
+class Jd30Spider(scrapy.Spider):
+    name = &#39;jd30&#39;
+    custom_settings = {
+        &#39;ITEM_PIPELINES&#39;:{&#39;jdbooksales.pipelines.Jdbookssales30ipeline&#39;: 300},
+    }
+    allowed_domains = [&#39;book.jd.com&#39;]
+    start_urls = [&#39;http://book.jd.com/booktop/0-0-0.html?category=3287-0-0-0-10003-1&#39;]
+
+    def parse(self, response):
+        books = response.xpath(&#39;//div[@class=&quot;mc&quot;]/ul[@class=&quot;clearfix&quot;]/li&#39;)
+        for book in books:
+            item = JdbooksalesItem()
+            #获取名字
+            item[&#39;name&#39;] = book.xpath(&#39;./div[@class=&quot;p-detail&quot;]/a/text()&#39;).extract()[0]
+            yield item
+        
+        #获取下一页的数据
+        next_url = response.xpath(&#39;//a[@class=&quot;pn-next&quot;][1]/@href&#39;).extract()[0]
+        if len(next_url) &gt; 0:
+            next_url = response.urljoin(next_url)
+            yield scrapy.Request(next_url, callback=self.parse)
+
+</code></pre>
+
+<p>每一只爬虫通过内部设置 custom_settings 属性来指定 ITEM_PIPELINES（项目管道），此时就不需要再在 jdbooksales/jdbooksales/settings.py 里面再设置 ITEM_PIPELINES 了。一只爬虫对应一个管道，或多个管道。</p>
+
+<h3 id="toc_9">6.添加多执行多脚本执行的命令</h3>
+
+<p>在 jdbooksales/jdbooksales/ 目录下创建文件夹：commands。</p>
+
+<p>在 commands 文件夹下创建两个文件：__init__.py 和 crawlall.py。</p>
+
+<p><strong>init</strong>.py 文件不用填写任何内容，只是表明当前是一个类。</p>
+
+<p>crawlall.py 的内容如下：</p>
+
+<pre><code># -*- coding: utf-8 -*-
+
+from scrapy.commands import ScrapyCommand  
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.conf import arglist_to_dict
+
+class Command(ScrapyCommand):
+  requires_project = True
+  def syntax(self):  
+    return &#39;[options]&#39;
+
+  def short_desc(self):
+    return &#39;Runs all of the spiders&#39;
+
+  def add_options(self, parser):
+    ScrapyCommand.add_options(self, parser)
+    parser.add_option(&quot;-a&quot;, dest=&quot;spargs&quot;, action=&quot;append&quot;, default=[], metavar=&quot;NAME=VALUE&quot;,
+              help=&quot;set spider argument (may be repeated)&quot;)
+    parser.add_option(&quot;-o&quot;, &quot;--output&quot;, metavar=&quot;FILE&quot;,
+              help=&quot;dump scraped items into FILE (use - for stdout)&quot;)
+    parser.add_option(&quot;-t&quot;, &quot;--output-format&quot;, metavar=&quot;FORMAT&quot;,
+              help=&quot;format to use for dumping items with -o&quot;)
+
+  def process_options(self, args, opts):
+    ScrapyCommand.process_options(self, args, opts)
+    try:
+      opts.spargs = arglist_to_dict(opts.spargs)
+    except ValueError:
+      raise UsageError(&quot;Invalid -a value, use -a NAME=VALUE&quot;, print_help=False)
+
+  def run(self, args, opts):
+    #settings = get_project_settings()
+
+    spider_loader = self.crawler_process.spider_loader
+    for spidername in args or spider_loader.list():
+        print (&quot;*********cralall spidername************&quot; + spidername)
+        self.crawler_process.crawl(spidername, **opts.spargs)
+    self.crawler_process.start()
+
+</code></pre>
+
+<p>在 jdbooksales/jdbooksales/ 目录下创建文件：setup.py。</p>
+
+<p>setup.py 的内容如下：</p>
+
+<pre><code># -*- coding: utf-8 -*-
+
+from setuptools import setup, find_packages
+
+setup(name=&#39;scrapy-mymodule&#39;,
+  entry_points={
+    &#39;scrapy.commands&#39;: [
+      &#39;crawlall=jdbooksales.commands:crawlall&#39;,
+    ],
+  },
+ )
+</code></pre>
+
+<p>打开 jdbooksales/jdbooksales/settings.py，<br/>
+头部添加：</p>
+
+<pre><code>COMMANDS_MODULE = &#39;jdbooksales.commands&#39;
+</code></pre>
+
+<h3 id="toc_10">7.在执行前要检查下面的设置弄好没有</h3>
+
+<p>关闭 robots.text 的检测</p>
+
+<pre><code>ROBOTSTXT_OBEY = False
+</code></pre>
+
+<p>设置延迟下载（模拟真人操作，减少服务器压力）</p>
+
+<pre><code>DOWNLOAD_DELAY = 3
+</code></pre>
+
+<p>没有必要就关闭 cookies</p>
+
+<pre><code>COOKIES_ENABLED = False
+</code></pre>
+
+<p>具体响应的设置就要看具体的情况而定。</p>
+
+<h3 id="toc_11">8.执行命令吧！</h3>
+
+<p>在  jdbooksales 根目录下，执行：</p>
+
+<pre><code>scrapy crawlall
+</code></pre>
+
+<p>便会在该目录下多了名为 jd1.json、jd24.json、jd30.json的文件了。</p>
+
+<h3 id="toc_12">9.外传 之 crawlall.py 的其他写法：</h3>
+
+<pre><code># -*- coding: utf-8 -*-
+
+from scrapy.commands import ScrapyCommand
+from scrapy.utils.project import get_project_settings
+ 
+class Command(ScrapyCommand):
+ 
+    requires_project = True
+ 
+    def syntax(self):
+        return &#39;[options]&#39;
+ 
+    def short_desc(self):
+        return &#39;Runs all of the spiders&#39;
+ 
+    def run(self, args, opts):
+        spider_list = self.crawler_process.spiders.list()
+        for name in spider_list:
+            self.crawler_process.crawl(name, **opts.__dict__)
+        self.crawler_process.start()
+
+</code></pre>
+
+<h3 id="toc_13">【完】</h3>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

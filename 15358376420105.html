@@ -1,0 +1,474 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	FragmentTabHost+Fragment 实现底部菜单 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">FragmentTabHost+Fragment 实现底部菜单</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p><img src="media/15358376420105/F42117D9-C6EF-49EF-9C54-BE79FE290D73.png" alt="F42117D9-C6EF-49EF-9C54-BE79FE290D73"/></p>
+
+<h3 id="toc_0">项目目录</h3>
+
+<p><img src="media/15358376420105/15358377641044.jpg" alt=""/></p>
+
+<p>图片资源请自行复制到“mipmap-xxhdpi”目录下。（具体目录为/LearnAndroid02/app/src/main/res/mipmap-xxhdpi）</p>
+
+<h3 id="toc_1">简单说明</h3>
+
+<p>MainActivity 是基于 FragmentActivity。</p>
+
+<p>HomeFragment、HotFragment、CategoryFragment、CartFragment、MineFragment 是基于 Fragment。</p>
+
+<p>tab_indicator.xml 就是 每个单独 tab 的视图。</p>
+
+<h3 id="toc_2">详细代码</h3>
+
+<p>Tab.java</p>
+
+<pre><code>public class Tab {
+    private int Image;
+    private int Text;
+    private Class Fragment;
+
+    public Tab(int image, int text, Class fragment) {
+        Image = image;
+        Text = text;
+        Fragment = fragment;
+    }
+
+    public int getImage() {
+        return Image;
+    }
+    public void setImage(int image) {
+        Image = image;
+    }
+    public int getText() {
+        return Text;
+    }
+    public void setText(int text) {
+        Text = text;
+    }
+    public Class getFragment() {
+        return Fragment;
+    }
+    public void setFragment(Class fragment) {
+        Fragment = fragment;
+    }
+}
+</code></pre>
+
+<p>tab_indicator.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:layout_gravity=&quot;center&quot;
+    android:paddingTop=&quot;3dp&quot;
+    android:paddingBottom=&quot;3dp&quot;
+    android:gravity=&quot;center&quot;&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/tab_img&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tab_txt&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:textColor=&quot;@color/selector_tab_text&quot;
+        android:layout_marginTop=&quot;2dp&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>res/values/strings.xml</p>
+
+<pre><code>&lt;resources&gt;
+    &lt;string name=&quot;app_name&quot;&gt;LearnAndroid02&lt;/string&gt;
+
+    &lt;!-- TODO: Remove or change this placeholder text --&gt;
+    &lt;string name=&quot;hello_blank_fragment&quot;&gt;Hello blank fragment&lt;/string&gt;
+
+
+    &lt;string name=&quot;home&quot;&gt;主页&lt;/string&gt;
+    &lt;string name=&quot;cart&quot;&gt;购物车&lt;/string&gt;
+    &lt;string name=&quot;category&quot;&gt;分类&lt;/string&gt;
+    &lt;string name=&quot;hot&quot;&gt;热卖&lt;/string&gt;
+    &lt;string name=&quot;mine&quot;&gt;我的&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>res/color/selector_tab_text.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:state_selected=&quot;true&quot; android:color=&quot;#eb4f38&quot; /&gt;
+    &lt;item android:state_active=&quot;true&quot; android:color=&quot;#eb4f38&quot;/&gt;
+    &lt;item android:state_selected=&quot;false&quot; android:color=&quot;#a9b7b7&quot; /&gt;
+    &lt;item android:state_active=&quot;false&quot; android:color=&quot;#a9b7b7&quot;/&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>res/drawable/selector_home.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    //被选中的时候的图标
+    &lt;item android:state_selected=&quot;true&quot; android:drawable=&quot;@mipmap/icon_home_press&quot;/&gt;
+    //正常状态下的图标
+    &lt;item android:drawable=&quot;@mipmap/icon_home&quot;/&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>HomeFragment.java</p>
+
+<pre><code>import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.muzico.learnandroid02.R;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class HomeFragment extends Fragment {
+
+
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+}
+</code></pre>
+
+<p>fragement_home.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;FrameLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.fragment.HomeFragment&quot;&gt;
+
+    &lt;TextView
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:gravity=&quot;center&quot;
+        android:text=&quot;@string/home&quot;/&gt;
+
+&lt;/FrameLayout&gt;
+</code></pre>
+
+<p>activity_main.xml</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;FrameLayout
+        android:id=&quot;@+id/realcontent&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;0dp&quot;
+        android:layout_weight=&quot;1&quot;&gt;
+
+    &lt;/FrameLayout&gt;
+
+    &lt;android.support.v4.app.FragmentTabHost
+        android:id=&quot;@android:id/tabhost&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:background=&quot;#ffee99&quot;&gt;
+
+        &lt;FrameLayout
+            android:id=&quot;@android:id/tabcontent&quot;
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;0dp&quot;
+            android:layout_weight=&quot;0&quot;&gt;
+
+        &lt;/FrameLayout&gt;
+
+    &lt;/android.support.v4.app.FragmentTabHost&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>MainActivity.java</p>
+
+<pre><code>import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTabHost;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TabHost;
+import android.widget.TextView;
+
+import com.example.muzico.learnandroid02.bean.Tab;
+import com.example.muzico.learnandroid02.fragment.CartFragment;
+import com.example.muzico.learnandroid02.fragment.CategoryFragment;
+import com.example.muzico.learnandroid02.fragment.HomeFragment;
+import com.example.muzico.learnandroid02.fragment.HotFragment;
+import com.example.muzico.learnandroid02.fragment.MineFragment;
+
+import java.util.ArrayList;
+
+public class MainActivity extends FragmentActivity {
+
+    private FragmentTabHost mTabHost;
+    private LayoutInflater mInflater;
+    private ArrayList&lt;Tab&gt; mTabs = new ArrayList&lt;&gt;(5);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        initTab();
+    }
+
+    private void initTab() {
+        Tab tab_home = new Tab(R.drawable.selector_home,R.string.home,HomeFragment.class);
+        Tab tab_hot = new Tab(R.drawable.selector_hot,R.string.hot, HotFragment.class);
+        Tab tab_category = new Tab(R.drawable.selector_category,R.string.category, CategoryFragment.class);
+        Tab tab_cart = new Tab(R.drawable.selector_cart,R.string.cart, CartFragment.class);
+        Tab tab_mine = new Tab(R.drawable.selector_mine,R.string.mine, MineFragment.class);
+
+
+        mTabs.add(tab_home);
+        mTabs.add(tab_hot);
+        mTabs.add(tab_category);
+        mTabs.add(tab_cart);
+        mTabs.add(tab_mine);
+
+
+        mTabHost = findViewById(android.R.id.tabhost);
+        mTabHost.setup(this, getSupportFragmentManager(),R.id.realcontent);
+        mInflater = LayoutInflater.from(this);
+
+
+        for (Tab tab : mTabs) {
+            TabHost.TabSpec tabSpec = mTabHost.newTabSpec(String.valueOf(tab.getText()));
+            tabSpec.setIndicator(buildView(tab));
+            mTabHost.addTab(tabSpec,tab.getFragment(),null);
+        }
+
+        mTabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
+
+    }
+
+    private View buildView(Tab tab) {
+        View view = mInflater.inflate(R.layout.tab_indicator, null);
+        ImageView imageView = view.findViewById(R.id.tab_img);
+        TextView textView = view.findViewById(R.id.tab_txt);
+
+        imageView.setBackgroundResource(tab.getImage());
+        textView.setText(tab.getText());
+
+        return view;
+    }
+}
+</code></pre>
+
+<h3 id="toc_3">效果图</h3>
+
+<p><img src="media/15358376420105/7570F707-5F22-4B26-856A-BCAAA4877EE8.png" alt="7570F707-5F22-4B26-856A-BCAAA4877EE8"/></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

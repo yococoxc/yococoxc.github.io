@@ -1,0 +1,726 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Swift 类 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Swift 类</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">0.备注</h3>
+
+<p>以前在 OC 上面用 #pragma mark 注释</p>
+
+<pre><code>#pragma mark - 备注
+</code></pre>
+
+<p>而swift 则改用了  //MARK</p>
+
+<pre><code>//MARK : 备注
+</code></pre>
+
+<h3 id="toc_1">1.类 Person.swift</h3>
+
+<pre><code>import UIKit
+
+class Person {
+
+}
+</code></pre>
+
+<h3 id="toc_2">2.继承自 NSObject 的类 Person.swift</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    
+}
+</code></pre>
+
+<h3 id="toc_3">3.对象的实例</h3>
+
+<pre><code>let man = Person()
+</code></pre>
+
+<h3 id="toc_4">4.实例方法</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    func show() -&gt; Void {
+        print(&quot;对象方法...&quot;)
+    }
+}
+</code></pre>
+
+<h3 id="toc_5">5.实例方法的调用</h3>
+
+<pre><code>let man = Person()
+man.show()
+</code></pre>
+
+<h3 id="toc_6">6.类方法</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    static func dosome() -&gt; Void {
+        print(&quot;类方法...&quot;)
+    }
+    
+    class func dosomething() -&gt; Void {
+        print(&quot;类方法2...&quot;)
+    }
+}
+</code></pre>
+
+<h3 id="toc_7">6.1.类方法的调用</h3>
+
+<pre><code>Person.dosome()
+
+Person.dosomething()
+</code></pre>
+
+<h3 id="toc_8">7.结构体、枚举的类方法</h3>
+
+<pre><code>import UIKit
+
+struct Book {
+    static func show() -&gt; Void {
+        print(&quot;结构体的类方法&quot;)
+    }
+}
+</code></pre>
+
+<pre><code>enum Book {
+    static func show() -&gt; Void {
+        print(&quot;枚举的类方法&quot;)
+    }
+}
+</code></pre>
+
+<h3 id="toc_9">7.1.结构体、枚举的类方法 使用</h3>
+
+<pre><code>Book.show()
+</code></pre>
+
+<pre><code>var book : Book = Book.Red
+book = Book.Green
+
+if book == Book.Green {
+    print(&quot;绿之书&quot;)
+    Book.show()
+} else {
+    print(&quot;其他书&quot;)
+}
+</code></pre>
+
+<h3 id="toc_10">8.类的属性</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+}
+</code></pre>
+
+<h3 id="toc_11">8.0.类的属性的公开性</h3>
+
+<pre><code>var name: String?
+</code></pre>
+
+<p>的效果和</p>
+
+<pre><code>public var name: String?
+</code></pre>
+
+<p>差不多，都可以将属性开放出来。</p>
+
+<p>而：</p>
+
+<pre><code>private var name: String?
+</code></pre>
+
+<p>则是外部所无法访问的。属于私有属性。</p>
+
+<h3 id="toc_12">8.1.类的属性使用</h3>
+
+<pre><code>let man = Person()
+man.name = &quot;muzico&quot;
+
+if man.name != nil {
+    print(&quot;Person.name = \(man.name!)&quot;)
+} else {
+    print(&quot;Person.name 内容为空&quot;)
+}
+</code></pre>
+
+<h3 id="toc_13">9.类的属性，添加默认值</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String? = &quot;无名&quot;
+}
+</code></pre>
+
+<h3 id="toc_14">10.构建函数 init</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    
+    init(name : String) {
+        super.init()
+        
+        self.name = name
+    }
+}
+</code></pre>
+
+<p>如果自定义了 构建函数 init，则默认的会消失，无法使用。</p>
+
+<h3 id="toc_15">10.1.构建函数 init 使用</h3>
+
+<pre><code>let man = Person(name: &quot;muzico&quot;)
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>let man = Person.init(name: &quot;muzico&quot;)
+</code></pre>
+
+<p>建议是下面的方法，因为Xcode的提示更好~~~</p>
+
+<h3 id="toc_16">11.多构建函数 init</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    var age: Int = 0
+    
+    init(name : String) {
+        super.init()
+        
+        self.name = name
+    }
+    init(name : String, age : Int) {
+        super.init()
+        
+        self.name = name
+        self.age = age
+    }
+}
+</code></pre>
+
+<h3 id="toc_17">11.1.多构建函数 init 使用</h3>
+
+<pre><code>let man = Person(name: &quot;muzico&quot;)
+
+let man2 = Person(name: &quot;muzico&quot;, age: 18)
+</code></pre>
+
+<pre><code>let man = Person.init(name: &quot;muzico&quot;)
+
+let man2 = Person.init(name: &quot;muzico&quot;, age: 18)
+</code></pre>
+
+<h3 id="toc_18">12.无标签的构建函数（也适用于方法）</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    var age: Int = 0
+    
+    init(_ name : String) {
+        super.init()
+        
+        self.name = name
+    }
+}
+</code></pre>
+
+<p>&quot;_&quot; 代表无标签，编译器将不会出现标签的名字</p>
+
+<h3 id="toc_19">12.1.无标签的构建函数 使用</h3>
+
+<pre><code>let man = Person.init(&quot;muzico&quot;)
+
+let man2 = Person(&quot;muzico&quot;)
+</code></pre>
+
+<h3 id="toc_20">12.2.因为无标签，所以可以达成方法、函数的重载</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    var age: Int = 0
+    
+    init(_ name : String) {
+        super.init()
+        
+        self.name = name
+    }
+    init(_ age : Int) {
+        super.init()
+        
+        self.age = age
+    }
+    init(_ name : String, _ age : Int) {
+        super.init()
+        
+        self.name = name
+        self.age = age
+    }
+    init(_ age : Int, _ name : String) {
+        super.init()
+        
+        self.name = name
+        self.age = age
+    }
+}
+</code></pre>
+
+<h3 id="toc_21">12.3.因为无标签，所以可以达成方法、函数的重载  使用</h3>
+
+<pre><code>let man = Person(&quot;muzcio&quot;)
+let man2 = Person(18)
+let man3 = Person(&quot;muzico&quot;, 18)
+let man4 = Person(18, &quot;muzico&quot;)
+</code></pre>
+
+<h3 id="toc_22">12.4.有标签的方法</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    var age: Int = 0
+    
+    init(_ name : String) {
+        super.init()
+        
+        self.name = name
+    }
+    init(_ age : Int) {
+        super.init()
+        
+        self.age = age
+    }
+    init(_ name : String, _ age : Int) {
+        super.init()
+        
+        self.name = name
+        self.age = age
+    }
+    init(_ age : Int, _ name : String) {
+        super.init()
+        
+        self.name = name
+        self.age = age
+    }
+    
+    init(PersonName name : String) {
+        super.init()
+        
+        self.name = name
+    }
+}
+</code></pre>
+
+<p>默认标签即为参数名，如果写出了标签，则必须用标签。</p>
+
+<h3 id="toc_23">12.5.有标签的方法 使用</h3>
+
+<pre><code>let man = Person(&quot;muzcio&quot;)
+let man2 = Person(18)
+let man3 = Person(&quot;muzico&quot;, 18)
+let man4 = Person(18, &quot;muzico&quot;)
+let man5 = Person(PersonName: &quot;muzico&quot;)
+</code></pre>
+
+<h3 id="toc_24">13.属性的 setter getter</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    private var _name: String?
+    var name: String? {
+        get {
+            if _name == nil {
+                _name = &quot;无名&quot;
+            }
+            return _name
+        }
+        
+        set {
+            _name = newValue;
+        }
+    }
+    
+    var age: Int = 0
+    
+    override init() {
+        super.init()
+    }
+    init(name : String) {
+        super.init()
+        
+        self._name = name
+    }
+    init(name : String, age : Int) {
+        super.init()
+        
+        self._name = name
+        self.age = age
+    }
+}
+</code></pre>
+
+<h3 id="toc_25">14.属性的只读</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    private var _name: String?
+    var name: String? {
+        get {
+            if _name == nil {
+                _name = &quot;无名&quot;
+            }
+            return _name
+        }
+    }
+    
+    var age: Int = 0
+    
+    override init() {
+        super.init()
+        
+    }
+    init(name : String) {
+        super.init()
+        
+        self._name = name
+    }
+    init(name : String, age : Int) {
+        super.init()
+        
+        self._name = name
+        self.age = age
+    }
+}
+</code></pre>
+
+<h3 id="toc_26">15.属性另一种只读写法</h3>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    private var _name: String?
+    var name: String? {
+        get {
+            if _name == nil {
+                _name = &quot;无名&quot;
+            }
+            return _name
+        }
+    }
+    
+    var age: Int = 0
+    
+    override init() {
+        super.init()
+        
+    }
+    init(name : String) {
+        super.init()
+        
+        self._name = name
+    }
+    init(name : String, age : Int) {
+        super.init()
+        
+        self._name = name
+        self.age = age
+    }
+}
+</code></pre>
+
+<h3 id="toc_27">16.extension 实例方法</h3>
+
+<p>Person.swift:</p>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    var name: String?
+    
+    init(_ name : String) {
+        super.init()
+        
+        self.name = name
+    }
+}
+</code></pre>
+
+<p>Person+.swift:</p>
+
+<pre><code>import Foundation
+
+extension Person {
+    var callName : String {
+        if self.name == nil {
+            return &quot;Mr.&quot; + &quot;无名&quot;
+        }
+        return &quot;Mr.&quot; + self.name!
+    }
+}
+</code></pre>
+
+<p>使用:</p>
+
+<pre><code>let man = Person(&quot;muzico&quot;)
+print(&quot;call name : \(man.callName)&quot;)
+</code></pre>
+
+<h3 id="toc_28">17.extension 类方法</h3>
+
+<p>Person.swift:</p>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+
+}
+</code></pre>
+
+<p>Person+.swift:</p>
+
+<pre><code>import Foundation
+
+extension Person {
+    class func show() -&gt; Void {
+        print(&quot;扩充的类方法&quot;)
+    }
+}
+</code></pre>
+
+<p>使用:</p>
+
+<pre><code>Person.show()
+</code></pre>
+
+<h3 id="toc_29">18.extension 属性</h3>
+
+<p>Person.swift:</p>
+
+<pre><code>import UIKit
+
+class Person: NSObject {
+    
+}
+</code></pre>
+
+<p>Person+.swift:</p>
+
+<pre><code>import Foundation
+
+extension Person {
+    private struct theName {
+        static var nameValue: String = &quot;&quot;
+    }
+    
+    var name: String? {
+        get {
+            guard let temp = objc_getAssociatedObject(self, &amp;theName.nameValue) as? String else {
+                return nil
+            }
+            return temp
+        }
+        set {
+            objc_setAssociatedObject(self, &amp;theName.nameValue, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+}
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	RN 打包 Android项目（for Mac） - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">RN 打包 Android项目（for Mac）</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>为了展示全貌，所以从头到尾过一遍。</p>
+
+<p>官方文档：</p>
+
+<pre><code>https://reactnative.cn/docs/0.51/signed-apk-android.html
+</code></pre>
+
+<p>实践过程中与官方文档有差异。</p>
+
+<h3 id="toc_0">1.创建项目，该项目就叫做 &#39;demo&#39;：</h3>
+
+<pre><code>react-native init demo
+</code></pre>
+
+<p><img src="media/15223166144476/E42A75B0-080B-444C-AE5F-442394EFA658.png" alt="E42A75B0-080B-444C-AE5F-442394EFA658"/></p>
+
+<h3 id="toc_1">2.根据提示进入项目目录下：</h3>
+
+<pre><code>cd /Users/muzico/Documents/Project/reactnative/demo
+</code></pre>
+
+<h3 id="toc_2">3.然后执行项目看看</h3>
+
+<pre><code>react-native run-android
+</code></pre>
+
+<p>如果出错了，应该有东西没有设置啊，还好出错了，不然怎么说下去啊！</p>
+
+<p><img src="media/15223166144476/1741D230-8300-4E73-8BF9-6D96CB96D434.png" alt="1741D230-8300-4E73-8BF9-6D96CB96D434"/></p>
+
+<p>实际上这个问题是没有找到ANDROID_HOME 环境变量值，而该值则是记录着Android SDK的地址。</p>
+
+<h3 id="toc_3">4.通过 echo $ANDROID_HOME 命令可以看到该值当前是什么内容：</h3>
+
+<pre><code>echo $ANDROID_HOME
+</code></pre>
+
+<p><img src="media/15223166144476/ADDEDD2C-F8C6-46AE-A624-8DCF06EA3EA1.png" alt="ADDEDD2C-F8C6-46AE-A624-8DCF06EA3EA1"/></p>
+
+<p>是空白的，果然没有内容啊。</p>
+
+<p>然后我们通过命令来为 ANDROID_HOME 进行赋值：</p>
+
+<pre><code>export ANDROID_HOME=~/Library/Android/sdk
+</code></pre>
+
+<h3 id="toc_4">5.然后我们用之前的命令来查看是否已经设置成功了。</h3>
+
+<pre><code>echo $ANDROID_HOME
+</code></pre>
+
+<p><img src="media/15223166144476/463D5CD7-A648-4E92-BF8B-189D5F28F40E.png" alt="463D5CD7-A648-4E92-BF8B-189D5F28F40E"/></p>
+
+<p>好的，没有问题了。</p>
+
+<p>然后，要么把Android 模拟器打开，或许连接上Android 真机设备。</p>
+
+<p>不然无法进行下一步哦，这个很重要。</p>
+
+<h3 id="toc_5">6.上面的东西都弄好了，那么就来跑项目吧。</h3>
+
+<pre><code>react-native run-android
+</code></pre>
+
+<p><img src="media/15223166144476/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-03-29%20%E4%B8%8B%E5%8D%886.17.12.png" alt="屏幕快照 2018-03-29 下午6.17.12"/></p>
+
+<p>看到这个内容，说明已经成功了。</p>
+
+<p>项目已经跑起来了，这个时候可以看看模拟器（或真机）。</p>
+
+<p><img src="media/15223166144476/AC75A043-7F4E-43C9-A2D8-E2D42416FB37.png" alt="AC75A043-7F4E-43C9-A2D8-E2D42416FB37"/></p>
+
+<p>嗯，没有什么问题了。</p>
+
+<p>接着就是来搞搞打包的事吧。</p>
+
+<p>根据某文档：</p>
+
+<pre><code>https://reactnative.cn/docs/0.51/signed-apk-android.html#content
+</code></pre>
+
+<h3 id="toc_6">1.生成一个签名密钥</h3>
+
+<pre><code>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+</code></pre>
+
+<p>上面的命令会生成一个名为 my-release-key.keystore 的文件，有效期为10000天。<br/>
+--alias参数后面的别名是你将来为应用签名时所需要用到的，所以记得记录这个别名。</p>
+
+<p><img src="media/15223166144476/3B0D23A4-C20C-4B5A-B021-E24E158FEC34.png" alt="3B0D23A4-C20C-4B5A-B021-E24E158FE"/></p>
+
+<p><img src="media/15223166144476/7CDD856B-1702-4B0A-990D-3965535D9350.png" alt="7CDD856B-1702-4B0A-990D-3965535D9350"/></p>
+
+<p>然之后把这个文件移到项目里面的 /android/app 路径下。</p>
+
+<p><img src="media/15223166144476/D83C9BFF-0ABE-408A-B22F-6B19FC16214C.png" alt="D83C9BFF-0ABE-408A-B22F-6B19FC16214"/></p>
+
+<h3 id="toc_7">2.添加签名到项目的gradle配置文件</h3>
+
+<p>编辑你项目目录下的android/app/build.gradle，添加如下的签名配置：</p>
+
+<pre><code>...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+</code></pre>
+
+<p><img src="media/15223166144476/2BB0AAF1-4BAB-48AF-B473-4515581C7460.png" alt="2BB0AAF1-4BAB-48AF-B473-4515581C7460"/></p>
+
+<h3 id="toc_8">4.生成发行APK包</h3>
+
+<pre><code>cd android &amp;&amp; ./gradlew assembleRelease
+</code></pre>
+
+<p><img src="media/15223166144476/FE7894B9-36D7-4C61-B8AE-97D46A5418F1.png" alt="FE7894B9-36D7-4C61-B8AE-97D46A5418F1"/></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

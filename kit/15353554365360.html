@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	LQSMenuScrollPageView、LQSViewTemplateCollectionItem 实践 - LQSKit
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="LQSKit" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">LQSKit</a></h1>
+					<p class="subtitle">LQSKit 文档</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">LQSMenuScrollPageView、LQSViewTemplateCollectionItem 实践</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>退货、退款</p>
+
+<p>SYH__ReturnRefundController<br/>
+基于 LQSHeadViewController 类。<br/>
+加载了 SYH__ReturnRefundView 的实例对象。</p>
+
+<p>SYH__ReturnRefundView<br/>
+基于 LQSView 类。<br/>
+用来实现 LQSMenuScrollPageView 实例对象。</p>
+
+<p>SYH__RefundView<br/>
+基于 LQSViewTemplateCollectionItem 类。<br/>
+在当前类里面实现请求数据逻辑，以及获取数据后转换成 LQSCollectionSectionItem类 对象。<br/>
+从而让 LQSViewTemplateCollectionItem类识别。</p>
+
+<h3 id="toc_0">SYH__ReturnRefundController</h3>
+
+<pre><code>#import &quot;SYH__ReturnRefundController.h&quot;
+#import &quot;SYH__ReturnRefundView.h&quot;
+
+@interface SYH__ReturnRefundController ()
+
+@property(nonatomic,strong) SYH__ReturnRefundView* myView;
+
+@end
+
+@implementation SYH__ReturnRefundController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.headTitle = @&quot;退货/退款&quot;;
+    
+    SYH__ReturnRefundView* temp = [SYH__ReturnRefundView new];
+    [self setupBodyView:temp];
+    self.myView = temp;
+}
+
+@end
+</code></pre>
+
+<h3 id="toc_1">SYH__ReturnRefundView</h3>
+
+<pre><code>#import &quot;SYH__ReturnRefundView.h&quot;
+
+#import &quot;SYH__RefundView.h&quot;
+#import &quot;SYH__ReturnView.h&quot;
+
+@interface SYH__ReturnRefundView ()&lt;LQSMenuScrollPageViewSource,LQSMenuScrollPageViewDelegate&gt;
+
+@property(nonatomic,strong) NSArray* array;
+
+@property(nonatomic,strong) LQSMenuScrollPageView* menuScrollPageView;
+
+@end
+
+@implementation SYH__ReturnRefundView
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    self.array = @[@{@&quot;name&quot;: @&quot;退款列表&quot;,@&quot;viewClass&quot;:@&quot;SYH__RefundView&quot;},
+                   @{@&quot;name&quot;: @&quot;退货列表&quot;,@&quot;viewClass&quot;:@&quot;SYH__ReturnView&quot;}];
+    
+    LQSMenuScrollPageView* menuScrollPageView = [LQSMenuScrollPageView new];
+    menuScrollPageView.menu.style = LQSMenuStyleAverageDefault;
+    menuScrollPageView.menu.buttonTextSelectedColor = @&quot;#BE00FA&quot;;
+    menuScrollPageView.dataSource = self;
+    menuScrollPageView.delegate = self;
+    menuScrollPageView.menu.scrollLineWidth = 50;
+    [self setupBodyView:menuScrollPageView];
+    self.menuScrollPageView = menuScrollPageView;
+}
+
+
+#pragma mark - LQSMenuScrollPageViewSource
+- (NSUInteger) numberOfViewsInLQSMenuScrollPageView:(LQSMenuScrollPageView *)view {
+    if ([self.array isKindOfClass:[NSArray class]]) {
+        return [self.array count];
+    }
+    return 0;
+}
+- (NSString*) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view textOfMenuAtIndex:(NSUInteger)index {
+    NSString* text = nil;
+    NSDictionary* dictionary = [self.array objectAtIndex:index];
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        text = [dictionary objectForKey:@&quot;name&quot;];
+    }
+    return text;
+}
+
+- (UIView*) lqsMenuScrollPageView:(LQSMenuScrollPageView *)view viewOfScrollPageAtIndex:(NSUInteger)index {
+    NSString* classString = nil;
+    NSDictionary* dictionary = [self.array objectAtIndex:index];
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        classString = [dictionary objectForKey:@&quot;viewClass&quot;];
+        Class tempClass = NSClassFromString(classString);
+        if (tempClass) {
+            return [tempClass new];
+        }
+    }
+    return nil;
+}
+
+@end
+</code></pre>
+
+<h3 id="toc_2">SYH__RefundView</h3>
+
+<pre><code>#import &quot;SYH__RefundView.h&quot;
+
+#import &quot;MemberRefund__GetRefundListRequest.h&quot;
+
+#import &quot;SYH__RefundViewCollectionCell.h&quot;
+#import &quot;SYH__RefundViewCollectionHeader.h&quot;
+#import &quot;SYH__RefundViewCollectionFooter.h&quot;
+
+#import &quot;SYH__ReturnRefundDetailsController.h&quot;
+
+@interface SYH__RefundView ()&lt;LQSRequestImplementDelegate&gt;
+
+@property(nonatomic,strong) NSMutableArray* keepArray;
+
+@end
+
+@implementation SYH__RefundView
+
+- (void) initializeWithView {
+    [super initializeWithView];
+    
+    self.lqs__backgroundColor = @&quot;#f7f7f7&quot;;
+    
+    self.keepArray = [NSMutableArray array];
+    //请求
+    [self requestAction];
+}
+
+
+- (void) requestAction {
+    MemberRefund__GetRefundListRequest* request = [MemberRefund__GetRefundListRequest requestWithDelegate:self];
+    [request requestWithCurpage:@&quot;1&quot;];
+}
+
+#pragma mark - LQSRequestImplementDelegate
+- (void) lqsRequestImplement:(LQSRequestImplement *)request error:(NSError *)error {
+    NSLog(@&quot;%s error   %@&quot;,__func__,error);
+}
+- (void) lqsRequestImplement:(LQSRequestImplement *)request success:(id)result {
+    
+}
+- (void) lqsRequestImplement:(LQSRequestImplement *)request successWithDictionary:(NSDictionary *)result code200ForDatasDcitionary:(NSDictionary *)datas {
+    
+    if ([datas lqs__isNSDictionary]) {
+        NSArray* refund_list = [datas objectForKey:@&quot;refund_list&quot;];
+        if ([refund_list lqs__isNSArray]) {
+            [self.keepArray addObjectsFromArray:refund_list];
+        }
+    }
+    
+    [self sdasdasdad];
+}
+
+- (void) sdasdasdad {
+    NSMutableArray* keepArray = [NSMutableArray array];
+    for (NSDictionary* dictionary in self.keepArray) {
+        if ([dictionary lqs__isNSDictionary]) {
+            NSArray* goods_list = [dictionary objectForKey:@&quot;goods_list&quot;];
+            if ([goods_list lqs__isNSArray] == NO) {
+                goods_list = [NSArray array];
+            }
+            
+            LQSCollectionSectionItem* item = [LQSCollectionSectionItem new];
+            item.dataSourceDictionary = dictionary;
+            [item setupHeaderWithClass:[SYH__RefundViewCollectionHeader class] height:44];
+            [item setupFooterWithClass:[SYH__RefundViewCollectionFooter class] height:130];
+            [item setupCellWithClass:[SYH__RefundViewCollectionCell class] array:goods_list height:120];
+            [keepArray addObject:item];
+            
+            [keepArray addObject:[LQSCollectionSectionItem gap:10]];
+        }
+    }
+    self.collectionDataSource = keepArray;
+}
+
+
+#pragma mark -
+- (void) collectionManager:(LQSCollectionView*)manager cell:(LQSBasicCollectionViewCell*)cell forItem:(LQSCollectionSectionItem*)item atIndexPath:(NSIndexPath *)indexPath {
+    
+}
+- (void) collectionManager:(LQSCollectionView*)manager header:(LQSBasicCollectionReusableView*)header forItem:(LQSCollectionSectionItem*)item atIndexPath:(NSIndexPath *)indexPath {
+    [header setupWithDictionary:item.dataSourceDictionary];
+}
+- (void) collectionManager:(LQSCollectionView*)manager footer:(LQSBasicCollectionReusableView *)footer forItem:(LQSCollectionSectionItem *)item atIndexPath:(NSIndexPath *)indexPath {
+    [footer setupWithDictionary:item.dataSourceDictionary];
+}
+
+- (void) collectionManager:(LQSCollectionView *)manager didSelectItem:(LQSCollectionSectionItem *)item atIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([item.dataSourceDictionary lqs__isNSDictionary]) {
+        NSString* refund_id = [item.dataSourceDictionary lqs__toStringWithObjectForKey:@&quot;refund_id&quot;];
+        
+        
+        SYH__ReturnRefundDetailsController* controller = [SYH__ReturnRefundDetailsController new];
+        controller.return_id = refund_id;
+        [self lqs__currentNavigationControllerPushViewController:controller];
+    }
+}
+
+@end
+</code></pre>
+
+<p>效果图</p>
+
+<p><img src="media/15353554365360/17848EDF-9A65-4D03-B6D6-C5D34373F3E9.png" alt="17848EDF-9A65-4D03-B6D6-C5D34373F3E9"/></p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+
+
+
+</body>
+</html>
