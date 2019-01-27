@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	PHP - 木子才的博客
+  	iOS UIViewController 简单的切换动画 - 木子才的博客
   	
 	</title>
 
@@ -152,54 +152,83 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">iOS UIViewController 简单的切换动画</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">1.UITabBarController</h3>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-01-09T16:57:00+08:00" itemprop="datePublished">2019/1/9</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
+<pre><code>#import &quot;MyTabBarController.h&quot;
+
+@interface MyTabBarController ()&lt;UITabBarControllerDelegate&gt;
+
+@end
+
+@implementation MyTabBarController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.delegate = self;
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    CATransition* animation = [CATransition animation];
+    [animation setDuration:0.5f];
+    [animation setType:@&quot;oglFlip&quot;];
+    [animation setSubtype:kCATransitionFromRight];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    [[self.view layer]addAnimation:animation forKey:@&quot;switchView&quot;];
+    
+    return YES;
+}
+
+@end
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>#pragma mark - UITabBarControllerDelegate
+- (nullable id &lt;UIViewControllerAnimatedTransitioning&gt;)tabBarController:(UITabBarController *)tabBarController
+                     animationControllerForTransitionFromViewController:(UIViewController *)fromVC
+                                                       toViewController:(UIViewController *)toVC {
+    CATransition * animation = [CATransition animation];
+    [animation setDuration:0.5];
+    [animation setSubtype:kCATransitionFromLeft];
+    [animation setType:@&quot;oglFlip&quot;];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [[self.view layer]addAnimation:animation forKey:@&quot;SwitchToView&quot; ];
+    
+    return nil;
+}
+</code></pre>
+
+<h3 id="toc_1">2.UINavigationController Push</h3>
+
+<pre><code>CATransition* transition =[CATransition animation];
+        transition.duration = 0.5;
+        transition.type = @&quot;oglFlip&quot;;
+        transition.subtype = kCATransitionFromLeft;
+        
+        ViewControllerAAA* two = [ViewControllerAAA new];
+        
+        [self.navigationController pushViewController:two animated:YES];
+        [self.navigationController.view.layer addAnimation:transition forKey:@&quot;abcd&quot;];
+</code></pre>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15470242204753.html" itemprop="url">
-		PHP CI 第一个项目</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-09-18T17:14:09+08:00" itemprop="datePublished">2018/9/18</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15372620498044.html" itemprop="url">
-		PHP 热更新的服务器</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

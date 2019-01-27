@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	如何开发一个iOS APP - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">如何开发一个iOS APP</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">导读</h3>
+
+<p>如何开发一个APP，本文将以《西瓜翡翠》APP，一常见商业型APP进行表述自己的见解，希望有不同意见的请私聊。</p>
+
+<h3 id="toc_1">第一步，划分模块</h3>
+
+<p>作为一个开发者，我们首先要知道自己将要做一个什么样子的APP，就得通过UI的设计来知道这一情况。</p>
+
+<p>一般来说，我们可以根据UI的页面来确定需要做多少的页面。</p>
+
+<p>而本文，我将以这个《西瓜翡翠》APP的页面来划分模块，至少26+。</p>
+
+<p>为什么是26+？</p>
+
+<p>实际上我只会分析的去做这26个页面，理由是在线客服没有兴趣，都是套第三方的，虽然也做过自定义的UI；接着就是我不打算自己进行交易获取知道订单的样式、订单详情的样式、还有交易的其他样式，所以我计划只搞26个简单的页面。</p>
+
+<p><img src="media/15485209878722/2F30F353-C2F7-43A5-B719-544948CC4339.jpg" alt="2F30F353-C2F7-43A5-B719-544948C"/></p>
+
+<h3 id="toc_2">第二步，构建测试</h3>
+
+<p>由于通过第一步，我们已经知道需要制作多少模块页面了。</p>
+
+<p>接下来，我们要构建一个测试页面，通过点击测试页面进入到对应的页面里面，方便测试。</p>
+
+<p>代码：</p>
+
+<pre><code>- (NSArray *) tableViewDataSource {
+    if (_tableViewDataSource) {
+        return _tableViewDataSource;
+    }
+    NSMutableArray *keepArray = [NSMutableArray array];
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;首页&quot; VC:@&quot;YCHomeVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;分类&quot; VC:@&quot;YCClassificationVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;消息&quot; VC:@&quot;YCMessageVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;我的&quot; VC:@&quot;YCMineVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;设置&quot; VC:@&quot;YCSettingVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;个人资料&quot; VC:@&quot;YCPersonalInformationVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;我的订单&quot; VC:@&quot;YCMyOrderVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;我的收藏&quot; VC:@&quot;YCMyCollectionVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;分享App&quot; VC:@&quot;YCShareAppVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;申请店铺&quot; VC:@&quot;YCApplyForStoreVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;更改昵称&quot; VC:@&quot;YCChangeNicknameVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;系统通知&quot; VC:@&quot;YCSystemNotificationVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;系统通知详情&quot; VC:@&quot;YCSystemNotificationDetailVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;产品详情&quot; VC:@&quot;YCProductDetailVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;产品分类筛选&quot; VC:@&quot;YCProductClassificationFilterVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;搜索页&quot; VC:@&quot;YCSearchVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;搜索产品筛选&quot; VC:@&quot;YCSearchProductFilterVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;确认订单&quot; VC:@&quot;YCConfirmOrderVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;资讯详情&quot; VC:@&quot;YCInformationDetailsVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;账号安全&quot; VC:@&quot;YCAccountSecurityVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;更改密码&quot; VC:@&quot;YCChangePasswordVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;我的收货地址&quot; VC:@&quot;YCMyShippingAddressVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;添加修改我的收货地址&quot; VC:@&quot;YCAddEditMyShippingAddressVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;意见反馈&quot; VC:@&quot;YCOpinionFeedbackVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;关于我们&quot; VC:@&quot;YCAboutUsVC&quot; param:nil]];
+    }
+    {
+        [keepArray addObject:[self dictionaryWithName:@&quot;简介&quot; VC:@&quot;YCIntroductionVC&quot; param:nil]];
+    }
+    _tableViewDataSource = keepArray;
+    return _tableViewDataSource;
+}
+</code></pre>
+
+<p><img src="media/15485209878722/0BF110FE-3A2F-466B-8B1C-C5A35514039B.jpg" alt="0BF110FE-3A2F-466B-8B1C-C5A35514039B"/></p>
+
+<h3 id="toc_3">第三步，编写UI</h3>
+
+<p>UI，是体验你的成果的唯一可视化的结果。</p>
+
+<p>有很多人不知道你到底做了什么惊天动地的事情，他们唯一的检验指标就是看看你的UI。</p>
+
+<p>有很多时候，UI先出，而服务器那方面也不一定跟的上速度，所以我的建议是，先不要管服务器的数据，自己先写个UI出来吧，可以用随机数据来检验你的UI效果。</p>
+
+<p>编写UI 方面，我建议从最通用的UIView开始构建，不要从UIViewController 带个XIB 开始搞起，也不要从TableViewCell、CollectionViewCell 那里的XIB搞起，因为都不通用。</p>
+
+<h4 id="toc_4">3.1.编写【设置】页面</h4>
+
+<p>实现上图看看【设置】页面的效果。</p>
+
+<p><img src="media/15485209878722/18DED3DBC436141280364A46FB612AFA.jpg" alt="18DED3DBC436141280364A46FB612AFA"/></p>
+
+<p>一个中规中矩的界面设计。</p>
+
+<p>在我看来就是一些UIView的构成，所以我就写了两个UIView类来实现这个效果。</p>
+
+<p><img src="media/15485209878722/E02419EC-22F1-4127-B309-CBD820CD2592.jpg" alt="E02419EC-22F1-4127-B309-CBD820CD2592"/></p>
+
+<p>然后创建 【设置】页面的 UIViewController，基于最新设计的 LQSFixController，下面是具体代码：</p>
+
+<pre><code>#import &quot;YCSettingVC.h&quot;
+
+#import &quot;CommonCellView.h&quot;
+#import &quot;CommonCellButton.h&quot;
+
+@interface YCSettingVC ()
+
+@property(nonatomic,strong) CommonScrollView2 *scrollView;
+
+@end
+
+@implementation YCSettingVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.title = @&quot;设置&quot;;
+    
+    self.view.lqs_backgroundColor = @&quot;#eeeeee&quot;;
+    
+    self.fixView.body = self.scrollView;
+}
+
+- (NSArray *) contentWithItems {
+    NSMutableArray *array = [NSMutableArray array];
+    {
+        CommonCellView *view = [CommonCellView viewWithTitle:@&quot;账号与安全&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+        [array addObject:item];
+    }
+    {
+        CommonCellView *view = [CommonCellView viewWithTitle:@&quot;我的收货地址&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+        [array addObject:item];
+    }
+    {
+        CommonCellView *view = [CommonCellView viewWithTitle:@&quot;清理存储空间&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+        [array addObject:item];
+    }
+    {
+        CommonCellView *view = [CommonCellView viewWithTitle:@&quot;意见反馈&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(1, 0, 0, 0);
+        [array addObject:item];
+    }
+    {
+        CommonCellView *view = [CommonCellView viewWithTitle:@&quot;关于我们&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(1, 0, 0, 0);
+        [array addObject:item];
+    }
+    {
+        CommonCellButton *view = [CommonCellButton viewWithTitle:@&quot;退出登录&quot;];
+        LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+        item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+        [array addObject:item];
+    }
+    
+    return array;
+}
+
+#pragma mark - 懒加载
+- (CommonScrollView2 *) scrollView {
+    if (_scrollView == nil) {
+        _scrollView = [CommonScrollView2 new];
+        _scrollView.items = [self contentWithItems];
+    }
+    return _scrollView;
+}
+
+@end
+</code></pre>
+
+<p>这个时候，假如你说，不对啊，“清理存储空间”可是有其他数据展示啊。</p>
+
+<p>关于这个问题，可以用以下方式解决：</p>
+
+<p>创建一个 LQSUICustodian 属性对象，用来监听对象。</p>
+
+<pre><code>@property(nonatomic,strong) LQSUICustodian *custodianLabel;
+</code></pre>
+
+<p>如下绑定：</p>
+
+<pre><code>{
+    CommonCellView *view = [CommonCellView viewWithTitle:@&quot;清理存储空间&quot;];
+    self.custodianLabel = [LQSUICustodian custodianWithView:view.rightLabel];
+    
+    LQSViewItem *item = [ LQSViewItem itemWithView:view height:50];
+    item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+    [array addObject:item];
+}
+</code></pre>
+
+<p>测试：</p>
+
+<pre><code>dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    self.custodianLabel.text = @&quot;6.66MB&quot;;
+});
+</code></pre>
+
+<p>点击界面，如何触发对应的事件：</p>
+
+<pre><code>CommonCellView *view = [CommonCellView viewWithTitle:@&quot;我的收货地址&quot;];
+view.didSelectBlock = ^(CommonCellView *view) {
+    [[CommonVCManager shared] pushVC:@&quot;YCMyShippingAddressVC&quot; param:nil];
+};
+LQSViewItem *item = [LQSViewItem itemWithView:view height:50];
+item.inset = UIEdgeInsetsMake(8, 0, 0, 0);
+[array addObject:item];
+</code></pre>
+
+<p>还有其他方案，就说这种吧，够直观的。</p>
+
+<h3 id="toc_5">第四步，数据请求</h3>
+
+<p>UI结束后，是时候请求数据了。</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

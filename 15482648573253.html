@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	PHP - 木子才的博客
+  	Flutter Cookbook > 将抽屉添加到屏幕上 - 木子才的博客
   	
 	</title>
 
@@ -152,54 +152,161 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter Cookbook > 将抽屉添加到屏幕上</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>在使用Material Design的应用程序中，导航有两个主要选项：制表符和抽屉。当没有足够的空间来支撑标签时，抽屉提供了一个方便的替代方案。</p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-01-09T16:57:00+08:00" itemprop="datePublished">2019/1/9</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
+<p>在Flutter中，我们可以将Drawer Widget与Scaffold结合使用，以使用Material Design Drawer创建布局！</p>
+
+<h3 id="toc_0">导读</h3>
+
+<p>1.创建 Scaffold。<br/>
+2.添加抽屉。<br/>
+3.用物品填充抽屉。<br/>
+4.以编程方式关闭抽屉。</p>
+
+<h3 id="toc_1">1.创建 Scaffold</h3>
+
+<p>为了在我们的应用程序中添加抽屉，我们需要将其包装在Scaffold Widget中。 Scaffold Widget为遵循Material Design Guidelines的应用程序提供一致的可视化结构。它还支持特殊的Material Design组件，例如Drawers，AppBars和SnackBars。</p>
+
+<p>在这种情况下，我们想要创建一个带抽屉的Scaffold：</p>
+
+<pre><code>Scaffold(
+    drawer:
+);
+</code></pre>
+
+<h3 id="toc_2">2.添加抽屉</h3>
+
+<p>我们现在可以在我们的脚手架上添加一个抽屉。抽屉可以是任何Widget，但通常最好使用材料库中的Drawer widget，它遵循Material Design规范。</p>
+
+<pre><code>Scaffold(
+    drawer: Drawer(
+        child:
+    ),
+);
+</code></pre>
+
+<h3 id="toc_3">3.用物品填充抽屉。</h3>
+
+<p>现在我们有一个抽屉，我们可以添加内容！在这个例子中，我们将使用ListView。虽然我们可以使用Column Widget，但ListView在这种情况下很方便，因为如果内容占用的空间比屏幕支持的更多，它将允许用户滚动抽屉。</p>
+
+<p>我们将使用DrawerHeader和两个ListTile Widgets填充ListView。有关使用列表的更多信息，请参阅列表配方。</p>
+
+<pre><code>Drawer(
+    child: ListView(
+        padding: EdgeInsets.zero,
+        children: &lt;Widget&gt;[
+            DrawerHeader(
+                child: Text(&#39;Drawer Header&#39;),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                ),
+            ),
+            ListTile(
+                title: Text(&#39;Item 1&#39;),
+                onTap: (){
+                },
+            ),
+            ListTile(
+                title: Text(&#39;Item 2&#39;),
+                onTap: (){
+                },
+            ),
+        ],
+    ),
+);
+</code></pre>
+
+<h3 id="toc_4">4.以编程方式关闭抽屉</h3>
+
+<p>用户点击某个项后，我们经常要关闭抽屉。我们怎样才能做到这一点？使用导航器！</p>
+
+<p>当用户打开抽屉时，Flutter会将抽屉添加到引擎盖下的导航堆栈中。因此，要关闭抽屉，我们可以调用Navigator.pop（context）。</p>
+
+<pre><code>ListTile(
+    title: Text(&#39;Item 1&#39;),
+    onTap: (){
+        Navigator.pop(context);
+    },
+),
+</code></pre>
+
+<h3 id="toc_5">完整例子</h3>
+
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+    final appTitle = &#39;Drawer Demo&#39;;
+    
+    @override
+    Widget build(BuildContext context) {
+        return MaterialApp(
+            title: appTitle,
+            home: MyHomePage(
+                title: appTitle
+            ),
+        );
+    }
+}
+
+class MyHomePage extends StatelessWidget {
+    final String title;
+    
+    MyHomePage({Key key, this.title}) : super(key: key);
+    
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(title: Text(title)),
+            body: Center(child: Text(&#39;My page!&#39;)),
+            drawer: Drawer(
+                child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: &lt;Widget&gt;[
+                        DrawerHeader(
+                            child: Text(&#39;Drawer Header&#39;),
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                            ),
+                        ),
+                        ListTile(
+                            title: Text(&#39;Item 1&#39;),
+                            onTap: (){
+                                Navigator.pop(context);
+                            },
+                        ),
+                        ListTile(
+                            title: Text(&#39;Item 2&#39;),
+                            onTap: (){
+                                Navigator.pop(context);
+                            },
+                        ),
+                    ],
+                ),
+            ),
+        );
+    }
+}
+</code></pre>
+
+<p><img src="media/15482648573253/xxx0111.gif" alt="xxx0111"/></p>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15470242204753.html" itemprop="url">
-		PHP CI 第一个项目</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-09-18T17:14:09+08:00" itemprop="datePublished">2018/9/18</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15372620498044.html" itemprop="url">
-		PHP 热更新的服务器</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

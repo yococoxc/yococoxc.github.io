@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	PHP - 木子才的博客
+  	Flutter Cookbook > Widget的淡入淡出 - 木子才的博客
   	
 	</title>
 
@@ -152,54 +152,174 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter Cookbook > Widget的淡入淡出</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>作为UI开发人员，我们经常需要在屏幕上显示和隐藏元素。但是，快速弹出屏幕上和屏幕外的元素会让最终用户感到不安。相反，我们可以使用不透明度动画淡入淡出元素以创建流畅的体验。</p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-01-09T16:57:00+08:00" itemprop="datePublished">2019/1/9</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
+<p>在Flutter中，我们可以使用AnimatedOpacity Widget完成此任务。</p>
+
+<h3 id="toc_0">导读</h3>
+
+<p>1.显示一个淡入淡出的方块。<br/>
+2.定义StatefulWidget。<br/>
+3.显示切换可见性的按钮。<br/>
+4.将方块淡入淡出。</p>
+
+<h3 id="toc_1">1.创建一个淡入淡出的方块。</h3>
+
+<p>首先，我们需要一些淡入淡出的东西！在这个例子中，我们将在屏幕上绘制一个绿色方块。</p>
+
+<pre><code>Container(
+    width: 200.0,
+    height: 200.0,
+    color: Colors.green,
+);
+</code></pre>
+
+<h3 id="toc_2">2.定义StatefulWidget。</h3>
+
+<p>现在我们有一个绿色方块来制作动画，我们需要一种方法来了解该方块是应该是可见的还是不可见的。为此，我们可以使用StatefulWidget。</p>
+
+<p>StatefulWidget是一个创建State对象的类。 State对象包含有关我们应用程序的一些数据，并提供了更新该数据的方法。当我们更新数据时，我们也可以要求Flutter使用这些更改重建我们的UI。</p>
+
+<p>在我们的例子中，我们将有一个数据：一个表示按钮是可见还是不可见的布尔值。</p>
+
+<p>要构造StatefulWidget，我们需要创建两个类：StatefulWidget和相应的State类。专业提示：适用于Android Studio和VSCode的Flutter插件包含可用于快速生成此代码的片段！</p>
+
+<pre><code>class MyHomePage extends StatefulWidget {
+    final String title;
+    
+    MyHomePage({Key key, this.title}) : super(key: key);
+    
+    @override
+    _MyHomePageState createState() =&gt; _MyHomePageState();
+}
+
+class _MyHomePageState extends State&lt;MyHomePage&gt; {
+    bool _visible = true;
+    
+    @override
+    Widget build(BuildContext context) {
+    }
+}
+
+</code></pre>
+
+<h3 id="toc_3">3.显示切换可见性的按钮</h3>
+
+<p>现在我们已经有了一些数据来确定我们的绿色方块是可见的还是不可见的，我们需要一种更新数据的方法。在我们的例子中，如果方块是可见的，我们想要隐藏它。如果该方块被隐藏，我们想要显示它！</p>
+
+<p>为此，我们将显示一个按钮。当用户按下按钮时，我们将布尔值从true翻转为false，或将false翻转为true。我们需要使用setState进行此更改，这是State类的一个方法。这将让Flutter知道它需要重建Widget。</p>
+
+<p>注意：有关使用用户输入的更多信息，请参阅Cookbook的“手势”部分。</p>
+
+<pre><code>FloatingActionButton(
+    onPressed: (){
+        setState((){
+            _visible = !_visible;
+        });
+    },
+    tooltip: &#39;Toggle Opacity&#39;,
+    child: Icon(Icons.flip),
+);
+</code></pre>
+
+<h3 id="toc_4">4.将方块淡入淡出</h3>
+
+<p>我们屏幕上有一个绿色的方块。我们有一个按钮可以将可见性切换为true或false。那么我们如何淡入和淡出方块呢？使用AnimatedOpacity小部件！</p>
+
+<p>AnimatedOpacity Widget 需要三个参数：<br/>
+* opacity：透明度，从0.0（不可见）到1.0（完全可见）的值。<br/>
+* duration，持续时间，动画需要多长时间才能完成。<br/>
+* child，动画小部件。在我们的例子中，绿色方块。</p>
+
+<pre><code>AnimatedOpacity(
+    opacity: _visible ? 1.0 : 0.0,
+    duration: Duration(milliseconds: 500),
+    child: Container(
+        width: 200.0,
+        height: 200.0,
+        color: Colors.green,
+    ),
+);
+</code></pre>
+
+<h3 id="toc_5">完整例子</h3>
+
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        final appTitle = &#39;Opacity Demo&#39;;
+        return MaterialApp(
+            title: appTitle,
+            home: MyHomePage(
+                title: appTitle
+            ),
+        );
+    }
+}
+
+class MyHomePage extends StatefulWidget {
+    final String title;
+    
+    MyHomePage({Key key, this.title}) : super(key: key);
+    
+    @override
+    _MyHomePageState createState() =&gt; _MyHomePageState();
+}
+
+class _MyHomePageState extends State&lt;MyHomePage&gt; {
+    bool _visible = true;
+    
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+                title: Text(widget.title),
+            ),
+            body: Center(
+                child: AnimatedOpacity(
+                    opacity: _visible ? 1.0 : 0.0,
+                    duration: Duration(milliseconds: 500),
+                    child: Container(
+                        width: 200.0,
+                        height: 200.0,
+                        color: Colors.green,
+                    ),
+                ),
+            ),
+            floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                    setState((){
+                        _visible = !_visible;
+                    });
+                },
+                tooltip: &#39;Toggle Opacity&#39;,
+                child: Icon(Icons.flip),
+            ),
+        );
+    }
+}
+
+</code></pre>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15470242204753.html" itemprop="url">
-		PHP CI 第一个项目</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-09-18T17:14:09+08:00" itemprop="datePublished">2018/9/18</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15372620498044.html" itemprop="url">
-		PHP 热更新的服务器</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
