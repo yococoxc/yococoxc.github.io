@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	其他 - 木子才的博客
+  	Flutter 为列表准备数据 - 木子才的博客
   	
 	</title>
 
@@ -152,102 +152,104 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter 为列表准备数据</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>在项目的 lib 文件夹下创建一个 model文件夹，然后创建一个 post.dart 文件。</p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-02-06T01:12:25+08:00" itemprop="datePublished">2019/2/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
+<p>创建一个名为 Post 的类，用来表示将要用到的 model，包含了 title、author、imageUrl 内容。</p>
+
+<pre><code>class Post {
+  const Post({
+    this.title,
+    this.author,
+    this.imageUrl,
+  });
+
+  final String title;
+  final String author;
+  final String imageUrl;
+}
+</code></pre>
+
+<p>其中：</p>
+
+<pre><code>const Post({
+    this.title,
+    this.author,
+    this.imageUrl,
+  });
+</code></pre>
+
+<p>应该类似构造体的定义。</p>
+
+<p>而：</p>
+
+<pre><code>final String title;
+final String author;
+final String imageUrl;
+</code></pre>
+
+<p>则是描述构造体中的属性的类型，final 代表分配内容后不能被修改。</p>
+
+<p>然后手工（硬码）准备好一些数据。</p>
+
+<pre><code>final List&lt;Post&gt; posts = [
+    Post(
+        title: &#39;喜欢本大爷的竟然就你一个？&#39;,
+        author: &#39;骆驼/伊岛ユウ&#39;,
+        imageUrl: &#39;http://mhfm2tel.cdndm5.com/36/35832/20170328214617_180x240_27.jpg&#39;,
+    ),
+    Post(
+        title: &#39;Overlord不死者之OH！&#39;,
+        author: &#39;じゅうあみ/丸山くがね&#39;,
+        imageUrl: &#39;http://mhfm8tel.cdndm5.com/47/46304/20181115214613_180x240_22.jpg&#39;,
+    ),
+    Post(
+        title: &#39;即使是不起眼剑圣亦是最强&#39;,
+        author: &#39;あっぺ/明石六郎&#39;,
+        imageUrl: &#39;http://mhfm8tel.cdndm5.com/43/42373/20180529172116_180x240_24.jpg&#39;,
+    ),
+    Post(
+        title: &#39;白熊转生&#39;,
+        author: &#39;草野ほうき/三岛千广&#39;,
+        imageUrl: &#39;http://mhfm4tel.cdndm5.com/40/39074/20171028085606_180x240_25.jpg&#39;,
+    ),
+    Post(
+        title: &#39;平凡职业成就世界最强&#39;,
+        author: &#39;RoGa/白米良(厨二好き)&#39;,
+        imageUrl: &#39;http://mhfm8tel.cdndm5.com/22/21802/20160210120032_180x240_23.jpg&#39;,
+    ),
+    Post(
+        title: &#39;原最强剑士憧憬着异世界魔法&#39;,
+        author: &#39;天乃ちはる/红月シン&#39;,
+        imageUrl: &#39;http://mhfm7tel.cdndm5.com/42/41484/20180404220657_180x240_27.jpg&#39;,
+    ),
+    Post(
+        title: &#39;身为暗杀者的我明显比勇者还强&#39;,
+        author: &#39;合鸭ひろゆき/赤井まつり&#39;,
+        imageUrl: &#39;http://mhfm8tel.cdndm5.com/47/46770/20181212151146_180x240_25.jpg&#39;,
+    ),
+];
+</code></pre>
+
+<p>回到 main.dart 文件下，导入 post.dart 文件：</p>
+
+<pre><code>import &#39;model/post.dart&#39;;
+</code></pre>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15493867450071.html" itemprop="url">
-		文本 AES 加密解密 （Python、JavaScript）</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-21T19:59:19+08:00" itemprop="datePublished">2018/3/21</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15216335591453.html" itemprop="url">
-		成本只需要10块的远程控制开关是怎样炼成的？</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-06T21:13:22+08:00" itemprop="datePublished">2018/3/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15203420020073.html" itemprop="url">
-		个人简历</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-04T02:15:20+08:00" itemprop="datePublished">2018/3/4</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15201009204048.html" itemprop="url">
-		Please try running this command again as root/Administrator.</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-01-30T01:16:07+08:00" itemprop="datePublished">2018/1/30</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15172461673724.html" itemprop="url">
-		码云 在 SourceTree 上使用</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	其他 - 木子才的博客
+  	Flutter 列表项目 - 木子才的博客
   	
 	</title>
 
@@ -152,102 +152,71 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter 列表项目</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>先读我：</p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-02-06T01:12:25+08:00" itemprop="datePublished">2019/2/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
+<p>我之前准备的Post.dart 里面的图片地址都是 https 资源，测试加载的时候出现异常：</p>
+
+<p>通过 Image.network 加载的：</p>
+
+<pre><code>Image.network(posts[index].imageUrl),
+</code></pre>
+
+<p>异常提示如下：</p>
+
+<p><img src="media/15487847373501/BBA188A6-37AB-4A90-AA54-BF7B016A84BE.jpg" alt="BBA188A6-37AB-4A90-AA54-BF7B016A84BE"/></p>
+
+<p>测试了很久，我有如下的解决方案：</p>
+
+<p>1.十分简单，把https 资源换成 http 资源。</p>
+
+<p>2.但是真的是 https 问题吗？经过我采用其他 https 资源测试后发现。。。并不是 https 的锅，是我之前采用的资源的服务器应该采取某种方式阻止了我使用这些资源。</p>
+
+<p>最后我更换了其他资源。。。</p>
+
+<h3 id="toc_0">后来的事</h3>
+
+<p>更改 Item的样式，把图片、作者的信息都调出来。</p>
+
+<pre><code>Widget _listItemBuilder(BuildContext context, int index) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.all(8.0),
+      child: Column(
+        children: &lt;Widget&gt;[
+          Image.network(posts[index].imageUrl),
+          SizedBox(height: 16.0),
+          Text(
+            posts[index].title,
+            style: Theme.of(context).textTheme.title,
+          ),
+          Text(
+            posts[index].author,
+            style: Theme.of(context).textTheme.subhead,
+          ),
+          SizedBox(height: 16.0),
+        ],
+      ),
+    );
+  }
+</code></pre>
+
+<p>应用到的 Widget 有：Container、Column。</p>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15493867450071.html" itemprop="url">
-		文本 AES 加密解密 （Python、JavaScript）</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-21T19:59:19+08:00" itemprop="datePublished">2018/3/21</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15216335591453.html" itemprop="url">
-		成本只需要10块的远程控制开关是怎样炼成的？</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-06T21:13:22+08:00" itemprop="datePublished">2018/3/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15203420020073.html" itemprop="url">
-		个人简历</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-04T02:15:20+08:00" itemprop="datePublished">2018/3/4</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15201009204048.html" itemprop="url">
-		Please try running this command again as root/Administrator.</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-01-30T01:16:07+08:00" itemprop="datePublished">2018/1/30</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15172461673724.html" itemprop="url">
-		码云 在 SourceTree 上使用</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

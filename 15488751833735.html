@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	其他 - 木子才的博客
+  	Flutter StatefulWidget：有状态的小部件 - 木子才的博客
   	
 	</title>
 
@@ -152,102 +152,133 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter StatefulWidget：有状态的小部件</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>需要 setState() 设置内容，就需要使用到 StatefulWidget，而此前，我们都不需要用到，所以一直在使用 StatelessWidget。<br/>
+而现在，因为 bottomNavigationBar 的切换需要 setState()，所以需要。</p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-02-06T01:12:25+08:00" itemprop="datePublished">2019/2/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
+<p>创建 BottomNavigationBarDemo.dart:</p>
+
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+
+class BottomNavigationBarDemo extends StatefulWidget {
+  @override
+    State&lt;StatefulWidget&gt; createState() {
+      return _BottomNavigationBarDemoState();
+    }
+}
+
+class _BottomNavigationBarDemoState extends State&lt;BottomNavigationBarDemo&gt; {
+  int _currentIndex = 0;
+
+  void _onTapHandler (int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  @override
+    Widget build(BuildContext context) {
+      return BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: _onTapHandler,
+          type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.red,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.edit),
+              title: Text(&#39;edit&#39;),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.cached),
+              title: Text(&#39;cached&#39;),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.save),
+              title: Text(&#39;save&#39;),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.face),
+              title: Text(&#39;face&#39;),
+            ),
+          ],
+      );
+    }
+}
+</code></pre>
+
+<p>main.dart:</p>
+
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+import &#39;demo/DrawerDemo.dart&#39;;
+import &#39;demo/BottomNavigationBarDemo.dart&#39;;
+
+void main() =&gt; runApp(App());
+
+class App extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return MaterialApp(
+          home: Home(),
+          theme: ThemeData(
+            primaryColor: Colors.orange,
+            highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+            splashColor: Colors.white70,
+          ),
+        );
+    }
+}
+
+class Home extends StatelessWidget {
+  @override
+    Widget build(BuildContext context) {
+      return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          backgroundColor: Colors.grey[100],
+          appBar: AppBar(
+            title: Text(&#39;Muzico&#39;),
+            elevation: 0.0,
+            bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.green,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 5.0,
+              tabs: &lt;Widget&gt;[
+                Tab(icon: Icon(Icons.local_bar),),
+                Tab(icon: Icon(Icons.local_cafe),),
+                Tab(icon: Icon(Icons.local_offer),),
+              ],
+            ),
+            ),
+            body: TabBarView(
+              children: &lt;Widget&gt;[
+                Icon(Icons.local_bar, size: 128.0, color: Colors.black12,),
+                Icon(Icons.local_cafe, size: 128.0, color: Colors.black12,),
+                Icon(Icons.local_offer, size: 128.0, color: Colors.black12,),
+              ],
+            ),
+            drawer: DrawerDemo(),
+            bottomNavigationBar: BottomNavigationBarDemo(),
+        ),
+      );
+    }
+}
+</code></pre>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15493867450071.html" itemprop="url">
-		文本 AES 加密解密 （Python、JavaScript）</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-21T19:59:19+08:00" itemprop="datePublished">2018/3/21</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15216335591453.html" itemprop="url">
-		成本只需要10块的远程控制开关是怎样炼成的？</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-06T21:13:22+08:00" itemprop="datePublished">2018/3/6</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15203420020073.html" itemprop="url">
-		个人简历</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-03-04T02:15:20+08:00" itemprop="datePublished">2018/3/4</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15201009204048.html" itemprop="url">
-		Please try running this command again as root/Administrator.</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-01-30T01:16:07+08:00" itemprop="datePublished">2018/1/30</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='%E5%85%B6%E4%BB%96.html'>其他</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15172461673724.html" itemprop="url">
-		码云 在 SourceTree 上使用</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

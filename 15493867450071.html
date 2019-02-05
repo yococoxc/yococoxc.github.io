@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	文本 AES 加密解密 （Python、JavaScript） - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">文本 AES 加密解密 （Python、JavaScript）</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">初衷：</h3>
+
+<p>不想公开的内容想借助公开场所传播，这个时候就得加密，然后通过解密获取信息。<br/>
+我的设想很简单，一个网页的内容，里面记载着不想公开的内容，但是又想通过网络（服务器、博客之类）放在网络上面，方便自己需要的时候查询。<br/>
+这个时候就得需要把内容加密，然后通过密码解密内容。</p>
+
+<p><img src="media/15493867450071/xxx011133.gif" alt="xxx011133"/></p>
+
+<p>效果如同上面的GIF那样。</p>
+
+<h3 id="toc_1">方案</h3>
+
+<p>方案打算采用 AES 算法，加密模式为 CBC，填充为 pkcs5padding 或 pkcs7padding （在网络上说 Java 有些情况最好用 pkcs5padding，所以我 Python 那里用了，然而JavaScript 只能 pkcs7padding，而且效果一致，没有深究下去），数据块应该为 128 位，自定义密码，可自定义偏移量（感觉简单的情况下，默认就好了，如果是高阶就自定义绝对牛逼了），输出为 base64（因为比 hex 字符更少），字符集为 utf8。</p>
+
+<p><a href="http://tool.chacuo.net/cryptaes">可以通过一些在线加密解密网站测试</a></p>
+
+<h3 id="toc_2">代码</h3>
+
+<p>下面直接放出代码</p>
+
+<pre><code>&lt;!Doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;aes demo&lt;/title&gt;
+  &lt;style&gt;
+  body {
+      font-size: 12px;font-family: Arial;
+    }
+  .content {
+      width: 100%;height: auto;word-wrap:break-word;word-break:break-all;overflow: hidden;
+    }
+  &lt;/style&gt;
+  &lt;script src=&quot;http://code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;aes.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var theContent = null;
+    function Decrypt(str, KEY) {
+        var iv = CryptoJS.enc.Utf8.parse(&#39;1234567812345678&#39;);
+        var key = CryptoJS.enc.Utf8.parse(KEY);
+        var decrypt = CryptoJS.AES.decrypt(str, key, {iv: iv, mode:CryptoJS.mode.CBC,padding: CryptoJS.pad.Pkcs7});
+        return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+    }
+    function escape2Html(str) {
+        var arrEntities={&#39;lt&#39;:&#39;&lt;&#39;,&#39;gt&#39;:&#39;&gt;&#39;,&#39;nbsp&#39;:&#39; &#39;,&#39;amp&#39;:&#39;&amp;&#39;,&#39;quot&#39;:&#39;&quot;&#39;};
+        return str.replace(/&amp;(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+    }
+    function clickText() {
+        var Key = pwdfield.value;
+        if (theContent == null) {theContent = document.getElementById(&quot;test&quot;).innerHTML;}
+        var text = Decrypt(theContent, Key);
+        console.log(&quot;返回的数据:&quot; + text);
+        text = escape2Html(text);
+        $(&quot;#main&quot;).html(text);
+    }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;main&quot; class=&quot;content&quot;&gt;
+        &lt;center&gt;&lt;div&gt;请输入正确密码以翻译本文内容：&lt;input type=&quot;text&quot; id=&quot;pwdfield&quot; value=&quot;qwedsazxc123321a&quot;&gt;&lt;button onclick=&quot;clickText()&quot;&gt;解密&lt;/button&gt;&lt;/div&gt;&lt;/center&gt;
+        &lt;hr/&gt;
+        &lt;div id=&quot;test&quot; class=&quot;content&quot;&gt;这里显示本地文本内容&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;$(function(){$(&quot;#test&quot;).load(&quot;777ok.txt&quot;);});&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code>#-*- coding : utf-8 -*-
+# coding: utf-8
+#!/usr/bin/env python
+#! usr/bin/python #coding=utf-8
+
+import sys
+sys.path.append(&#39;/usr/local/lib/python3.7/site-packages&#39;)
+
+&#39;&#39;&#39;
+Created on 2018年7月7日
+@author: ray
+&#39;&#39;&#39;
+import Crypto.Cipher.AES
+import Crypto.Random
+import base64
+import binascii
+class Cipher_AES:
+  pad_default = lambda x, y: x + (y - len(x) % y) * &quot; &quot;.encode(&quot;utf-8&quot;)
+  unpad_default = lambda x: x.rstrip()
+  pad_user_defined = lambda x, y, z: x + (y - len(x) % y) * z.encode(&quot;utf-8&quot;)
+  unpad_user_defined = lambda x, z: x.rstrip(z)
+  pad_pkcs5 = lambda x, y: x + (y - len(x) % y) * chr(y - len(x) % y).encode(&quot;utf-8&quot;)
+  unpad_pkcs5 = lambda x: x[:-ord(x[-1])]
+  def __init__(self, key=&quot;abcdefgh12345678&quot;, iv=Crypto.Random.new().read(Crypto.Cipher.AES.block_size)):
+    self.__key = key
+    self.__iv = iv
+  def set_key(self, key):
+    self.__key = key
+  def get_key(self):
+    return self.__key
+  def set_iv(self, iv):
+    self.__iv = iv
+  def get_iv(self):
+    return self.__iv
+  def Cipher_MODE_ECB(self):
+    self.__x = Crypto.Cipher.AES.new(self.__key.encode(&quot;utf-8&quot;), Crypto.Cipher.AES.MODE_ECB)
+  def Cipher_MODE_CBC(self):
+    self.__x = Crypto.Cipher.AES.new(self.__key.encode(&quot;utf-8&quot;), Crypto.Cipher.AES.MODE_CBC, self.__iv.encode(&quot;utf-8&quot;))
+  def encrypt(self, text, cipher_method, pad_method=&quot;&quot;, code_method=&quot;&quot;):
+    if cipher_method.upper() == &quot;MODE_ECB&quot;:
+      self.Cipher_MODE_ECB()
+    elif cipher_method.upper() == &quot;MODE_CBC&quot;:
+      self.Cipher_MODE_CBC()
+    cipher_text = b&quot;&quot;.join([self.__x.encrypt(i) for i in self.text_verify(text.encode(&quot;utf-8&quot;), pad_method)])
+    if code_method.lower() == &quot;base64&quot;:
+      return base64.encodebytes(cipher_text).decode(&quot;utf-8&quot;).rstrip()
+    elif code_method.lower() == &quot;hex&quot;:
+      return binascii.b2a_hex(cipher_text).decode(&quot;utf-8&quot;).rstrip()
+    else:
+      return cipher_text.decode(&quot;utf-8&quot;).rstrip()
+  def decrypt(self, cipher_text, cipher_method, pad_method=&quot;&quot;, code_method=&quot;&quot;):
+    if cipher_method.upper() == &quot;MODE_ECB&quot;:
+      self.Cipher_MODE_ECB()
+    elif cipher_method.upper() == &quot;MODE_CBC&quot;:
+      self.Cipher_MODE_CBC()
+    if code_method.lower() == &quot;base64&quot;:
+      cipher_text = base64.decodebytes(cipher_text.encode(&quot;utf-8&quot;))
+    elif code_method.lower() == &quot;hex&quot;:
+      cipher_text = binascii.a2b_hex(cipher_text.encode(&quot;utf-8&quot;))
+    else:
+      cipher_text = cipher_text.encode(&quot;utf-8&quot;)
+    return self.unpad_method(self.__x.decrypt(cipher_text).decode(&quot;utf-8&quot;), pad_method)
+  def text_verify(self, text, method):
+    while len(text) &gt; len(self.__key):
+      text_slice = text[:len(self.__key)]
+      text = text[len(self.__key):]
+      yield text_slice
+    else:
+      if len(text) == len(self.__key):
+        yield text
+      else:
+        yield self.pad_method(text, method)
+  def pad_method(self, text, method):
+    if method == &quot;&quot;:
+      return Cipher_AES.pad_default(text, len(self.__key))
+    elif method == &quot;PKCS5Padding&quot;:
+      return Cipher_AES.pad_pkcs5(text, len(self.__key))
+    else:
+      return Cipher_AES.pad_user_defined(text, len(self.__key), method)
+  def unpad_method(self, text, method):
+    if method == &quot;&quot;:
+      return Cipher_AES.unpad_default(text)
+    elif method == &quot;PKCS5Padding&quot;:
+      return Cipher_AES.unpad_pkcs5(text)
+    else:
+      return Cipher_AES.unpad_user_defined(text, method)
+    
+
+key = &quot;qwedsazxc123321a&quot;
+iv = &quot;1234567812345678&quot;
+
+
+f = open(&#39;777.txt&#39;)
+text = f.read()
+f.close()
+
+
+cipher_method = &quot;MODE_CBC&quot;
+pad_method = &quot;PKCS5Padding&quot;
+code_method = &quot;base64&quot;
+cipher_text = Cipher_AES(key, iv).encrypt(text, cipher_method, pad_method, code_method)
+cipher_text = cipher_text.replace(&#39;\n&#39;,&#39;&#39;)
+print(&#39;[&#39;+cipher_text+&#39;]&#39;)
+print(type(cipher_text))
+text = Cipher_AES(key, iv).decrypt(cipher_text, cipher_method, pad_method, code_method)
+print(text)
+</code></pre>
+
+<h3 id="toc_3">参考资料</h3>
+
+<p><a href="https://www.jb51.net/article/152151.htm">AES 类的封装出处</a></p>
+
+<p><a href="https://dmyz.org/archives/673">参考资料</a></p>
+
+<p><a href="https://cloud.tencent.com/info/4bff65964275b4b44d00df8b2bb87108.html">参考资料</a></p>
+
+<p><a href="https://www.pylist.com/t/1519541719">参考资料</a></p>
+
+<p><a href="https://blog.csdn.net/nurke/article/details/77267081">参考资料</a></p>
+
+<p><a href="https://blog.csdn.net/myzksky/article/details/82052920">参考资料</a></p>
+
+<p><a href="https://blog.csdn.net/s740556472/article/details/79026128">参考资料</a></p>
+
+<p><a href="https://www.cnblogs.com/shenzhuang/p/10302182.html">参考资料</a></p>
+
+<p><a href="https://www.jianshu.com/p/5d27888e7c93">参考资料</a></p>
+
+<p><a href="http://www.cnblogs.com/aguncn/p/6069349.html">参考资料</a></p>
+
+<p>aes.js:</p>
+
+<pre><code>!function(t,n){&quot;object&quot;==typeof exports?module.exports=exports=n():&quot;function&quot;==typeof define&amp;&amp;define.amd?define([],n):t.CryptoJS=n()}(this,function(){var t=t||function(t,n){var i=Object.create||function(){function t(){}return function(n){var i;return t.prototype=n,i=new t,t.prototype=null,i}}(),e={},r=e.lib={},o=r.Base=function(){return{extend:function(t){var n=i(this);return t&amp;&amp;n.mixIn(t),n.hasOwnProperty(&quot;init&quot;)&amp;&amp;this.init!==n.init||(n.init=function(){n.$super.init.apply(this,arguments)}),n.init.prototype=n,n.$super=this,n},create:function(){var t=this.extend();return t.init.apply(t,arguments),t},init:function(){},mixIn:function(t){for(var n in t)t.hasOwnProperty(n)&amp;&amp;(this[n]=t[n]);t.hasOwnProperty(&quot;toString&quot;)&amp;&amp;(this.toString=t.toString)},clone:function(){return this.init.prototype.extend(this)}}}(),s=r.WordArray=o.extend({init:function(t,i){t=this.words=t||[],i!=n?this.sigBytes=i:this.sigBytes=4*t.length},toString:function(t){return(t||c).stringify(this)},concat:function(t){var n=this.words,i=t.words,e=this.sigBytes,r=t.sigBytes;if(this.clamp(),e%4)for(var o=0;o&lt;r;o++){var s=i[o&gt;&gt;&gt;2]&gt;&gt;&gt;24-o%4*8&amp;255;n[e+o&gt;&gt;&gt;2]|=s&lt;&lt;24-(e+o)%4*8}else for(var o=0;o&lt;r;o+=4)n[e+o&gt;&gt;&gt;2]=i[o&gt;&gt;&gt;2];return this.sigBytes+=r,this},clamp:function(){var n=this.words,i=this.sigBytes;n[i&gt;&gt;&gt;2]&amp;=4294967295&lt;&lt;32-i%4*8,n.length=t.ceil(i/4)},clone:function(){var t=o.clone.call(this);return t.words=this.words.slice(0),t},random:function(n){for(var i,e=[],r=function(n){var n=n,i=987654321,e=4294967295;return function(){i=36969*(65535&amp;i)+(i&gt;&gt;16)&amp;e,n=18e3*(65535&amp;n)+(n&gt;&gt;16)&amp;e;var r=(i&lt;&lt;16)+n&amp;e;return r/=4294967296,r+=.5,r*(t.random()&gt;.5?1:-1)}},o=0;o&lt;n;o+=4){var a=r(4294967296*(i||t.random()));i=987654071*a(),e.push(4294967296*a()|0)}return new s.init(e,n)}}),a=e.enc={},c=a.Hex={stringify:function(t){for(var n=t.words,i=t.sigBytes,e=[],r=0;r&lt;i;r++){var o=n[r&gt;&gt;&gt;2]&gt;&gt;&gt;24-r%4*8&amp;255;e.push((o&gt;&gt;&gt;4).toString(16)),e.push((15&amp;o).toString(16))}return e.join(&quot;&quot;)},parse:function(t){for(var n=t.length,i=[],e=0;e&lt;n;e+=2)i[e&gt;&gt;&gt;3]|=parseInt(t.substr(e,2),16)&lt;&lt;24-e%8*4;return new s.init(i,n/2)}},u=a.Latin1={stringify:function(t){for(var n=t.words,i=t.sigBytes,e=[],r=0;r&lt;i;r++){var o=n[r&gt;&gt;&gt;2]&gt;&gt;&gt;24-r%4*8&amp;255;e.push(String.fromCharCode(o))}return e.join(&quot;&quot;)},parse:function(t){for(var n=t.length,i=[],e=0;e&lt;n;e++)i[e&gt;&gt;&gt;2]|=(255&amp;t.charCodeAt(e))&lt;&lt;24-e%4*8;return new s.init(i,n)}},f=a.Utf8={stringify:function(t){try{return decodeURIComponent(escape(u.stringify(t)))}catch(t){throw new Error(&quot;Malformed UTF-8 data&quot;)}},parse:function(t){return u.parse(unescape(encodeURIComponent(t)))}},h=r.BufferedBlockAlgorithm=o.extend({reset:function(){this._data=new s.init,this._nDataBytes=0},_append:function(t){&quot;string&quot;==typeof t&amp;&amp;(t=f.parse(t)),this._data.concat(t),this._nDataBytes+=t.sigBytes},_process:function(n){var i=this._data,e=i.words,r=i.sigBytes,o=this.blockSize,a=4*o,c=r/a;c=n?t.ceil(c):t.max((0|c)-this._minBufferSize,0);var u=c*o,f=t.min(4*u,r);if(u){for(var h=0;h&lt;u;h+=o)this._doProcessBlock(e,h);var p=e.splice(0,u);i.sigBytes-=f}return new s.init(p,f)},clone:function(){var t=o.clone.call(this);return t._data=this._data.clone(),t},_minBufferSize:0}),p=(r.Hasher=h.extend({cfg:o.extend(),init:function(t){this.cfg=this.cfg.extend(t),this.reset()},reset:function(){h.reset.call(this),this._doReset()},update:function(t){return this._append(t),this._process(),this},finalize:function(t){t&amp;&amp;this._append(t);var n=this._doFinalize();return n},blockSize:16,_createHelper:function(t){return function(n,i){return new t.init(i).finalize(n)}},_createHmacHelper:function(t){return function(n,i){return new p.HMAC.init(t,i).finalize(n)}}}),e.algo={});return e}(Math);return t});
+//# sourceMappingURL=core.min.js.map
+!function(e,t,i){&quot;object&quot;==typeof exports?module.exports=exports=t(require(&quot;./core.min&quot;),require(&quot;./sha1.min&quot;),require(&quot;./hmac.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;,&quot;./sha1.min&quot;,&quot;./hmac.min&quot;],t):t(e.CryptoJS)}(this,function(e){return function(){var t=e,i=t.lib,r=i.Base,n=i.WordArray,o=t.algo,a=o.MD5,c=o.EvpKDF=r.extend({cfg:r.extend({keySize:4,hasher:a,iterations:1}),init:function(e){this.cfg=this.cfg.extend(e)},compute:function(e,t){for(var i=this.cfg,r=i.hasher.create(),o=n.create(),a=o.words,c=i.keySize,f=i.iterations;a.length&lt;c;){s&amp;&amp;r.update(s);var s=r.update(e).finalize(t);r.reset();for(var u=1;u&lt;f;u++)s=r.finalize(s),r.reset();o.concat(s)}return o.sigBytes=4*c,o}});t.EvpKDF=function(e,t,i){return c.create(i).compute(e,t)}}(),e.EvpKDF});
+//# sourceMappingURL=evpkdf.min.js.map
+!function(r,e){&quot;object&quot;==typeof exports?module.exports=exports=e(require(&quot;./core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;],e):e(r.CryptoJS)}(this,function(r){return function(){function e(r,e,t){for(var n=[],i=0,o=0;o&lt;e;o++)if(o%4){var f=t[r.charCodeAt(o-1)]&lt;&lt;o%4*2,c=t[r.charCodeAt(o)]&gt;&gt;&gt;6-o%4*2;n[i&gt;&gt;&gt;2]|=(f|c)&lt;&lt;24-i%4*8,i++}return a.create(n,i)}var t=r,n=t.lib,a=n.WordArray,i=t.enc;i.Base64={stringify:function(r){var e=r.words,t=r.sigBytes,n=this._map;r.clamp();for(var a=[],i=0;i&lt;t;i+=3)for(var o=e[i&gt;&gt;&gt;2]&gt;&gt;&gt;24-i%4*8&amp;255,f=e[i+1&gt;&gt;&gt;2]&gt;&gt;&gt;24-(i+1)%4*8&amp;255,c=e[i+2&gt;&gt;&gt;2]&gt;&gt;&gt;24-(i+2)%4*8&amp;255,s=o&lt;&lt;16|f&lt;&lt;8|c,h=0;h&lt;4&amp;&amp;i+.75*h&lt;t;h++)a.push(n.charAt(s&gt;&gt;&gt;6*(3-h)&amp;63));var p=n.charAt(64);if(p)for(;a.length%4;)a.push(p);return a.join(&quot;&quot;)},parse:function(r){var t=r.length,n=this._map,a=this._reverseMap;if(!a){a=this._reverseMap=[];for(var i=0;i&lt;n.length;i++)a[n.charCodeAt(i)]=i}var o=n.charAt(64);if(o){var f=r.indexOf(o);f!==-1&amp;&amp;(t=f)}return e(r,t,a)},_map:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;}}(),r.enc.Base64});
+//# sourceMappingURL=enc-base64.min.js.map
+!function(e,t,r){&quot;object&quot;==typeof exports?module.exports=exports=t(require(&quot;./core.min&quot;),require(&quot;./evpkdf.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;,&quot;./evpkdf.min&quot;],t):t(e.CryptoJS)}(this,function(e){e.lib.Cipher||function(t){var r=e,i=r.lib,n=i.Base,c=i.WordArray,o=i.BufferedBlockAlgorithm,s=r.enc,a=(s.Utf8,s.Base64),f=r.algo,p=f.EvpKDF,d=i.Cipher=o.extend({cfg:n.extend(),createEncryptor:function(e,t){return this.create(this._ENC_XFORM_MODE,e,t)},createDecryptor:function(e,t){return this.create(this._DEC_XFORM_MODE,e,t)},init:function(e,t,r){this.cfg=this.cfg.extend(r),this._xformMode=e,this._key=t,this.reset()},reset:function(){o.reset.call(this),this._doReset()},process:function(e){return this._append(e),this._process()},finalize:function(e){e&amp;&amp;this._append(e);var t=this._doFinalize();return t},keySize:4,ivSize:4,_ENC_XFORM_MODE:1,_DEC_XFORM_MODE:2,_createHelper:function(){function e(e){return&quot;string&quot;==typeof e?B:x}return function(t){return{encrypt:function(r,i,n){return e(i).encrypt(t,r,i,n)},decrypt:function(r,i,n){return e(i).decrypt(t,r,i,n)}}}}()}),h=(i.StreamCipher=d.extend({_doFinalize:function(){var e=this._process(!0);return e},blockSize:1}),r.mode={}),u=i.BlockCipherMode=n.extend({createEncryptor:function(e,t){return this.Encryptor.create(e,t)},createDecryptor:function(e,t){return this.Decryptor.create(e,t)},init:function(e,t){this._cipher=e,this._iv=t}}),l=h.CBC=function(){function e(e,r,i){var n=this._iv;if(n){var c=n;this._iv=t}else var c=this._prevBlock;for(var o=0;o&lt;i;o++)e[r+o]^=c[o]}var r=u.extend();return r.Encryptor=r.extend({processBlock:function(t,r){var i=this._cipher,n=i.blockSize;e.call(this,t,r,n),i.encryptBlock(t,r),this._prevBlock=t.slice(r,r+n)}}),r.Decryptor=r.extend({processBlock:function(t,r){var i=this._cipher,n=i.blockSize,c=t.slice(r,r+n);i.decryptBlock(t,r),e.call(this,t,r,n),this._prevBlock=c}}),r}(),_=r.pad={},v=_.Pkcs7={pad:function(e,t){for(var r=4*t,i=r-e.sigBytes%r,n=i&lt;&lt;24|i&lt;&lt;16|i&lt;&lt;8|i,o=[],s=0;s&lt;i;s+=4)o.push(n);var a=c.create(o,i);e.concat(a)},unpad:function(e){var t=255&amp;e.words[e.sigBytes-1&gt;&gt;&gt;2];e.sigBytes-=t}},y=(i.BlockCipher=d.extend({cfg:d.cfg.extend({mode:l,padding:v}),reset:function(){d.reset.call(this);var e=this.cfg,t=e.iv,r=e.mode;if(this._xformMode==this._ENC_XFORM_MODE)var i=r.createEncryptor;else{var i=r.createDecryptor;this._minBufferSize=1}this._mode&amp;&amp;this._mode.__creator==i?this._mode.init(this,t&amp;&amp;t.words):(this._mode=i.call(r,this,t&amp;&amp;t.words),this._mode.__creator=i)},_doProcessBlock:function(e,t){this._mode.processBlock(e,t)},_doFinalize:function(){var e=this.cfg.padding;if(this._xformMode==this._ENC_XFORM_MODE){e.pad(this._data,this.blockSize);var t=this._process(!0)}else{var t=this._process(!0);e.unpad(t)}return t},blockSize:4}),i.CipherParams=n.extend({init:function(e){this.mixIn(e)},toString:function(e){return(e||this.formatter).stringify(this)}})),m=r.format={},k=m.OpenSSL={stringify:function(e){var t=e.ciphertext,r=e.salt;if(r)var i=c.create([1398893684,1701076831]).concat(r).concat(t);else var i=t;return i.toString(a)},parse:function(e){var t=a.parse(e),r=t.words;if(1398893684==r[0]&amp;&amp;1701076831==r[1]){var i=c.create(r.slice(2,4));r.splice(0,4),t.sigBytes-=16}return y.create({ciphertext:t,salt:i})}},x=i.SerializableCipher=n.extend({cfg:n.extend({format:k}),encrypt:function(e,t,r,i){i=this.cfg.extend(i);var n=e.createEncryptor(r,i),c=n.finalize(t),o=n.cfg;return y.create({ciphertext:c,key:r,iv:o.iv,algorithm:e,mode:o.mode,padding:o.padding,blockSize:e.blockSize,formatter:i.format})},decrypt:function(e,t,r,i){i=this.cfg.extend(i),t=this._parse(t,i.format);var n=e.createDecryptor(r,i).finalize(t.ciphertext);return n},_parse:function(e,t){return&quot;string&quot;==typeof e?t.parse(e,this):e}}),g=r.kdf={},S=g.OpenSSL={execute:function(e,t,r,i){i||(i=c.random(8));var n=p.create({keySize:t+r}).compute(e,i),o=c.create(n.words.slice(t),4*r);return n.sigBytes=4*t,y.create({key:n,iv:o,salt:i})}},B=i.PasswordBasedCipher=x.extend({cfg:x.cfg.extend({kdf:S}),encrypt:function(e,t,r,i){i=this.cfg.extend(i);var n=i.kdf.execute(r,e.keySize,e.ivSize);i.iv=n.iv;var c=x.encrypt.call(this,e,t,n.key,i);return c.mixIn(n),c},decrypt:function(e,t,r,i){i=this.cfg.extend(i),t=this._parse(t,i.format);var n=i.kdf.execute(r,e.keySize,e.ivSize,t.salt);i.iv=n.iv;var c=x.decrypt.call(this,e,t,n.key,i);return c}})}()});
+//# sourceMappingURL=cipher-core.min.js.map
+!function(e,i){&quot;object&quot;==typeof exports?module.exports=exports=i(require(&quot;./core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;],i):i(e.CryptoJS)}(this,function(e){!function(){var i=e,t=i.lib,n=t.Base,s=i.enc,r=s.Utf8,o=i.algo;o.HMAC=n.extend({init:function(e,i){e=this._hasher=new e.init,&quot;string&quot;==typeof i&amp;&amp;(i=r.parse(i));var t=e.blockSize,n=4*t;i.sigBytes&gt;n&amp;&amp;(i=e.finalize(i)),i.clamp();for(var s=this._oKey=i.clone(),o=this._iKey=i.clone(),a=s.words,f=o.words,c=0;c&lt;t;c++)a[c]^=1549556828,f[c]^=909522486;s.sigBytes=o.sigBytes=n,this.reset()},reset:function(){var e=this._hasher;e.reset(),e.update(this._iKey)},update:function(e){return this._hasher.update(e),this},finalize:function(e){var i=this._hasher,t=i.finalize(e);i.reset();var n=i.finalize(this._oKey.clone().concat(t));return n}})}()});
+//# sourceMappingURL=hmac.min.js.map
+!function(e,o,r){&quot;object&quot;==typeof exports?module.exports=exports=o(require(&quot;./core.min&quot;),require(&quot;./cipher-core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;,&quot;./cipher-core.min&quot;],o):o(e.CryptoJS)}(this,function(e){return e.mode.ECB=function(){var o=e.lib.BlockCipherMode.extend();return o.Encryptor=o.extend({processBlock:function(e,o){this._cipher.encryptBlock(e,o)}}),o.Decryptor=o.extend({processBlock:function(e,o){this._cipher.decryptBlock(e,o)}}),o}(),e.mode.ECB});
+//# sourceMappingURL=mode-ecb.min.js.map
+!function(e,r,i){&quot;object&quot;==typeof exports?module.exports=exports=r(require(&quot;./core.min&quot;),require(&quot;./cipher-core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;,&quot;./cipher-core.min&quot;],r):r(e.CryptoJS)}(this,function(e){return e.pad.Pkcs7});
+//# sourceMappingURL=pad-pkcs7.min.js.map
+!function(e,r,i){&quot;object&quot;==typeof exports?module.exports=exports=r(require(&quot;./core.min&quot;),require(&quot;./enc-base64.min&quot;),require(&quot;./md5.min&quot;),require(&quot;./evpkdf.min&quot;),require(&quot;./cipher-core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;,&quot;./enc-base64.min&quot;,&quot;./md5.min&quot;,&quot;./evpkdf.min&quot;,&quot;./cipher-core.min&quot;],r):r(e.CryptoJS)}(this,function(e){return function(){var r=e,i=r.lib,n=i.BlockCipher,o=r.algo,t=[],c=[],s=[],f=[],a=[],d=[],u=[],v=[],h=[],y=[];!function(){for(var e=[],r=0;r&lt;256;r++)r&lt;128?e[r]=r&lt;&lt;1:e[r]=r&lt;&lt;1^283;for(var i=0,n=0,r=0;r&lt;256;r++){var o=n^n&lt;&lt;1^n&lt;&lt;2^n&lt;&lt;3^n&lt;&lt;4;o=o&gt;&gt;&gt;8^255&amp;o^99,t[i]=o,c[o]=i;var p=e[i],l=e[p],_=e[l],k=257*e[o]^16843008*o;s[i]=k&lt;&lt;24|k&gt;&gt;&gt;8,f[i]=k&lt;&lt;16|k&gt;&gt;&gt;16,a[i]=k&lt;&lt;8|k&gt;&gt;&gt;24,d[i]=k;var k=16843009*_^65537*l^257*p^16843008*i;u[o]=k&lt;&lt;24|k&gt;&gt;&gt;8,v[o]=k&lt;&lt;16|k&gt;&gt;&gt;16,h[o]=k&lt;&lt;8|k&gt;&gt;&gt;24,y[o]=k,i?(i=p^e[e[e[_^p]]],n^=e[e[n]]):i=n=1}}();var p=[0,1,2,4,8,16,32,64,128,27,54],l=o.AES=n.extend({_doReset:function(){if(!this._nRounds||this._keyPriorReset!==this._key){for(var e=this._keyPriorReset=this._key,r=e.words,i=e.sigBytes/4,n=this._nRounds=i+6,o=4*(n+1),c=this._keySchedule=[],s=0;s&lt;o;s++)if(s&lt;i)c[s]=r[s];else{var f=c[s-1];s%i?i&gt;6&amp;&amp;s%i==4&amp;&amp;(f=t[f&gt;&gt;&gt;24]&lt;&lt;24|t[f&gt;&gt;&gt;16&amp;255]&lt;&lt;16|t[f&gt;&gt;&gt;8&amp;255]&lt;&lt;8|t[255&amp;f]):(f=f&lt;&lt;8|f&gt;&gt;&gt;24,f=t[f&gt;&gt;&gt;24]&lt;&lt;24|t[f&gt;&gt;&gt;16&amp;255]&lt;&lt;16|t[f&gt;&gt;&gt;8&amp;255]&lt;&lt;8|t[255&amp;f],f^=p[s/i|0]&lt;&lt;24),c[s]=c[s-i]^f}for(var a=this._invKeySchedule=[],d=0;d&lt;o;d++){var s=o-d;if(d%4)var f=c[s];else var f=c[s-4];d&lt;4||s&lt;=4?a[d]=f:a[d]=u[t[f&gt;&gt;&gt;24]]^v[t[f&gt;&gt;&gt;16&amp;255]]^h[t[f&gt;&gt;&gt;8&amp;255]]^y[t[255&amp;f]]}}},encryptBlock:function(e,r){this._doCryptBlock(e,r,this._keySchedule,s,f,a,d,t)},decryptBlock:function(e,r){var i=e[r+1];e[r+1]=e[r+3],e[r+3]=i,this._doCryptBlock(e,r,this._invKeySchedule,u,v,h,y,c);var i=e[r+1];e[r+1]=e[r+3],e[r+3]=i},_doCryptBlock:function(e,r,i,n,o,t,c,s){for(var f=this._nRounds,a=e[r]^i[0],d=e[r+1]^i[1],u=e[r+2]^i[2],v=e[r+3]^i[3],h=4,y=1;y&lt;f;y++){var p=n[a&gt;&gt;&gt;24]^o[d&gt;&gt;&gt;16&amp;255]^t[u&gt;&gt;&gt;8&amp;255]^c[255&amp;v]^i[h++],l=n[d&gt;&gt;&gt;24]^o[u&gt;&gt;&gt;16&amp;255]^t[v&gt;&gt;&gt;8&amp;255]^c[255&amp;a]^i[h++],_=n[u&gt;&gt;&gt;24]^o[v&gt;&gt;&gt;16&amp;255]^t[a&gt;&gt;&gt;8&amp;255]^c[255&amp;d]^i[h++],k=n[v&gt;&gt;&gt;24]^o[a&gt;&gt;&gt;16&amp;255]^t[d&gt;&gt;&gt;8&amp;255]^c[255&amp;u]^i[h++];a=p,d=l,u=_,v=k}var p=(s[a&gt;&gt;&gt;24]&lt;&lt;24|s[d&gt;&gt;&gt;16&amp;255]&lt;&lt;16|s[u&gt;&gt;&gt;8&amp;255]&lt;&lt;8|s[255&amp;v])^i[h++],l=(s[d&gt;&gt;&gt;24]&lt;&lt;24|s[u&gt;&gt;&gt;16&amp;255]&lt;&lt;16|s[v&gt;&gt;&gt;8&amp;255]&lt;&lt;8|s[255&amp;a])^i[h++],_=(s[u&gt;&gt;&gt;24]&lt;&lt;24|s[v&gt;&gt;&gt;16&amp;255]&lt;&lt;16|s[a&gt;&gt;&gt;8&amp;255]&lt;&lt;8|s[255&amp;d])^i[h++],k=(s[v&gt;&gt;&gt;24]&lt;&lt;24|s[a&gt;&gt;&gt;16&amp;255]&lt;&lt;16|s[d&gt;&gt;&gt;8&amp;255]&lt;&lt;8|s[255&amp;u])^i[h++];e[r]=p,e[r+1]=l,e[r+2]=_,e[r+3]=k},keySize:8});r.AES=n._createHelper(l)}(),e.AES});
+//# sourceMappingURL=aes.min.js.map
+!function(e,n){&quot;object&quot;==typeof exports?module.exports=exports=n(require(&quot;./core.min&quot;)):&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;./core.min&quot;],n):n(e.CryptoJS)}(this,function(e){return e.enc.Utf8});
+//# sourceMappingURL=enc-utf8.min.js.map
+
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>
