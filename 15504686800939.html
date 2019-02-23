@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	JetBrains IDE 破解 - 木子才的博客
+  	Android 定制 toast 消息 - 木子才的博客
   	
 	</title>
 
@@ -154,78 +154,18 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">JetBrains IDE 破解</h1>
+		<h1 class="title" itemprop="name">Android 定制 toast 消息</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p><a href="https://blog.csdn.net/u014044812/article/details/78727496">参考 - 1</a><br/>
-<a href="http://blog.sina.com.cn/s/blog_1885d23df0102ydjc.html">参考 - 2</a></p>
+			<p>改在屏幕顶部而不是底部显示弹出消息。这需要使用Toast 类的setGravity方法，并使用Gravity.TOP重力值。具体如何使用，请参考Android开发者文档。 该方法所在网页为 developer.android.com/reference/android/widget/Toast.html#setGravity(int, int, int)。</p>
 
-<h3 id="toc_0">1.下载</h3>
+<p><a href="https://developer.android.google.cn/reference/android/widget/Toast">Toast 文档</a></p>
 
-<p>下载 <a href="https://pan.baidu.com/s/1mcQM8CLUnweY02ahKEr4PQ">https://pan.baidu.com/s/1mcQM8CLUnweY02ahKEr4PQ</a> 并将 JetbrainsCrack-release-enc.jar 放置到任意一个位置，接下来在配置文件中填写对应的路径即可。<br/>
-（本博客将会存放一份备份:/resource/JetbrainsCrack-release-enc.jar.zip）</p>
-
-<h3 id="toc_1">2.设置配置文件</h3>
-
-<p>在 IDE 的目录的 \bin 目录下找到 .vmoptions 后缀的文件，，以文本格式打开并在文件最后追加  -javaagent:JetbrainsCrack-release-enc.jar文件的路径，然后保存。</p>
-
-<h3 id="toc_2">3.激活码</h3>
-
-<p>IDEA、pyCharm（2018.3实测可用）、WebStorm（2018.3实测可用）、phpstorm（2018.3实测可用）、clion 可用的激活码</p>
-
-<pre><code>ThisCrackLicenseId-{
-&quot;licenseId&quot;:&quot;11011&quot;,
-&quot;licenseeName&quot;:&quot;WeChat&quot;,
-&quot;assigneeName&quot;:&quot;IT--Pig&quot;,
-&quot;assigneeEmail&quot;:&quot;1113449881@qq.com&quot;,
-&quot;licenseRestriction&quot;:&quot;&quot;,
-&quot;checkConcurrentUse&quot;:false,
-&quot;products&quot;:[
-{&quot;code&quot;:&quot;II&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;DM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;AC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;RS0&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;WS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;DPN&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;RC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;PS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;DC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;RM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;CL&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-{&quot;code&quot;:&quot;PC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;}
-],
-&quot;hash&quot;:&quot;2911276/0&quot;,
-&quot;gracePeriodDays&quot;:7,
-&quot;autoProlongated&quot;:false}
+<pre><code>Toast.makeText(MainActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
 </code></pre>
 
-<p>GoLand  可用的激活码:2018.3实测可用</p>
-
-<pre><code>##### {&quot;licenseId&quot;:&quot;ThisCrackLicenseId&quot;,
-##### &quot;licenseeName&quot;:&quot;Rover12421&quot;,
-##### &quot;assigneeName&quot;:&quot;Rover12421&quot;,
-##### &quot;assigneeEmail&quot;:&quot;rover12421@163.com&quot;,
-##### &quot;licenseRestriction&quot;:&quot;By Rover12421 Crack, Only Test! Please support genuine!!!&quot;,
-##### &quot;checkConcurrentUse&quot;:false,
-##### &quot;products&quot;:[
-##### {&quot;code&quot;:&quot;II&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;DM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;AC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;RS0&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;WS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;DPN&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;RC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;PS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;DC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;RM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;CL&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;PC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;DB&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;GO&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},
-##### {&quot;code&quot;:&quot;RD&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;}
-##### ],
-##### &quot;hash&quot;:&quot;2911276/0&quot;,
-##### &quot;gracePeriodDays&quot;:7,
-##### &quot;autoProlongated&quot;:false}
+<pre><code>Toast toast = Toast.makeText(MainActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT);
+toast.setGravity(Gravity.TOP,0,10);
+toast.show();
 </code></pre>
 
 		</div>
