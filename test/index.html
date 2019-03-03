@@ -11,8 +11,8 @@
       width: 100%;height: auto;word-wrap:break-word;word-break:break-all;overflow: hidden;
     }
   </style>
-  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="aes.js"></script>
+  <script src="./jquery-1.10.2.js"></script>
+  <script src="./aes.js"></script>
   <script>
     var theContent = null;
     function Decrypt(str, KEY) {
@@ -41,6 +41,6 @@
 		<hr/>
 		<div id="test" class="content">这里显示本地文本内容</div>
 	</div>
-	<script>$(function(){$("#test").load("777ok.txt");});</script>
+	<script>$(function(){$("#test").load("./777ok.txt");});</script>
 </body>
 </html>
