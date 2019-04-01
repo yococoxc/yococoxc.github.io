@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	RN 上拉下拉刷新的组件封装篇 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="flexBox.html">flexBox</a></li>
+						
+						  <li id=""><a target="_self" href="flutter.html">flutter</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="Vue.html">Vue</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">RN 上拉下拉刷新的组件封装篇</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>首先，先上一份实现了 List 上下拉刷新的代码：</p>
+
+<pre><code>import React, { Component } from &#39;react&#39;;
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    ListView,
+    TouchableHighlight,
+    RefreshControl,
+    Image,
+} from &#39;react-native&#39;;
+
+import MZCKit from &#39;react-native-mzckit&#39;;
+
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) =&gt; r1 !== r2});
+
+export default class PageContent extends Component&lt;Props&gt; {
+    static navigationOptions = ({navigation}) =&gt; ({
+        title: &#39;最新动态&#39;,
+        headerStyle: { backgroundColor: &#39;#ff6600&#39;, },
+        headerTintColor: &#39;#FFFFFF&#39;,
+        headerTitleStyle: { color: &#39;white&#39; },
+    });
+
+    constructor(props) {
+        super(props);
+
+        this.state = ({
+            refreshing: true,
+            loadMore: false,
+            name: this.props.name,
+            dataSource: [],
+            page:1,
+        })
+    }
+
+    componentDidMount() {
+        this._fetchData();
+    }
+
+    _fetchData() {
+        var that = this;
+        var params = {id:2,page:this.state.page,per_page:20};
+
+        var url = &#39;http://api.test.com&#39; + &#39;/v2/api.article.list&#39;;
+        MZCKit.post2(url,params, function (data) {
+            if (data.error_code === 0) {
+                console.log(&#39;aaaaaaaaaaaaaaaaaa=========&#39;, data);
+
+                let articles = data.articles;
+
+                that.setState({
+                    refreshing: false,
+                    loadMore: false,
+                    dataSource:that.state.dataSource.concat(articles),
+                });
+            }
+        }, function (err) {
+            console.log(&#39;nnnnnnnnnnnnnnnnnn&#39;, err);
+            alert(err)
+        });
+    }
+
+    _onRefresh() {
+        this.setState({
+            refreshing: true,
+            page: 1,
+            dataSource: [],
+        }, () =&gt; this._fetchData());
+    }
+
+    _onEndReached() {
+        if (this.state.dataSource.length === 0) return;
+        this.setState({
+            loadMore: true,
+            page: this.state.page + 1,
+        }, () =&gt; this._fetchData());
+    }
+
+    _onPress(rowData) {
+        const {navigate} = this.props.navigation;
+        navigate(&#39;NewsDetail&#39;, {
+            title: rowData.title,
+            href: &#39;http://api.test.com/article/&#39; + rowData.id
+        })
+    }
+
+    _renderRow(rowData) {
+        return &lt;TouchableHighlight
+            underlayColor=&#39;#008b8b&#39;
+            onPress={() =&gt; this._onPress(rowData)}&gt;
+            &lt;View style={styles.rowStyle}&gt;
+                &lt;Text style={{fontSize: 20, flex: 1}}&gt;{rowData.title}&lt;/Text&gt;
+            &lt;/View&gt;
+        &lt;/TouchableHighlight&gt;
+    }
+
+    render() {
+        const FooterView = this.state.loadMore ?
+            &lt;View style={styles.footer}&gt;
+                &lt;Text style={{fontSize: 16, color: &#39;#777&#39;}}&gt;加载更多...&lt;/Text&gt;
+            &lt;/View&gt; : null;
+        return &lt;ListView
+            refreshControl={
+                &lt;RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh.bind(this)}
+                /&gt;
+            }
+            style={[styles.listView]}
+            dataSource={ds.cloneWithRows(this.state.dataSource)}
+            enableEmptySections={true}
+            renderRow={this._renderRow.bind(this)}
+            onEndReachedThreshold={10}
+            onEndReached={this._onEndReached.bind(this)}
+            renderFooter={() =&gt; FooterView}
+        /&gt;
+    }
+}
+
+const styles = StyleSheet.create({
+    listView: {
+        backgroundColor: &#39;#eee&#39;,
+    },
+    rowStyle: {
+        padding: 10,
+        backgroundColor: &#39;#fff&#39;,
+        flexDirection: &#39;row&#39;,
+        justifyContent: &#39;space-between&#39;,
+        marginBottom: 1,
+    },
+    footer: {
+        flexDirection: &#39;column&#39;,
+        justifyContent: &#39;center&#39;,
+        alignItems: &#39;center&#39;,
+        height: 40,
+    },
+});
+</code></pre>
+
+<p>可以看到这个实现有很多方法。</p>
+
+<pre><code>_fetchData     请求事件
+_onRefresh     下拉刷新事件
+_onEndReached  上拉刷新事件
+_onPress       点击事件
+_renderRow     实现 List 的 Row
+</code></pre>
+
+<h3 id="toc_0">封装</h3>
+
+<p>把通用的东西提取出来，比如</p>
+
+<pre><code>_fetchData     请求
+_onPress       点击事件
+_renderRow     实现 List 的 Row
+</code></pre>
+
+<p>其他的刷新事件就封装在组件里面。</p>
+
+<h3 id="toc_1">最终实现 刷新组件</h3>
+
+<p>NewsListPageListRefresh.js</p>
+
+<pre><code>import React, { Component } from &#39;react&#39;;
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    ListView,
+    RefreshControl,
+} from &#39;react-native&#39;;
+
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) =&gt; r1 !== r2});
+
+const styles = StyleSheet.create({
+    footer: {
+        flexDirection: &#39;column&#39;,
+        justifyContent: &#39;center&#39;,
+        alignItems: &#39;center&#39;,
+        height: 40,
+    },
+});
+
+export default class PageContent extends Component&lt;Props&gt; {
+    static defaultProps = {
+        initPage: 1,
+        backgroundColor: &#39;#fff&#39;,
+        footerView : (
+            &lt;View style={styles.footer}&gt;
+                &lt;Text style={{fontSize: 16, color: &#39;#777&#39;}}&gt;加载更多...&lt;/Text&gt;
+            &lt;/View&gt;
+        ),
+        footerViewEnd : (
+            &lt;View style={styles.footer}&gt;
+                &lt;Text style={{fontSize: 16, color: &#39;#777&#39;}}&gt;没有更多的数据。&lt;/Text&gt;
+            &lt;/View&gt;
+        )
+    }
+
+    constructor(props) {
+        super(props);
+
+        this.state = ({
+            refreshing: true,
+            loadMore: false,
+            dataSource: [],
+            page:this.props.initPage,
+        })
+    }
+
+    componentDidMount() {
+        if (this.props.fetchData) {
+            this.props.fetchData(this);
+        }
+    }
+
+    _onRefresh() {
+        this.setState({
+            refreshing: true,
+            page: this.props.initPage,
+            dataSource: [],
+        }, () =&gt; {
+            if (this.props.fetchData) {
+                this.props.fetchData(this);
+            }
+        });
+    }
+
+    _onEndReached() {
+        if (this.state.dataSource.length === 0) return;
+        this.setState({
+            loadMore: true,
+            page: this.state.page + 1,
+        }, () =&gt; {
+            if (this.props.fetchData) {
+                this.props.fetchData(this);
+            }
+        });
+    }
+
+    render() {
+        const FooterView = this.state.loadMore ?
+            this.props.footerView : this.props.footerViewEnd;
+        return (
+            &lt;ListView
+                style={{backgroundColor:this.props.backgroundColor}}
+                refreshControl={
+                    &lt;RefreshControl
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._onRefresh.bind(this)}
+                    /&gt;
+                }
+                style={[styles.listView]}
+                dataSource={ds.cloneWithRows(this.state.dataSource)}
+                enableEmptySections={true}
+                renderRow={this.props.renderRow.bind(this)}
+                onEndReachedThreshold={10}
+                onEndReached={this._onEndReached.bind(this)}
+                renderFooter={() =&gt; FooterView}
+            /&gt;
+        )
+    }
+}
+</code></pre>
+
+<p>提供属性：</p>
+
+<pre><code>fetchData(this)         接入请求的方法，this 为组件。
+renderRow(rowData)      接入List的Row的方法，rowData 就是当前Row 要使用的数据。
+backgroundColor         背景颜色值，初始值为#fff。
+initPage                默认页，初始值为1。
+footerView              &quot;加载更多...&quot;的组件。
+footerViewEnd           &quot;没有更多的数据。&quot;的组件。
+loadMore                布尔值，判断是否有更多的加载。
+refreshing              布尔值，判断是否加载中。
+</code></pre>
+
+<h3 id="toc_2">使用该组件</h3>
+
+<pre><code>import React, { Component } from &#39;react&#39;;
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    TouchableHighlight,
+    SafeAreaView,
+} from &#39;react-native&#39;;
+
+import MZCKit from &#39;react-native-mzckit&#39;;
+
+import ListRefresh from &#39;./NewsListPageListRefresh&#39;;
+
+export default class PageContent extends Component&lt;Props&gt; {
+    static navigationOptions = ({navigation}) =&gt; ({
+        title: &#39;最新动态&#39;,
+        headerStyle: { backgroundColor: &#39;#ff6600&#39;, },
+        headerTintColor: &#39;#FFFFFF&#39;,
+        headerTitleStyle: { color: &#39;white&#39; },
+    });
+
+    _fetchData(that) {
+        var params = {id:2,page:that.state.page,per_page:20};
+
+        var url = &#39;http://api.test.com&#39; + &#39;/v2/api.article.list&#39;;
+        MZCKit.post2(url,params, function (data) {
+            if (data.error_code === 0) {
+                console.log(&#39;aaaaaaaaaaaaaaaaaa=========&#39;, data);
+
+                let articles = data.articles;
+
+                that.setState({
+                    refreshing: false,
+                    loadMore: false,
+                    dataSource:that.state.dataSource.concat(articles),
+                });
+            }
+        }, function (err) {
+            console.log(&#39;nnnnnnnnnnnnnnnnnn&#39;, err);
+            alert(err)
+        });
+    }
+
+    _onPress(rowData) {
+        const {navigate} = this.props.navigation;
+        navigate(&#39;NewsDetail&#39;, {
+            title: rowData.title,
+            href: &#39;http://api.test.com/article/&#39; + rowData.id
+        })
+    }
+
+
+    _renderRow(rowData) {
+        return &lt;TouchableHighlight
+            underlayColor=&#39;#008b8b&#39;
+            onPress={() =&gt; this._onPress(rowData)}&gt;
+            &lt;View style={styles.rowStyle}&gt;
+                &lt;Text style={{fontSize: 20, flex: 1,color:&#39;#cc9660&#39;}}&gt;{rowData.title}&lt;/Text&gt;
+            &lt;/View&gt;
+        &lt;/TouchableHighlight&gt;
+    }
+
+    render() {
+        return &lt;SafeAreaView&gt;
+            &lt;ListRefresh backgroundColor=&#39;#ccff00&#39;
+                renderRow={this._renderRow.bind(this)}
+                fetchData={this._fetchData.bind(this)}
+                /&gt;
+            &lt;/SafeAreaView&gt;
+    }
+}
+
+const styles = StyleSheet.create({
+    rowStyle: {
+        padding: 10,
+        backgroundColor: &#39;#fff&#39;,
+        flexDirection: &#39;row&#39;,
+        justifyContent: &#39;space-between&#39;,
+        marginBottom: 1,
+    },
+});
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>
