@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Flutter 调用 Webview - 木子才的博客
+  	Go - 木子才的博客
   	
 	</title>
 
@@ -158,98 +158,70 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
 
-	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Flutter 调用 Webview</h1>
-		<div class="entry-content" itemprop="articleBody">
-			<p>使用第三方的库 <a href="https://pub.dartlang.org/packages/flutter_webview_plugin#-readme-tab-">flutter_webview_plugin</a></p>
 
-<p>写这篇文章的时候（2018-05-18），最新版为 0.1.5。<br/>
-PS:2019-4-25，最新版为 0.3.4。</p>
-
-<p>简单的使用：</p>
-
-<pre><code>import &#39;package:flutter/material.dart&#39;;
-
-import &#39;package:flutter_webview_plugin/flutter_webview_plugin.dart&#39;;
-
-class TestWebView02 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: &#39;测试 WebView&#39;,
-      routes: {
-        &#39;/&#39;: (_) =&gt; new MyHomePage(),
-        &#39;/webView&#39;: (_) =&gt; new WebviewScaffold(
-            url: &#39;https://www.baidu.com&#39;,
-            appBar: new AppBar(
-              title: new Text(&#39;百度&#39;),
-            ),
-            withZoom: true,
-            withLocalStorage: true,
-        ),
-      },
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(&#39;点击进入 WebView！&#39;),
-      ),
-      body: new Center(
-        child: new IconButton(icon: new Icon(Icons.add), onPressed: (){
-          Navigator.of(context).pushNamed(&quot;/webView&quot;);
-        }),
-      ),
-    );
-  }
-}
-</code></pre>
-
-<p><img src="media/15266341975749/944AF17C-08F9-45C0-86AC-5BAAA5237E17.png" alt="944AF17C-08F9-45C0-86AC-5BAAA5237E17"/><br/>
-<img src="media/15266341975749/6E566684-10F7-4D49-A1A4-0EA7E554D8D8.png" alt="6E566684-10F7-4D49-A1A4-0EA7E554D8D8"/></p>
-
-<p>使用第三方的库 <a href="https://pub.dartlang.org/packages/webview_flutter">webview_flutter</a></p>
-
-<p>写这篇文章的时候（2019-04-25），最新版为 0.3.6。</p>
-
-<pre><code>class NewsDetailPage extends StatelessWidget {
-  NewsDetailPage({
-    Key key,
-    this.title: &#39;文章详情&#39;,
-  }) : super(key: key);
-
-  String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(this.title),
-      ),
-      body: WebView(
-        initialUrl: &#39;https://www.baidu.com&#39;,
-      ),
-    );
-  }
-}
-</code></pre>
-
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2019-04-12T13:26:31+08:00" itemprop="datePublished">2019/4/12</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='Go.html'>Go</a>&nbsp;
+			 
+			</div>
 		</div>
+		<h1 class="category" itemprop="name"><a href="15550467914724.html" itemprop="url">
+		Go Gin demo</a></h1>
+
 	</article>
-	<div class="share-comment">
-	 
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2019-04-12T12:35:17+08:00" itemprop="datePublished">2019/4/12</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='Go.html'>Go</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="category" itemprop="name"><a href="15550437179603.html" itemprop="url">
+		Go Gin 入门</a></h1>
 
-	  
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2019-04-02T15:59:00+08:00" itemprop="datePublished">2019/4/2</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='Go.html'>Go</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="category" itemprop="name"><a href="15541919403955.html" itemprop="url">
+		Go iris 简单的demo</a></h1>
 
-	  
+	</article>
+  
 
-	</div>
 </div>
+<nav id="pagenavi">
+	 
+	
+	<div class="center"><a href="archives.html">Blog Archives</a></div>
+
+</nav>
+
+</div>
+
+
+
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 

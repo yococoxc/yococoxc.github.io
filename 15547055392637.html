@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Flutter 调用 Webview - 木子才的博客
+  	Flutter BottomNavigationBar切换页面被重置问题（保存状态） - 木子才的博客
   	
 	</title>
 
@@ -160,83 +160,227 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Flutter 调用 Webview</h1>
+		<h1 class="title" itemprop="name">Flutter BottomNavigationBar切换页面被重置问题（保存状态）</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p>使用第三方的库 <a href="https://pub.dartlang.org/packages/flutter_webview_plugin#-readme-tab-">flutter_webview_plugin</a></p>
+			<h3 id="toc_0">方案：1.BottomNavigationBar+PageView</h3>
 
-<p>写这篇文章的时候（2018-05-18），最新版为 0.1.5。<br/>
-PS:2019-4-25，最新版为 0.3.4。</p>
+<pre><code> class MainPage extends StatefulWidget {
+   @override
+  State&lt;StatefulWidget&gt; createState() {
+    return MainPageState();
+  }
+ }
 
-<p>简单的使用：</p>
+ class MainPageState extends State&lt;MainPage&gt; {
+   int _currentIndex;
+   List&lt;Widget&gt; _pages;
+   PageController _controller;
 
-<pre><code>import &#39;package:flutter/material.dart&#39;;
+   List&lt;BottomNavigationBarItem&gt; getItems() {
+     return [
+       BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(&quot;Home&quot;)),
+       BottomNavigationBarItem(icon: Icon(Icons.adb), title: Text(&quot;Adb&quot;)),
+       BottomNavigationBarItem(icon: Icon(Icons.person), title: Text(&quot;Person&quot;)),
+     ];
+   }
 
-import &#39;package:flutter_webview_plugin/flutter_webview_plugin.dart&#39;;
+   @override
+  void initState() {
+    super.initState();
+    _currentIndex = 0;
+    _pages = List()..add(Page1(&quot;第一页&quot;))..add(Page2(&quot;第二页&quot;))..add(Page3(&quot;第三页&quot;));
+    _controller = PageController(initialPage: 0);
+  }
 
-class TestWebView02 extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: &#39;测试 WebView&#39;,
-      routes: {
-        &#39;/&#39;: (_) =&gt; new MyHomePage(),
-        &#39;/webView&#39;: (_) =&gt; new WebviewScaffold(
-            url: &#39;https://www.baidu.com&#39;,
-            appBar: new AppBar(
-              title: new Text(&#39;百度&#39;),
-            ),
-            withZoom: true,
-            withLocalStorage: true,
-        ),
-      },
-    );
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+       body: PageView.builder(
+         physics: NeverScrollableScrollPhysics(),
+         controller: _controller,
+         itemCount: _pages.length,
+         itemBuilder: (context, index) {
+           return _pages[index];
+         },
+         onPageChanged: _pageChange,
+       ),
+       bottomNavigationBar: BottomNavigationBar(
+         items: getItems(),
+         currentIndex: _currentIndex,
+         onTap: onTap,
+       ),
+     );
+   }
+
+   void onTap(int index) {
+     _controller.jumpToPage(index);
+   }
+
+   void _pageChange(int index) {
+     if (index  != _currentIndex) {
+       setState(() {
+         _currentIndex = index;
+       });
+     }
+   }
+ }
+</code></pre>
+
+<h3 id="toc_1">方案：2.BottomNavigationBar+IndexedStack</h3>
+
+<pre><code>class MainPage extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; createState() {
+    return MainPageState();
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
+class MainPageState extends State&lt;MainPage&gt; {
+  int _currentIndex;
+  List&lt;Widget&gt; _pages;
+
+  List&lt;BottomNavigationBarItem&gt; getItems() {
+     return [
+       BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(&quot;Home&quot;)),
+       BottomNavigationBarItem(icon: Icon(Icons.adb), title: Text(&quot;Adb&quot;)),
+       BottomNavigationBarItem(icon: Icon(Icons.person), title: Text(&quot;Person&quot;)),
+     ];
+   }
+
+   @override
+  void initState() {
+    super.initState();
+    _currentIndex = 0;
+    _pages = List()..add(Page1(&quot;第一页&quot;))..add(Page2(&quot;第二页&quot;))..add(Page3(&quot;第三页&quot;));
+  }
+
+   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(&#39;点击进入 WebView！&#39;),
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentIndex,
+        items: getItems(),
+        onTap: onTabTapped,
       ),
-      body: new Center(
-        child: new IconButton(icon: new Icon(Icons.add), onPressed: (){
-          Navigator.of(context).pushNamed(&quot;/webView&quot;);
-        }),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pages,
       ),
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
 </code></pre>
 
-<p><img src="media/15266341975749/944AF17C-08F9-45C0-86AC-5BAAA5237E17.png" alt="944AF17C-08F9-45C0-86AC-5BAAA5237E17"/><br/>
-<img src="media/15266341975749/6E566684-10F7-4D49-A1A4-0EA7E554D8D8.png" alt="6E566684-10F7-4D49-A1A4-0EA7E554D8D8"/></p>
+<h4 id="toc_2">其他，用到的文件</h4>
 
-<p>使用第三方的库 <a href="https://pub.dartlang.org/packages/webview_flutter">webview_flutter</a></p>
+<p>0.</p>
 
-<p>写这篇文章的时候（2019-04-25），最新版为 0.3.6。</p>
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+ 
+ void main() =&gt; runApp(MyApp());
 
-<pre><code>class NewsDetailPage extends StatelessWidget {
-  NewsDetailPage({
-    Key key,
-    this.title: &#39;文章详情&#39;,
-  }) : super(key: key);
+ class MyApp extends StatelessWidget {
+   @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: &quot;Demo&quot;,
+      home: MainPage(),
+    );
+  }
+ }
+</code></pre>
 
-  String title;
+<p>1.Page1 &amp; Page1State</p>
+
+<pre><code>class Page1 extends StatefulWidget {
+   String _title;
+   Page1(this._title);
+
+   @override
+  State&lt;StatefulWidget&gt; createState() {
+    return Page1State();
+  }
+ }
+
+ class Page1State extends State&lt;Page1&gt; with AutomaticKeepAliveClientMixin {
+   int _count = 0;
+
+   @override
+  bool get wantKeepAlive =&gt; true;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.title),
+        title: Text(widget._title),
       ),
-      body: WebView(
-        initialUrl: &#39;https://www.baidu.com&#39;,
+      body: Center(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: &lt;Widget&gt;[
+          Text(widget._title + &quot;:点一下加1：$_count&quot;),
+          MaterialButton(
+            child: Text(&quot;跳转&quot;),
+            color: Colors.pinkAccent,
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) {
+                  return NewPage();
+                }));
+            },
+          )
+        ],
+      ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        heroTag: widget._title,
+        child: Icon(Icons.add),
+        onPressed: addAction,
       ),
     );
   }
-}
+
+  void addAction() {
+    setState(() {
+      _count++;
+    });
+  }
+ }
+</code></pre>
+
+<p>其余的 Page2 &amp; Page2State，Page3 &amp; Page3State 也类似上述代码。</p>
+
+<p>2.NewPage</p>
+
+<pre><code>class NewPage extends StatelessWidget {
+   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(&quot;新的界面&quot;),
+      ),
+      body: Center(
+        child: Text(&quot;我是一个新的界面&quot;),
+      ),
+    );
+  }
+ }
 </code></pre>
 
 		</div>

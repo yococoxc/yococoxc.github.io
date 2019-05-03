@@ -1,0 +1,714 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Flutter 布局 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="flexBox.html">flexBox</a></li>
+						
+						  <li id=""><a target="_self" href="flutter.html">flutter</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="Vue.html">Vue</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter 布局</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h3 id="toc_0">1.</h3>
+
+<p><img src="media/15560782088168/E22639C1-DFDA-4315-AC81-CDDA834660F9.jpg" alt="E22639C1-DFDA-4315-AC81-CDDA834660F9"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+  margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  child: Column(
+    // mainAxisSize: MainAxisSize.max,
+    // mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Image.network(
+          &#39;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556127407373&amp;di=405c30018111b97a5c60307da34a74a7&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201512%2F11%2F20151211071320_dHKxB.thumb.700_0.jpeg&#39;),
+      Padding(
+          padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+          child: Container(
+            color: MZC.randomColor(),
+            child: Text(
+                &#39;Padding控件即填充控件，能给子控件插入给定的填充。Padding控件即填充控件。Padding控件即填充控件，能给子控件插入给定的填充。&#39;),
+          )),
+      Padding(
+        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        child: Container(
+          child: Text(
+              &#39;2019-01-01 00:00:00 2019-01-0100:00:002019-01-0100:00:002019-01-0100:00:00&#39;),
+          color: MZC.randomColor(),
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_1">2.</h3>
+
+<p><img src="media/15560782088168/E1D4812B-1D68-4152-A258-C02457D0DCCA.jpg" alt="E1D4812B-1D68-4152-A258-C02457D0DCCA"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  padding: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  child: Column(
+    // mainAxisSize: MainAxisSize.max,
+    // mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Image.network(
+          &#39;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556127407373&amp;di=405c30018111b97a5c60307da34a74a7&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201512%2F11%2F20151211071320_dHKxB.thumb.700_0.jpeg&#39;),
+      Padding(
+          padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+          child: Container(
+            color: MZC.randomColor(),
+            child: Text(
+                &#39;Padding控件即填充控件，能给子控件插入给定的填充。Padding控件即填充控件。Padding控件即填充控件，能给子控件插入给定的填充。&#39;),
+          )),
+      Padding(
+        padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+        child: Container(
+          child: Text(
+              &#39;2019-01-01 00:00:00 2019-01-0100:00:002019-01-0100:00:002019-01-0100:00:00&#39;),
+          color: MZC.randomColor(),
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_2">3.</h3>
+
+<p><img src="media/15560782088168/7D64CAF0-8897-4A9D-8BF2-551A71E48554.jpg" alt="7D64CAF0-8897-4A9D-8BF2-551A71E48554"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
+  margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  child: Column(
+    // mainAxisSize: MainAxisSize.max,
+    // mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Image.network(
+          &#39;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556127407373&amp;di=405c30018111b97a5c60307da34a74a7&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201512%2F11%2F20151211071320_dHKxB.thumb.700_0.jpeg&#39;),
+      Padding(
+          padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+          child: Container(
+            color: MZC.randomColor(),
+            child: Text(
+                &#39;Padding控件即填充控件，能给子控件插入给定的填充。Padding控件即填充控件。Padding控件即填充控件，能给子控件插入给定的填充。&#39;),
+          )),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_3">4.</h3>
+
+<p><img src="media/15560782088168/68CC9A0C-BAF3-4483-A85F-486BE253A471.jpg" alt="68CC9A0C-BAF3-4483-A85F-486BE253A471"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+  // margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  child: Row(
+    // mainAxisSize: MainAxisSize.max,
+    // mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Container(
+        height: 90,
+        width: 134,
+        child: Image.network(
+          &#39;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556127407373&amp;di=405c30018111b97a5c60307da34a74a7&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201512%2F11%2F20151211071320_dHKxB.thumb.700_0.jpeg&#39;,
+          fit: BoxFit.fill,
+        ),
+      ),
+      Expanded(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: &lt;Widget&gt;[
+            Container(
+              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+              child: Text(
+                &#39;Padding控件即填充控件，能给子控件插入给定的填充&#39;,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.start,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+              // height: 30,
+              child: Text(
+                &#39;2019-01-1 10:10:10 2019-01-1 10:10:10&#39;,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.start,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_4">5.</h3>
+
+<p><img src="media/15560782088168/FFA6B0E5-D0E6-48A6-8B49-85C36104CCB9.jpg" alt="FFA6B0E5-D0E6-48A6-8B49-85C36104CCB9"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+  // margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+  child: Row(
+    // mainAxisSize: MainAxisSize.max,
+    // mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Container(
+        height: 90,
+        width: 134,
+        child: Image.network(
+          &#39;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1556127407373&amp;di=405c30018111b97a5c60307da34a74a7&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201512%2F11%2F20151211071320_dHKxB.thumb.700_0.jpeg&#39;,
+          fit: BoxFit.fill,
+        ),
+      ),
+      Expanded(
+        child: Column(
+          // mainAxisSize: MainAxisSize.max,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: &lt;Widget&gt;[
+            Padding(
+              padding: EdgeInsets.all(0),
+              child: Container(
+                padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                color: MZC.randomColor(),
+                height: 66,
+                child: Text(
+                  &#39;Padding控件即填充控件，能给子控件插入给定的填充Padding控件即填充控件，能给子控件插入给定的填充Padding控件即填充控件，能给子控件插入给定的填充&#39;,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              color: MZC.randomColor(),
+              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+              height: 24,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: &lt;Widget&gt;[
+                  Text(
+                    &#39;2019-01-1 10:10:10 2019-01-1 10:10:10&#39;,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.start,
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_5">6.</h3>
+
+<p><img src="media/15560782088168/A58272EA-1D02-43C5-B97D-C39EAB2A722E.jpg" alt="A58272EA-1D02-43C5-B97D-C39EAB2A722E"/></p>
+
+<pre><code>Container(
+  height: 100,
+  child: Row(
+    children: &lt;Widget&gt;[
+      Expanded(
+        flex: 3,
+        child: Container(
+          color: MZC.randomColor(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: &lt;Widget&gt;[
+              Container(
+                width: 50,
+                height: 50,
+                color: MZC.randomColor(),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+              ),
+              Text(&#39;data&#39;)
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Container(
+          color: MZC.randomColor(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: &lt;Widget&gt;[
+              Text(&#39;19:000&#39;),
+              Container(
+                child: Text(
+                  &#39;VS&#39;,
+                  style: TextStyle(fontSize: 20),
+                ),
+                margin: EdgeInsets.fromLTRB(0, 3, 0, 3),
+              ),
+              Container(
+                width: 80,
+                height: 30,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: MZC.randomColor()),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: &lt;Widget&gt;[
+                    Text(&#39;进行中&#39;),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        flex: 3,
+        child: Container(
+          color: MZC.randomColor(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: &lt;Widget&gt;[
+              Container(
+                width: 50,
+                height: 50,
+                color: MZC.randomColor(),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+              ),
+              Text(&#39;data&#39;)
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_6">7.</h3>
+
+<p><img src="media/15560782088168/C0ADDA68-3728-4DA5-A0DF-63A1BB6F5CE1.jpg" alt="C0ADDA68-3728-4DA5-A0DF-63A1BB6F5CE1"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  height: 40,
+  child: Row(
+    children: &lt;Widget&gt;[
+      Container(
+        width: 50,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;排名&#39;)],
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          color: MZC.randomColor(),
+          child: Text(&#39;球员&#39;),
+        ),
+      ),
+      Expanded(
+        flex: 3,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          color: MZC.randomColor(),
+          child: Text(&#39;所属球队&#39;),
+        ),
+      ),
+      Container(
+        width: 50,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;进球数&#39;)],
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_7">8.</h3>
+
+<p><img src="media/15560782088168/4AA18EC1-A88A-4B39-8DBC-4A4663A0D62C.jpg" alt="4AA18EC1-A88A-4B39-8DBC-4A4663A0D62"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  height: 60,
+  child: Row(
+    children: &lt;Widget&gt;[
+      Container(
+        width: 50,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[
+            Container(
+              width: 28,
+              height: 28,
+              color: MZC.randomColor(),
+            )
+          ],
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          color: MZC.randomColor(),
+          child: Text(&#39;球员&#39;),
+        ),
+      ),
+      Expanded(
+        flex: 3,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          color: MZC.randomColor(),
+          child: Text(&#39;所属球队所属球队所属球队所属球队&#39;),
+        ),
+      ),
+      Container(
+        width: 50,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;进球数&#39;)],
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_8">9.</h3>
+
+<p><img src="media/15560782088168/CBB9D4C5-0BC1-4446-90CF-CD9BCF1A23BA.jpg" alt="CBB9D4C5-0BC1-4446-90CF-CD9BCF1A23BA"/></p>
+
+<pre><code>Container(
+  color: MZC.randomColor(),
+  height: 40,
+  child: Row(
+    children: &lt;Widget&gt;[
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;排名&#39;)],
+        ),
+      ),
+      Expanded(
+        flex: 1,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          color: MZC.randomColor(),
+          child: Text(&#39;球队&#39;),
+        ),
+      ),
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;赛&#39;)],
+        ),
+      ),
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;胜&#39;)],
+        ),
+      ),
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;负&#39;)],
+        ),
+      ),
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;点胜&#39;)],
+        ),
+      ),
+      Container(
+        width: 40,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;点负&#39;)],
+        ),
+      ),
+      Container(
+        width: 30,
+        color: MZC.randomColor(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[Text(&#39;积分&#39;)],
+        ),
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+<h3 id="toc_9">10.</h3>
+
+<p><img src="media/15560782088168/F1EC8D9E-4F7D-44E7-A605-EC70EA323655.jpg" alt="F1EC8D9E-4F7D-44E7-A605-EC70EA323655"/></p>
+
+<pre><code>Container(
+  margin: EdgeInsets.all(8),
+  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+  color: MZC.randomColor(),
+  height: 115,
+  child: Row(
+    children: &lt;Widget&gt;[
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: &lt;Widget&gt;[
+          Container(
+            width: 70,
+            height: 70,
+            color: MZC.randomColor(),
+          )
+        ],
+      ),
+      Expanded(
+        child: Container(
+          margin: EdgeInsets.fromLTRB(8, 0, 0, 0),
+          child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[
+            Text(&#39;data&#39;, style: TextStyle(fontSize: 22),),
+            Text(&#39;data&#39;),
+          ],
+        ),
+        ),
+      ),
+      Column(
+        children: &lt;Widget&gt;[
+          Container(
+            width: 30,
+            height: 30,
+            color: MZC.randomColor(),
+          )
+        ],
+      ),
+    ],
+  ),
+)
+</code></pre>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>
