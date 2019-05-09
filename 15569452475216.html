@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	PHP - 木子才的博客
+  	PHP 宝塔 上 Nginx 跑 ThinkPHP - 木子才的博客
   	
 	</title>
 
@@ -158,70 +158,39 @@
 		</div>	
 		<div class="mid-col">
 			<div class="mid-col-container"> <div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
 
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">PHP 宝塔 上 Nginx 跑 ThinkPHP</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p><a href="https://www.cnblogs.com/fangziffff123/p/7588782.html">参考文章</a></p>
 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-05-04T12:47:27+08:00" itemprop="datePublished">2019/5/4</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
+<p><img src="media/15569452475216/9E57CD1A-EC37-4BC6-AE5F-964A9A44F2B0.jpg" alt="9E57CD1A-EC37-4BC6-AE5F-964A9A44F2B0"/></p>
+
+<p><img src="media/15569452475216/1487B6D1-A864-4805-BA61-586F1EE511F0.jpg" alt="1487B6D1-A864-4805-BA61-586F1EE511F0"/></p>
+
+<p>内容：</p>
+
+<pre><code>location / {
+if (!-e $request_filename){
+rewrite ^(.*)$ /index.php?s=$1 last; break;
+}
+}
+</code></pre>
+
+<p>这样就可以访问ThinkPHP的项目了~~<br/>
+不用去改其他的地方~~~</p>
+
 		</div>
-		<h1 class="category" itemprop="name"><a href="15569452475216.html" itemprop="url">
-		PHP 宝塔 上 Nginx 跑 ThinkPHP</a></h1>
-
 	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2019-01-09T16:57:00+08:00" itemprop="datePublished">2019/1/9</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15470242204753.html" itemprop="url">
-		PHP CI 第一个项目</a></h1>
-
-	</article>
- 
-	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="meta">
-			<div class="date">
-				<time datetime="2018-09-18T17:14:09+08:00" itemprop="datePublished">2018/9/18</time>
-			</div>
-			<div class="tags">posted in 
-			
-			    <a class='category' href='PHP.html'>PHP</a>&nbsp;
-			 
-			</div>
-		</div>
-		<h1 class="category" itemprop="name"><a href="15372620498044.html" itemprop="url">
-		PHP 热更新的服务器</a></h1>
-
-	</article>
-  
-
-</div>
-<nav id="pagenavi">
+	<div class="share-comment">
 	 
-	
-	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-</nav>
+	  
 
+	  
+
+	</div>
 </div>
-
-
-
         </div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
