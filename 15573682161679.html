@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Vue 非父子组件间传值 - 木子才的博客
+  	Vue 插槽 slot - 木子才的博客
   	
 	</title>
 
@@ -160,19 +160,39 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Vue 非父子组件间传值</h1>
+		<h1 class="title" itemprop="name">Vue 插槽 slot</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p>Vue 项目由多个组件组成，如何解决复杂的多层间传值？</p>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;child content=&#39;&lt;p&gt;Muzico&lt;/p&gt;&#39;&gt;&lt;/child&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            Vue.component(&#39;child&#39;, {
+                props: [&#39;content&#39;],
+                template: `
+                    &lt;div&gt;
+                    &lt;p&gt;hello&lt;/p&gt;
+                    &lt;div v-html=&quot;this.content&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                `,
+            })
+            
+            var vm = new Vue({
+                el: &#39;#app&#39;,
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-<h3 id="toc_0">Vuex</h3>
-
-<h3 id="toc_1">Bus/总线/发布订阅模式/观察者模式</h3>
-
-<p>兄弟组件间的值传递。</p>
-
-<p>两个组件通过一个总线连接起来。</p>
-
-<p>点击组件’Muzico‘将组件’Yococo‘的内容也变成’Muzico‘，而当点击组件’Yococo‘将组件’Muzico‘的内容也变成’Yococo‘。</p>
+<p>使用 slot：</p>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -182,34 +202,61 @@
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &lt;child content=&quot;Muzico&quot;&gt;&lt;/child&gt;
-            &lt;child content=&quot;Yococo&quot;&gt;&lt;/child&gt;
+            &lt;child&gt;
+                &lt;p&gt;Muzico&lt;/p&gt;
+            &lt;/child&gt;
         &lt;/div&gt;
         
         &lt;script&gt;
-            Vue.prototype.bus = new Vue()
-            
             Vue.component(&#39;child&#39;, {
-                props: {
-                    content: String,
-                },
-                data: function() {
-                    return {
-                        selfContent: this.content,
-                    }
-                },
-                template: &#39;&lt;div @click=&quot;handleClick&quot;&gt;{{selfContent}}&lt;/div&gt;&#39;,
-                methods: {
-                    handleClick: function() {
-                        this.bus.$emit(&#39;change&#39;, this.content)
-                    },
-                },
-                mounted: function() {
-                    var that = this
-                    this.bus.$on(&#39;change&#39;, function(msg) {
-                        that.selfContent = msg
-                    })
-                },
+                props: [&#39;content&#39;],
+                template: `
+                    &lt;div&gt;
+                        &lt;p&gt;hello&lt;/p&gt;
+                        &lt;slot&gt;&lt;/slot&gt;
+                    &lt;/div&gt;
+                `,
+            })
+            
+            var vm = new Vue({
+                el: &#39;#app&#39;,
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code>&lt;slot&gt;默认内容&lt;/slot&gt;
+</code></pre>
+
+<p>如果 <code>&lt;child&gt;&lt;/child&gt;</code> 没有内容就会显示默认内容。</p>
+
+<p>多插槽的时候可以命名方式来区别。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;child&gt;
+                &lt;div slot=&#39;header&#39;&gt;header&lt;/div&gt;
+                &lt;div slot=&#39;footer&#39;&gt;footer&lt;/div&gt;
+            &lt;/child&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            Vue.component(&#39;child&#39;, {
+                props: [&#39;content&#39;],
+                template: `
+                    &lt;div&gt;
+                        &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+                        &lt;div&gt;content&lt;/div&gt;
+                        &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+                    &lt;/div&gt;
+                `,
             })
             
             var vm = new Vue({

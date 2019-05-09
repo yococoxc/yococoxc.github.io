@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Vue 非父子组件间传值 - 木子才的博客
+  	Vue 同时使用多个动画效果 - 木子才的博客
   	
 	</title>
 
@@ -160,65 +160,160 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Vue 非父子组件间传值</h1>
+		<h1 class="title" itemprop="name">Vue 同时使用多个动画效果</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p>Vue 项目由多个组件组成，如何解决复杂的多层间传值？</p>
+			<p>第一次没有动画效果，刷新页面的时候，没有效果~~~</p>
 
-<h3 id="toc_0">Vuex</h3>
+<p>解决方法：</p>
 
-<h3 id="toc_1">Bus/总线/发布订阅模式/观察者模式</h3>
+<p>加上appear，触发显示动作，然后指定 appear-active-class 的动画效果。</p>
 
-<p>兄弟组件间的值传递。</p>
-
-<p>两个组件通过一个总线连接起来。</p>
-
-<p>点击组件’Muzico‘将组件’Yococo‘的内容也变成’Muzico‘，而当点击组件’Yococo‘将组件’Muzico‘的内容也变成’Yococo‘。</p>
+<p>PS: 如果没有写appear 真的没有效果！</p>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;utf-8&quot;&gt;
         &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./animate.v3.7.0.css&quot;/&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &lt;child content=&quot;Muzico&quot;&gt;&lt;/child&gt;
-            &lt;child content=&quot;Yococo&quot;&gt;&lt;/child&gt;
+            &lt;transition name=&quot;fade&quot;
+             appear
+             enter-active-class=&quot;animated swing&quot;
+             leave-active-class=&quot;animated shake&quot;
+             appear-active-class=&quot;animated swing&quot;&gt;
+                &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
         &lt;/div&gt;
         
         &lt;script&gt;
-            Vue.prototype.bus = new Vue()
-            
-            Vue.component(&#39;child&#39;, {
-                props: {
-                    content: String,
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
                 },
-                data: function() {
-                    return {
-                        selfContent: this.content,
-                    }
-                },
-                template: &#39;&lt;div @click=&quot;handleClick&quot;&gt;{{selfContent}}&lt;/div&gt;&#39;,
                 methods: {
                     handleClick: function() {
-                        this.bus.$emit(&#39;change&#39;, this.content)
-                    },
-                },
-                mounted: function() {
-                    var that = this
-                    this.bus.$on(&#39;change&#39;, function(msg) {
-                        that.selfContent = msg
-                    })
-                },
-            })
-            
-            var vm = new Vue({
-                el: &#39;#app&#39;,
+                        this.show = !this.show
+                    }
+                }
             })
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+
+<p>keyframes 动画和transition动画。<br/>
+过渡和动画同时执行：</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./animate.v3.7.0.css&quot;/&gt;
+        &lt;style&gt;
+            .fade-enter {
+                opacity: 0;
+            }
+            .fade-leave-to {
+                opacity: 0;
+            }
+            .fade-enter-active,
+            .fade-leave-active {
+                 transition: opacity 3s;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;transition name=&quot;fade&quot;
+             appear
+             enter-active-class=&quot;animated swing fade-enter-active&quot;
+             leave-active-class=&quot;animated shake fade-leave-active&quot;
+             appear-active-class=&quot;animated swing&quot;&gt;
+                &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
+                },
+                methods: {
+                    handleClick: function() {
+                        this.show = !this.show
+                    }
+                }
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>过渡和动画的时长不一样，可以通过指定类型来确保两者时长一致。</p>
+
+<pre><code>type=&quot;transition&quot;
+</code></pre>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;transition name=&quot;fade&quot;
+     type=&quot;transition&quot;
+     appear
+     enter-active-class=&quot;animated swing fade-enter-active&quot;
+     leave-active-class=&quot;animated shake fade-leave-active&quot;
+     appear-active-class=&quot;animated swing&quot;&gt;
+        &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+    &lt;/transition&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>也可以自行定义时间的长度：</p>
+
+<pre><code>:duration=5000
+</code></pre>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;transition name=&quot;fade&quot;
+     :duration=5000
+     appear
+     enter-active-class=&quot;animated swing fade-enter-active&quot;
+     leave-active-class=&quot;animated shake fade-leave-active&quot;
+     appear-active-class=&quot;animated swing&quot;&gt;
+        &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+    &lt;/transition&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>当然这样做的话，两个效果的世界也不会一致的。</p>
+
+<p>可以设置更复杂的：</p>
+
+<pre><code>:duration=&quot;{enter: 5000, leave: 10000}&quot;
+</code></pre>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;transition name=&quot;fade&quot;
+     :duration=&quot;{enter: 5000, leave: 10000}&quot;
+     appear
+     enter-active-class=&quot;animated swing fade-enter-active&quot;
+     leave-active-class=&quot;animated shake fade-leave-active&quot;
+     appear-active-class=&quot;animated swing&quot;&gt;
+        &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+    &lt;/transition&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>进入进出的时长都不一样。</p>
 
 		</div>
 	</article>

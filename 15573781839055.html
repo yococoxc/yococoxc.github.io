@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Vue 非父子组件间传值 - 木子才的博客
+  	Vue Velocity.js 实现动画 - 木子才的博客
   	
 	</title>
 
@@ -160,60 +160,124 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Vue 非父子组件间传值</h1>
+		<h1 class="title" itemprop="name">Vue Velocity.js 实现动画</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p>Vue 项目由多个组件组成，如何解决复杂的多层间传值？</p>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./animate.v3.7.0.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;transition name=&quot;fade&quot;
+             @before-enter=&quot;handleBeforeEnter&quot;
+             @enter=&quot;handleEnter&quot;
+             @after-enter=&quot;handleAfterEnter&quot;&gt;
+                &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
+                },
+                methods: {
+                    handleClick: function() {
+                        this.show = !this.show
+                    },
+                    handleBeforeEnter: function(el) {
+                        el.style.color = &#39;red&#39;
+                    },
+                    handleEnter: function(el, done) {
+                        setTimeout(() =&gt; {
+                            el.style.color = &#39;green&#39;
+                        }, 2000)
+                        
+                        setTimeout(() =&gt; {
+                            done()
+                        }, 4000)
+                    },
+                    handleAfterEnter: function(el) {
+                        el.style.color = &#39;#000&#39;
+                    }
+                }
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-<h3 id="toc_0">Vuex</h3>
+<p>JS 的钩子</p>
 
-<h3 id="toc_1">Bus/总线/发布订阅模式/观察者模式</h3>
+<pre><code>before-enter
+enter
+after-enter
 
-<p>兄弟组件间的值传递。</p>
+before-leave
+leave
+after-leave
+</code></pre>
 
-<p>两个组件通过一个总线连接起来。</p>
+<p>before-enter、after-enter 都会接收一个参数：el。<br/>
+而 enter 则会接收两个参数：el、done，执行 done() 则表示动画接触会触发 after-enter。</p>
 
-<p>点击组件’Muzico‘将组件’Yococo‘的内容也变成’Muzico‘，而当点击组件’Yococo‘将组件’Muzico‘的内容也变成’Yococo‘。</p>
+<h3 id="toc_0">Velocity.js</h3>
+
+<p>使用第三方库来实现 JS 动画：<a href="http://velocityjs.org/">Velocity.js</a></p>
+
+<p>引入：</p>
+
+<pre><code>&lt;script src=&quot;./velocity.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;utf-8&quot;&gt;
         &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;./velocity.min.js&quot;&gt;&lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &lt;child content=&quot;Muzico&quot;&gt;&lt;/child&gt;
-            &lt;child content=&quot;Yococo&quot;&gt;&lt;/child&gt;
+            &lt;transition name=&quot;fade&quot;
+             @before-enter=&quot;handleBeforeEnter&quot;
+             @enter=&quot;handleEnter&quot;
+             @after-enter=&quot;handleAfterEnter&quot;&gt;
+                &lt;div v-if=&quot;show&quot;&gt;Hello World&lt;/div&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
         &lt;/div&gt;
         
         &lt;script&gt;
-            Vue.prototype.bus = new Vue()
-            
-            Vue.component(&#39;child&#39;, {
-                props: {
-                    content: String,
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
                 },
-                data: function() {
-                    return {
-                        selfContent: this.content,
-                    }
-                },
-                template: &#39;&lt;div @click=&quot;handleClick&quot;&gt;{{selfContent}}&lt;/div&gt;&#39;,
                 methods: {
                     handleClick: function() {
-                        this.bus.$emit(&#39;change&#39;, this.content)
+                        this.show = !this.show
                     },
-                },
-                mounted: function() {
-                    var that = this
-                    this.bus.$on(&#39;change&#39;, function(msg) {
-                        that.selfContent = msg
-                    })
-                },
-            })
-            
-            var vm = new Vue({
-                el: &#39;#app&#39;,
+                    handleBeforeEnter: function(el) {
+                        el.style.opacity = 0
+                    },
+                    handleEnter: function(el, done) {
+                        Velocity(el, {
+                            opacity: 1,
+                        }, {
+                            duration: 1000,
+                            complete: done,
+                        })
+                    },
+                    handleAfterEnter: function(el) {
+                        console.log(&#39;动画结束&#39;)
+                    }
+                }
             })
         &lt;/script&gt;
     &lt;/body&gt;

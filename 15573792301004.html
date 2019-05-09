@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Vue 非父子组件间传值 - 木子才的博客
+  	Vue 多个元素或组件过渡动画 - 木子才的博客
   	
 	</title>
 
@@ -160,60 +160,155 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Vue 非父子组件间传值</h1>
+		<h1 class="title" itemprop="name">Vue 多个元素或组件过渡动画</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<p>Vue 项目由多个组件组成，如何解决复杂的多层间传值？</p>
-
-<h3 id="toc_0">Vuex</h3>
-
-<h3 id="toc_1">Bus/总线/发布订阅模式/观察者模式</h3>
-
-<p>兄弟组件间的值传递。</p>
-
-<p>两个组件通过一个总线连接起来。</p>
-
-<p>点击组件’Muzico‘将组件’Yococo‘的内容也变成’Muzico‘，而当点击组件’Yococo‘将组件’Muzico‘的内容也变成’Yococo‘。</p>
+			<h3 id="toc_0">多个元素过渡动画</h3>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;utf-8&quot;&gt;
         &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;style&gt;
+            .v-enter, .v-leave-to {
+                opacity: 0;
+            }
+            .v-enter-active, .v-leave-active {
+                transition: opacity 1s;
+            }
+        &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &lt;child content=&quot;Muzico&quot;&gt;&lt;/child&gt;
-            &lt;child content=&quot;Yococo&quot;&gt;&lt;/child&gt;
+            &lt;transition&gt;
+                &lt;div v-if=&quot;show&quot; key=&quot;hello&quot;&gt;Hello World&lt;/div&gt;
+                &lt;div v-else key=&quot;bye&quot;&gt;Bye World&lt;/div&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
         &lt;/div&gt;
         
         &lt;script&gt;
-            Vue.prototype.bus = new Vue()
-            
-            Vue.component(&#39;child&#39;, {
-                props: {
-                    content: String,
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
                 },
-                data: function() {
-                    return {
-                        selfContent: this.content,
-                    }
-                },
-                template: &#39;&lt;div @click=&quot;handleClick&quot;&gt;{{selfContent}}&lt;/div&gt;&#39;,
                 methods: {
                     handleClick: function() {
-                        this.bus.$emit(&#39;change&#39;, this.content)
+                        this.show = !this.show
                     },
-                },
-                mounted: function() {
-                    var that = this
-                    this.bus.$on(&#39;change&#39;, function(msg) {
-                        that.selfContent = msg
-                    })
-                },
+                }
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>transition 标签上设置一个参数</p>
+
+<pre><code>mode=&quot;in-out&quot;
+</code></pre>
+
+<p>然后点击就可以看到&#39;Bye World&#39; 先出来，然后 &#39;Hello World&#39; 再消失的效果。然后点击就可以看到，&#39;Hello World&#39; 先出来，然后 &#39;Bye World&#39; 再消失的效果...</p>
+
+<pre><code>mode=&quot;out-in&quot;
+</code></pre>
+
+<p>效果则相反。</p>
+
+<h3 id="toc_1">多个组件过渡动画</h3>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;style&gt;
+            .v-enter, .v-leave-to {
+                opacity: 0;
+            }
+            .v-enter-active, .v-leave-active {
+                transition: opacity 1s;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;transition mode=&quot;out-in&quot;&gt;
+                &lt;child v-if=&quot;show&quot; key=&quot;hello&quot;&gt;&lt;/child&gt;
+                &lt;child-one v-else key=&quot;bye&quot;&gt;&lt;/child-one&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            Vue.component(&#39;child&#39;, {
+                template: &#39;&lt;div&gt;child&lt;/div&gt;&#39;,
+            })
+            
+            Vue.component(&#39;child-one&#39;, {
+                template: &#39;&lt;div&gt;child-one&lt;/div&gt;&#39;,
             })
             
             var vm = new Vue({
-                el: &#39;#app&#39;,
+                el: &#39;#app&#39;, 
+                data: {
+                    show: true,
+                },
+                methods: {
+                    handleClick: function() {
+                        this.show = !this.show
+                    },
+                }
+            })
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>通过动态组件来实现：</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;script src=&quot;./vue.v2.6.10.dev.js&quot;&gt;&lt;/script&gt;
+        &lt;style&gt;
+            .v-enter, .v-leave-to {
+                opacity: 0;
+            }
+            .v-enter-active, .v-leave-active {
+                transition: opacity 1s;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;transition mode=&quot;out-in&quot;&gt;
+                &lt;component :is=&quot;type&quot;&gt;&lt;/component&gt;
+            &lt;/transition&gt;
+            &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+            Vue.component(&#39;child&#39;, {
+                template: &#39;&lt;div&gt;child&lt;/div&gt;&#39;,
+            })
+            
+            Vue.component(&#39;child-one&#39;, {
+                template: &#39;&lt;div&gt;child-one&lt;/div&gt;&#39;,
+            })
+            
+            var vm = new Vue({
+                el: &#39;#app&#39;, 
+                data: {
+                    type: &#39;child&#39;,
+                },
+                methods: {
+                    handleClick: function() {
+                        this.type = this.type === &#39;child&#39; ? &#39;child-one&#39; : &#39;child&#39;
+                    },
+                }
             })
         &lt;/script&gt;
     &lt;/body&gt;
