@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	Flutter Web 项目 创建 & 运行 - 木子才的博客
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="木子才的博客" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="muzicoLogo.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">木子才的博客</a></h1>
+					<p class="subtitle">木子才菜鸟的空间~</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">首页</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">全部文章</a></li>
+						
+						  <li id=""><a target="_self" href="flexBox.html">flexBox</a></li>
+						
+						  <li id=""><a target="_self" href="flutter.html">flutter</a></li>
+						
+						  <li id=""><a target="_self" href="iOS.html">iOS</a></li>
+						
+						  <li id=""><a target="_self" href="React Native.html">React Native</a></li>
+						
+						  <li id=""><a target="_self" href="Vue.html">Vue</a></li>
+						
+						  <li id=""><a target="_self" href="Python.html">Python</a></li>
+						
+						  <li id=""><a target="_self" href="Unity.html">Unity</a></li>
+						
+						  <li id=""><a target="_self" href="nodejs.html">nodejs</a></li>
+						
+						  <li id=""><a target="_self" href="Qt.html">Qt</a></li>
+						
+						  <li id=""><a target="_self" href="Xamarin.html">Xamarin</a></li>
+						
+						  <li id=""><a target="_self" href="友情链接.html">友情链接</a></li>
+						
+						  <li id=""><a target="_self" href="iOS组件.html">iOS 组件</a></li>
+						
+						  <li id=""><a target="_self" href="微信小程序.html">微信小程序</a></li>
+						
+						  <li id=""><a target="_self" href="Swift.html">Swift</a></li>
+						
+						  <li id=""><a target="_self" href="PHP.html">PHP</a></li>
+						
+						  <li id=""><a target="_self" href="作品展示.html">作品展示</a></li>
+						
+						  <li id=""><a target="_self" href="简单语法转OC文件.html">简单语法转OC文件</a></li>
+						
+						  <li id=""><a target="_self" href="其他.html">其他</a></li>
+						
+						  <li id=""><a target="_self" href="无题.html">无题</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/yococoxc" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:547153062@qq.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">Flutter Web 项目 创建 & 运行</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<p>伴随着 Flutter v1.5.4 的发布，Flutter 终于支持众多平台的开发了。</p>
+
+<p>在网上怎么搜索都没有找到关于更加具体的消息，我今天搜索了很久也没有任何收获。</p>
+
+<p>很无助的看着 VSCode 的项目的页面，发现 Dart 语言什么时候更新到 v3.0 的，然后就好奇的进去看看更新的文档描述，然后就发现了 Flutter 支持 Web 项目的创建了，6666，从 Dart v3.0 开始。</p>
+
+<p><a href="https://dartcode.org/releases/v3-0/">Dart 官方文档 &amp; Flutter Web 项目创建教程</a></p>
+
+<p>VSCode 率先支持 Flutter Web 项目的创建！</p>
+
+<p>在 VSCode 打开命令面板，输入命令：</p>
+
+<pre><code>&gt;Flutter:New Web Project
+</code></pre>
+
+<p>然后稍等就可以看到下面的界面：</p>
+
+<p><img src="media/15577433654138/1222E763-A943-4C4F-A5E9-27CF70196A96.jpg" alt="1222E763-A943-4C4F-A5E9-27CF70196A96"/></p>
+
+<p>这个界面的意思的就是要你输入你的 web 项目的名字。不支持大写字母来命名。</p>
+
+<p>然后就可以看到 VSCode 出现一个窗口让你选择项目保存在哪个目录下面。</p>
+
+<p>（没有图片，绝非我的懒惰，是没有必要而已~）</p>
+
+<p>然后 VSCode 会新建一个窗口来运行你的项目。</p>
+
+<p>于此同时，会自动下载关联的库，如：</p>
+
+<pre><code>[你的项目名] pub get
+Resolving dependencies...
++ analyzer 0.36.3
++ archive 2.0.8
++ args 1.5.1
++ async 2.2.0
++ bazel_worker 0.1.20
++ build 1.1.4
++ build_config 0.4.0
++ build_daemon 0.6.1
++ build_modules 2.1.2
++ build_resolvers 1.0.4
++ build_runner 1.4.0
++ build_runner_core 3.0.5
++ build_web_compilers 2.0.0
++ built_collection 4.2.2
++ built_value 6.5.0
++ charcode 1.1.2
++ code_builder 3.2.0
++ collection 1.14.11
++ convert 2.1.1
++ crypto 2.0.6
++ csslib 0.16.0
++ dart_style 1.2.7
++ fixnum 0.10.9
++ front_end 0.1.18
++ glob 1.1.7
++ graphs 0.2.0
++ html 0.14.0+2
++ http 0.12.0+2
++ http_multi_server 2.0.6
++ http_parser 3.1.3
++ intl 0.15.8
++ io 0.3.3
++ js 0.6.1+1
++ json_annotation 2.3.0
++ kernel 0.3.18
++ logging 0.11.3+2
++ matcher 0.12.5
++ meta 1.1.7
++ mime 0.9.6+2
++ package_config 1.0.5
++ package_resolver 1.0.10
++ path 1.6.2
++ pedantic 1.7.0
++ pool 1.4.0
++ protobuf 0.13.11
++ pub_semver 1.4.2
++ pubspec_parse 0.1.4
++ quiver 2.0.3
++ scratch_space 0.0.3+2
++ shelf 0.7.5
++ shelf_web_socket 0.2.3
++ source_maps 0.10.8
++ source_span 1.5.5
++ stack_trace 1.9.3
++ stream_channel 2.0.0
++ stream_transform 0.0.19
++ string_scanner 1.0.4
++ term_glyph 1.1.0
++ timing 0.1.1+1
++ typed_data 1.1.6
++ vector_math 2.0.8
++ watcher 0.9.7+10
++ web_socket_channel 1.0.12
++ yaml 2.1.15
+Warning: You are using these overridden dependencies:
+! flutter_web 0.0.0 from git https://github.com/flutter/flutter_web at acf4aa in packages/flutter_web
+! flutter_web_ui 0.0.0 from git https://github.com/flutter/flutter_web at acf4aa in packages/flutter_web_ui
+Changed 66 dependencies!
+Precompiling executables...
+Precompiled build_runner:graph_inspector.
+Precompiled build_runner:build_runner.
+exit code 0
+</code></pre>
+
+<p>上面的信息貌似是多余的，其实我滥竽充数而已~~</p>
+
+<p>然后直接运行，VSCode 只需要按 F5 快捷键就行了。</p>
+
+<p>然后你就可以看到 VSCode 弹出一个框让你选择运行项目的环境：</p>
+
+<p><img src="media/15577433654138/5B3EC55B-F3B8-4969-B0FF-E7B11848A2B8.jpg" alt="5B3EC55B-F3B8-4969-B0FF-E7B11848A2B8"/></p>
+
+<p>老铁，听我说，选 “ Dart &amp; Flutter ” 就对了。</p>
+
+<p>然后稍等一下吧，项目会编译，然后自动生成内容，其实就是 Dart 转换成 JavaScript 的过程。</p>
+
+<p>Dart 原本就是（谷歌）想代替 JavaScript 而发明的，可以转换成 JavaScript 代码。</p>
+
+<p>感觉 Dart 走了曲线救国的方式，终于走到这步 —— 代替 JavaScript。</p>
+
+<p>最后，你会看到你系统默认的浏览器会弹出一个新的窗口来运行你的项目。（感觉刚开始有点慢吧。。。。）</p>
+
+<p><img src="media/15577433654138/69B9A0B4-D7A0-4BE0-942A-14193591ABA6.jpg" alt="69B9A0B4-D7A0-4BE0-942A-14193591ABA6"/></p>
+
+<p>下面我们来看看项目的目录：</p>
+
+<p><img src="media/15577433654138/227A35FB-8CC9-4E7D-967D-AEDFB6BA8B63.jpg" alt="227A35FB-8CC9-4E7D-967D-AEDFB6BA8B63"/></p>
+
+<h3 id="toc_0">web/index.html</h3>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;script defer src=&quot;main.dart.js&quot; type=&quot;application/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<h3 id="toc_1">web/main.dart</h3>
+
+<pre><code>// Copyright 2019 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+import &#39;package:flutter_web_ui/ui.dart&#39; as ui;
+import &#39;package:aaaaaaa/main.dart&#39; as app;
+
+main() async {
+  await ui.webOnlyInitializePlatform();
+  app.main();
+}
+
+</code></pre>
+
+<h3 id="toc_2">lib/main.dart</h3>
+
+<pre><code>import &#39;package:flutter_web/material.dart&#39;;
+
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: &#39;Flutter Demo&#39;,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: &#39;Flutter Demo Home Page&#39;),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          // Column is also layout widget. It takes a list of children and
+          // arranges them vertically. By default, it sizes itself to fit its
+          // children horizontally, and tries to be as tall as its parent.
+          //
+          // Invoke &quot;debug painting&quot; (choose the &quot;Toggle Debug Paint&quot; action
+          // from the Flutter Inspector in Android Studio, or the &quot;Toggle Debug
+          // Paint&quot; command in Visual Studio Code) to see the wireframe for each
+          // widget.
+          //
+          // Column has various properties to control how it sizes itself and
+          // how it positions its children. Here we use mainAxisAlignment to
+          // center the children vertically; the main axis here is the vertical
+          // axis because Columns are vertical (the cross axis would be
+          // horizontal).
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: &lt;Widget&gt;[
+            Text(
+              &#39;Hello, World!&#39;,
+            ),
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+</code></pre>
+
+<p>本文就大致介绍到这里吧，不管怎么说 Flutter 跑在 Web 上面而且不是试验性质的，是正式版的，这是令人多么激动无比啊，我也情不自禁为其写下（全网）第一篇相关文章。</p>
+
+<p>PS: 目前体现一般，有些提示可能还没有做的很好，还有修改过的地方保存后不能在网页上马上改变，非得在网页上刷新一下才行。。。。。。不过这些都是小问题，很容易修复好的。接下来就是写一些复杂的内容~~~~</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+  
+    
+<script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>  
 	  
-  	Flutter 请求 JSON 并转为 Model - 木子才的博客
+  	Vue Ajax 获取数据 - 木子才的博客
   	
 	</title>
 
@@ -160,61 +160,40 @@
 			<div class="mid-col-container"> <div id="content" class="inner">
 
 	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-		<h1 class="title" itemprop="name">Flutter 请求 JSON 并转为 Model</h1>
+		<h1 class="title" itemprop="name">Vue Ajax 获取数据</h1>
 		<div class="entry-content" itemprop="articleBody">
-			<h4 id="toc_0">文本要点</h4>
+			<p>安装 axios</p>
 
-<ul>
-<li>HTTP Get 请求</li>
-<li>Dart 类方法（或称为：命名的构造函数）</li>
-<li>String 转 JSON</li>
-</ul>
+<pre><code>npm install axios --save
+</code></pre>
 
-<h3 id="toc_1">TestModel</h3>
+<p>在 Home.vue 中使用</p>
 
-<pre><code>import &#39;dart:convert&#39;;
-
-class TestModel {
-  String method;
-  num number;
-  bool isAjax;
-
-  TestModel(this.method, this.number, this.isAjax);
-
-  /**
-   * 类方法
-   */
-  TestModel.fromJSON(jsonObject) {
-    if (jsonObject.runtimeType == String) {
-
-      Map&lt;String, dynamic&gt; temp = json.decode(jsonObject);
-
-      if (temp != null) {
-        method = temp[&#39;method&#39;];
-        number = temp[&#39;number&#39;];
-        isAjax = temp[&#39;isAjax&#39;];
-      }
+<pre><code>&lt;script&gt;
+import axios from &#39;axios&#39;
+export default {
+  name: &#39;Home&#39;,
+  methods: {
+    getHomeInfo() {
+      axios.get(&#39;/api/index.json&#39;)
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc () {
+      console.log(res)
     }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
-
 }
+&lt;/script&gt;
 </code></pre>
 
-<pre><code>import &#39;package:http/http.dart&#39; as http;
+<p>但由于欠缺服务器的支持，所以本地开发是看不到效果的。<br/>
+为了让本地开发也有 Ajax 请求的效果，我们可以测试本地请求。</p>
 
-import &#39;TestModel.dart&#39;;
-</code></pre>
-
-<pre><code>void httpRequest() async {
-    var url = &#39;http://api.muco.vip/test.php?a=1&amp;b=2&amp;c=3&#39;;
-    http.get(url).then((response) {
-      print(&#39;内容：${response.body}&#39;);
-
-      var temp = TestModel.fromJSON(response.body);
-      print(&#39;temp method : ${temp.method}&#39;);
-    });
-}
-</code></pre>
+<p>在项目目录下面，有一个叫 static 的文件夹。<br/>
+该文件夹下面的内容都可以在浏览器上面可以访问到，其他文件夹的一律无法访问。</p>
 
 		</div>
 	</article>
